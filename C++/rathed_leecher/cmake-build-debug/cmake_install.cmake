@@ -1,4 +1,4 @@
-# Install script for directory: /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher
+# Install script for directory: /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

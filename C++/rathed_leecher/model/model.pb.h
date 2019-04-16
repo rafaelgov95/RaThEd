@@ -339,7 +339,7 @@ class VectorString final :
 
   // accessors -------------------------------------------------------
 
-  // repeated string peers = 1;
+  // repeated string peer = 1;
   int peers_size() const;
   void clear_peers();
   static const int kPeersFieldNumber = 1;
@@ -483,7 +483,7 @@ inline void Datagrama::set_allocated_data(::std::string* data) {
 
 // VectorString
 
-// repeated string peers = 1;
+// repeated string peer = 1;
 inline int VectorString::peers_size() const {
   return peers_.size();
 }
@@ -491,64 +491,64 @@ inline void VectorString::clear_peers() {
   peers_.Clear();
 }
 inline const ::std::string& VectorString::peers(int index) const {
-  // @@protoc_insertion_point(field_get:rathed.VectorString.peers)
+  // @@protoc_insertion_point(field_get:rathed.VectorString.peer)
   return peers_.Get(index);
 }
 inline ::std::string* VectorString::mutable_peers(int index) {
-  // @@protoc_insertion_point(field_mutable:rathed.VectorString.peers)
+  // @@protoc_insertion_point(field_mutable:rathed.VectorString.peer)
   return peers_.Mutable(index);
 }
 inline void VectorString::set_peers(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:rathed.VectorString.peers)
+  // @@protoc_insertion_point(field_set:rathed.VectorString.peer)
   peers_.Mutable(index)->assign(value);
 }
 #if LANG_CXX11
 inline void VectorString::set_peers(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:rathed.VectorString.peers)
+  // @@protoc_insertion_point(field_set:rathed.VectorString.peer)
   peers_.Mutable(index)->assign(std::move(value));
 }
 #endif
 inline void VectorString::set_peers(int index, const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   peers_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:rathed.VectorString.peers)
+  // @@protoc_insertion_point(field_set_char:rathed.VectorString.peer)
 }
 inline void VectorString::set_peers(int index, const char* value, size_t size) {
   peers_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:rathed.VectorString.peers)
+  // @@protoc_insertion_point(field_set_pointer:rathed.VectorString.peer)
 }
 inline ::std::string* VectorString::add_peers() {
-  // @@protoc_insertion_point(field_add_mutable:rathed.VectorString.peers)
+  // @@protoc_insertion_point(field_add_mutable:rathed.VectorString.peer)
   return peers_.Add();
 }
 inline void VectorString::add_peers(const ::std::string& value) {
   peers_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:rathed.VectorString.peers)
+  // @@protoc_insertion_point(field_add:rathed.VectorString.peer)
 }
 #if LANG_CXX11
 inline void VectorString::add_peers(::std::string&& value) {
   peers_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:rathed.VectorString.peers)
+  // @@protoc_insertion_point(field_add:rathed.VectorString.peer)
 }
 #endif
 inline void VectorString::add_peers(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   peers_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:rathed.VectorString.peers)
+  // @@protoc_insertion_point(field_add_char:rathed.VectorString.peer)
 }
 inline void VectorString::add_peers(const char* value, size_t size) {
   peers_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:rathed.VectorString.peers)
+  // @@protoc_insertion_point(field_add_pointer:rathed.VectorString.peer)
 }
 inline const ::google::protobuf::RepeatedPtrField<::std::string>&
 VectorString::peers() const {
-  // @@protoc_insertion_point(field_list:rathed.VectorString.peers)
+  // @@protoc_insertion_point(field_list:rathed.VectorString.peer)
   return peers_;
 }
 inline ::google::protobuf::RepeatedPtrField<::std::string>*
 VectorString::mutable_peers() {
-  // @@protoc_insertion_point(field_mutable_list:rathed.VectorString.peers)
+  // @@protoc_insertion_point(field_mutable_list:rathed.VectorString.peer)
   return &peers_;
 }
 

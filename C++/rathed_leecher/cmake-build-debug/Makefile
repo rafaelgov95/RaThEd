@@ -48,10 +48,10 @@ RM = /opt/clion/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher
+CMAKE_SOURCE_DIR = /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/cmake-build-debug
+CMAKE_BINARY_DIR = /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/cmake-build-debug/CMakeFiles /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/CMakeFiles /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed_leecher/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -190,32 +190,32 @@ model/model.pb.cc.s:
 	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/model/model.pb.cc.s
 .PHONY : model/model.pb.cc.s
 
-peers/Leecher.o: peers/Leecher.cpp.o
+peer/Leecher.o: peer/Leecher.cpp.o
 
-.PHONY : peers/Leecher.o
+.PHONY : peer/Leecher.o
 
 # target to build an object file
-peers/Leecher.cpp.o:
-	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/peers/Leecher.cpp.o
-.PHONY : peers/Leecher.cpp.o
+peer/Leecher.cpp.o:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/peer/Leecher.cpp.o
+.PHONY : peer/Leecher.cpp.o
 
-peers/Leecher.i: peers/Leecher.cpp.i
+peer/Leecher.i: peer/Leecher.cpp.i
 
-.PHONY : peers/Leecher.i
+.PHONY : peer/Leecher.i
 
 # target to preprocess a source file
-peers/Leecher.cpp.i:
-	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/peers/Leecher.cpp.i
-.PHONY : peers/Leecher.cpp.i
+peer/Leecher.cpp.i:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/peer/Leecher.cpp.i
+.PHONY : peer/Leecher.cpp.i
 
-peers/Leecher.s: peers/Leecher.cpp.s
+peer/Leecher.s: peer/Leecher.cpp.s
 
-.PHONY : peers/Leecher.s
+.PHONY : peer/Leecher.s
 
 # target to generate assembly for a file
-peers/Leecher.cpp.s:
-	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/peers/Leecher.cpp.s
-.PHONY : peers/Leecher.cpp.s
+peer/Leecher.cpp.s:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/peer/Leecher.cpp.s
+.PHONY : peer/Leecher.cpp.s
 
 rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.o: rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.o
 
@@ -314,9 +314,9 @@ help:
 	@echo "... model/model.pb.o"
 	@echo "... model/model.pb.i"
 	@echo "... model/model.pb.s"
-	@echo "... peers/Leecher.o"
-	@echo "... peers/Leecher.i"
-	@echo "... peers/Leecher.s"
+	@echo "... peer/Leecher.o"
+	@echo "... peer/Leecher.i"
+	@echo "... peer/Leecher.s"
 	@echo "... rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.o"
 	@echo "... rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.i"
 	@echo "... rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.s"

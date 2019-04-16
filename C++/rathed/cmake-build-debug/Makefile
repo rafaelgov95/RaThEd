@@ -48,10 +48,10 @@ RM = /opt/clion/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed
+CMAKE_SOURCE_DIR = /home/rafael/Documentos/Projetos/RaThEd/C++/rathed
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/cmake-build-debug
+CMAKE_BINARY_DIR = /home/rafael/Documentos/Projetos/RaThEd/C++/rathed/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/cmake-build-debug/CMakeFiles /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafael/Documentos/Projetos/RaThEd/C++/rathed/cmake-build-debug/CMakeFiles /home/rafael/Documentos/Projetos/RaThEd/C++/rathed/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafael/Documentos/Projetos/RaThEd/C++/rathed/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -177,32 +177,32 @@ model/model.pb.cc.s:
 	$(MAKE) -f CMakeFiles/rathed.dir/build.make CMakeFiles/rathed.dir/model/model.pb.cc.s
 .PHONY : model/model.pb.cc.s
 
-peers/Seed.o: peers/Seed.cpp.o
+peer/Seed.o: peer/Seed.cpp.o
 
-.PHONY : peers/Seed.o
+.PHONY : peer/Seed.o
 
 # target to build an object file
-peers/Seed.cpp.o:
-	$(MAKE) -f CMakeFiles/rathed.dir/build.make CMakeFiles/rathed.dir/peers/Seed.cpp.o
-.PHONY : peers/Seed.cpp.o
+peer/Seed.cpp.o:
+	$(MAKE) -f CMakeFiles/rathed.dir/build.make CMakeFiles/rathed.dir/peer/Seed.cpp.o
+.PHONY : peer/Seed.cpp.o
 
-peers/Seed.i: peers/Seed.cpp.i
+peer/Seed.i: peer/Seed.cpp.i
 
-.PHONY : peers/Seed.i
+.PHONY : peer/Seed.i
 
 # target to preprocess a source file
-peers/Seed.cpp.i:
-	$(MAKE) -f CMakeFiles/rathed.dir/build.make CMakeFiles/rathed.dir/peers/Seed.cpp.i
-.PHONY : peers/Seed.cpp.i
+peer/Seed.cpp.i:
+	$(MAKE) -f CMakeFiles/rathed.dir/build.make CMakeFiles/rathed.dir/peer/Seed.cpp.i
+.PHONY : peer/Seed.cpp.i
 
-peers/Seed.s: peers/Seed.cpp.s
+peer/Seed.s: peer/Seed.cpp.s
 
-.PHONY : peers/Seed.s
+.PHONY : peer/Seed.s
 
 # target to generate assembly for a file
-peers/Seed.cpp.s:
-	$(MAKE) -f CMakeFiles/rathed.dir/build.make CMakeFiles/rathed.dir/peers/Seed.cpp.s
-.PHONY : peers/Seed.cpp.s
+peer/Seed.cpp.s:
+	$(MAKE) -f CMakeFiles/rathed.dir/build.make CMakeFiles/rathed.dir/peer/Seed.cpp.s
+.PHONY : peer/Seed.cpp.s
 
 rastreador/Rastreador.o: rastreador/Rastreador.cpp.o
 
@@ -246,9 +246,9 @@ help:
 	@echo "... model/model.pb.o"
 	@echo "... model/model.pb.i"
 	@echo "... model/model.pb.s"
-	@echo "... peers/Seed.o"
-	@echo "... peers/Seed.i"
-	@echo "... peers/Seed.s"
+	@echo "... peer/Seed.o"
+	@echo "... peer/Seed.i"
+	@echo "... peer/Seed.s"
 	@echo "... rastreador/Rastreador.o"
 	@echo "... rastreador/Rastreador.i"
 	@echo "... rastreador/Rastreador.s"

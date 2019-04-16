@@ -647,13 +647,13 @@ const char* VectorString::_InternalParse(const char* begin, const char* end, voi
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // repeated string peers = 1;
+      // repeated string peer = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          ctx->extra_parse_data().SetFieldName("rathed.VectorString.peers");
+          ctx->extra_parse_data().SetFieldName("rathed.VectorString.peer");
           object = msg->add_peers();
           if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
             parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8Verify;
@@ -700,7 +700,7 @@ bool VectorString::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated string peers = 1;
+      // repeated string peer = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
@@ -709,7 +709,7 @@ bool VectorString::MergePartialFromCodedStream(
             this->peers(this->peers_size() - 1).data(),
             static_cast<int>(this->peers(this->peers_size() - 1).length()),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "rathed.VectorString.peers");
+            "rathed.VectorString.peer");
         } else {
           goto handle_unusual;
         }
@@ -743,12 +743,12 @@ void VectorString::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated string peers = 1;
+  // repeated string peer = 1;
   for (int i = 0, n = this->peers_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->peers(i).data(), static_cast<int>(this->peers(i).length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "rathed.VectorString.peers");
+      "rathed.VectorString.peer");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       1, this->peers(i), output);
   }
@@ -766,12 +766,12 @@ void VectorString::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated string peers = 1;
+  // repeated string peer = 1;
   for (int i = 0, n = this->peers_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->peers(i).data(), static_cast<int>(this->peers(i).length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "rathed.VectorString.peers");
+      "rathed.VectorString.peer");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(1, this->peers(i), target);
   }
@@ -797,7 +797,7 @@ size_t VectorString::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated string peers = 1;
+  // repeated string peer = 1;
   total_size += 1 *
       ::google::protobuf::internal::FromIntSize(this->peers_size());
   for (int i = 0, n = this->peers_size(); i < n; i++) {

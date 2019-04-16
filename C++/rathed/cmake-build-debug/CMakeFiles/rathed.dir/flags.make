@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/cmake-build-debug -I/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed -I/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/peers -I/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/rastreador -I/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/util -I/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/model -I/home/rafael/Documentos/Mestrado/Materias/Redes-de-Computadores-v2/Trabalhos/C++/rathed/template 
+CXX_INCLUDES = -I/home/rafael/Documentos/Projetos/RaThEd/C++/rathed/cmake-build-debug -I/home/rafael/Documentos/Projetos/RaThEd/C++/rathed -I/home/rafael/Documentos/Projetos/RaThEd/C++/rathed/peer -I/home/rafael/Documentos/Projetos/RaThEd/C++/rathed/rastreador -I/home/rafael/Documentos/Projetos/RaThEd/C++/rathed/util -I/home/rafael/Documentos/Projetos/RaThEd/C++/rathed/model -I/home/rafael/Documentos/Projetos/RaThEd/C++/rathed/template 
 
