@@ -15,10 +15,6 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 
-
-#define MAXLINE 1024
-#define T_PACOTE 160; //tamanho do pacote
-
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -36,8 +32,8 @@
 #include "util.h"
 #include "model.pb.h"
 
-#define MAX_LENGTH_DATAG 351
-#define MAX_LENGTH_FILE 340
+#define MAX_LENGTH 320
+
 
 
 class Leecher {
@@ -45,7 +41,7 @@ class Leecher {
 private:
     int socket_fd, bytes_read,total_bytes_file,rastreadorPorta = 8080;
     unsigned int address_length;
-    char recieve_data[MAX_LENGTH_DATAG];
+    char recieve_data[MAX_LENGTH];
     struct sockaddr_in rastreador_address;
     std::vector<std::pair<std::string, std::vector<std::string>>> tableFiles;
 

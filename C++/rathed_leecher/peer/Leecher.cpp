@@ -62,7 +62,7 @@ std::vector <std::string> Leecher::consultarRastreador(std::string hash) {
 
     usleep(200);
 
-    bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH_DATAG, 0, (struct sockaddr *) &rastreador_address,
+    bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH, 0, (struct sockaddr *) &rastreador_address,
                           &address_length); //block call, will wait till client enters something, before proceeding
     usleep(200);
 
@@ -95,7 +95,7 @@ void Leecher::downloandP2P(sockaddr_in seed_address, std::string caminho, std::s
 
     while (flag) {
 
-        bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH_DATAG, 0, (struct sockaddr *) &seed_address,
+        bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH, 0, (struct sockaddr *) &seed_address,
                               &address_length);
         datagrama_buff.ParseFromArray(recieve_data, bytes_read);
         if (datagrama_buff.packnumber() >= total_bytes_file) {
@@ -144,7 +144,7 @@ bool Leecher::consultarFileSize(std::string hash, sockaddr_in seed) {
                sizeof(struct sockaddr)) > 0) {
         usleep(200);
         datagrama_buff.clear_data();
-        bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH_DATAG, 0,
+        bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH, 0,
                               (struct sockaddr *) &seed,
                               &address_length); //block call, will wait till client enters something, before proceeding
         datagrama_buff.ParseFromArray(recieve_data, bytes_read);

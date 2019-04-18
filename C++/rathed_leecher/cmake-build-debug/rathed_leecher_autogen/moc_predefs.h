@@ -93,6 +93,7 @@
 #define __FLT64X_DENORM_MIN__ 3.64519953188247460252840593361941982e-4951F64x
 #define __FLT32X_HAS_INFINITY__ 1
 #define __INT32_MAX__ 0x7fffffff
+#define __SIZEOF_PTRDIFF_T__ 8
 #define __INT_WIDTH__ 32
 #define __SIZEOF_LONG__ 8
 #define __STDC_IEC_559__ 1
@@ -223,7 +224,6 @@
 #define QT_MULTIMEDIA_LIB 1
 #define __SIG_ATOMIC_MAX__ 0x7fffffff
 #define __GCC_ATOMIC_WCHAR_T_LOCK_FREE 2
-#define __SIZEOF_PTRDIFF_T__ 8
 #define __FLT32X_MANT_DIG__ 53
 #define __x86_64__ 1
 #define __FLT32X_MIN_EXP__ (-1021)

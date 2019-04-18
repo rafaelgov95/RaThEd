@@ -13,14 +13,34 @@
   <component name="ChangeListManager">
     <list default="true" id="2287bb4b-7650-4081-b910-3dae6e5019b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/peer/Seed.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/peer/Seed.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/rastreador/Rastreador.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/rathed" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/rathed" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/peer/Seed.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/peer/Seed.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rastreador/Rastreador.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/rastreador/Rastreador.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/peer/Seed.h" beforeDir="false" afterPath="$PROJECT_DIR$/peer/Seed.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rastreador/Rastreador.h" beforeDir="false" afterPath="$PROJECT_DIR$/rastreador/Rastreador.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed_leecher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher_autogen.dir/AutogenInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher_autogen.dir/AutogenInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher_autogen.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher_autogen.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher_autogen/moc_predefs.h" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher_autogen/moc_predefs.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/peer/Leecher.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/peer/Leecher.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/peer/Leecher.h" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/peer/Leecher.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,69 +56,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/peer/Seed.h">
+        <entry file="file:///usr/include/c++/8.2.1/bits/invoke.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="860">
-              <caret line="43" column="14" selection-start-line="42" selection-end-line="43" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/include/bits/types/struct_timeval.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/peer/Seed.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1120">
-              <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rastreador/Rastreador.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="56" column="24" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/include/sys/select.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2000">
-              <caret line="100" column="11" selection-start-line="100" selection-start-column="11" selection-end-line="100" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rede/CamadaDeRede.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rede/CamadaDeRede.h">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rastreador/Rastreador.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
-              <caret line="38" column="54" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="54" />
+            <state relative-caret-position="1880">
+              <caret line="94" selection-start-line="94" selection-end-line="94" />
             </state>
           </provider>
         </entry>
@@ -106,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="11" column="9" selection-end-line="41" selection-end-column="1" />
+            <state relative-caret-position="60">
+              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
               <folding>
                 <element signature="e#1#20#0" expanded="true" />
               </folding>
@@ -116,16 +77,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/model.pb.h">
+        <entry file="file://$PROJECT_DIR$/rastreador/Rastreador.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7840">
-              <caret line="392" column="42" selection-start-line="392" selection-start-column="42" selection-end-line="392" selection-end-column="42" />
-              <folding>
-                <element signature="e#2493#2495#0" expanded="true" />
-                <element signature="e#2581#2583#0" expanded="true" />
-                <element signature="e#5657#5884#0" expanded="true" />
-                <element signature="e#10611#10838#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="180">
+              <caret line="27" column="16" lean-forward="true" selection-start-line="27" selection-end-line="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/peer/Seed.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="41" column="11" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/peer/Seed.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="124" column="38" lean-forward="true" selection-start-line="124" selection-start-column="38" selection-end-line="124" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rastreador/Rastreador.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1088">
+              <caret line="116" column="43" selection-start-line="116" selection-start-column="43" selection-end-line="116" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/include/c++/8.2.1/thread">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3900">
+              <caret line="195" selection-start-line="195" selection-end-line="195" />
             </state>
           </provider>
         </entry>
@@ -182,10 +173,10 @@
         <option value="$PROJECT_DIR$/peers/Seed.h" />
         <option value="$PROJECT_DIR$/peers/Seed.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/rastreador/Rastreador.cpp" />
         <option value="$PROJECT_DIR$/rastreador/Rastreador.h" />
         <option value="$PROJECT_DIR$/peer/Seed.h" />
         <option value="$PROJECT_DIR$/peer/Seed.cpp" />
-        <option value="$PROJECT_DIR$/rastreador/Rastreador.cpp" />
       </list>
     </option>
   </component>
@@ -197,10 +188,10 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1975" />
-    <option name="y" value="118" />
-    <option name="width" value="1431" />
-    <option name="height" value="591" />
+    <option name="x" value="2006" />
+    <option name="y" value="280" />
+    <option name="width" value="1421" />
+    <option name="height" value="598" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -208,41 +199,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="rathed" type="b2602c69:ProjectViewProjectNode" />
               <item name="rathed" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rathed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rathed" type="462c0819:PsiDirectoryNode" />
-              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rathed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rathed" type="462c0819:PsiDirectoryNode" />
-              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
-              <item name="CMakeFiles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rathed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rathed" type="462c0819:PsiDirectoryNode" />
-              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
-              <item name="CMakeFiles" type="462c0819:PsiDirectoryNode" />
-              <item name="rathed.dir" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rathed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rathed" type="462c0819:PsiDirectoryNode" />
-              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
-              <item name="rathed_autogen" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rathed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rathed" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="rathed" type="b2602c69:ProjectViewProjectNode" />
@@ -254,21 +217,10 @@
               <item name="rathed" type="462c0819:PsiDirectoryNode" />
               <item name="rastreador" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="rathed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rathed" type="462c0819:PsiDirectoryNode" />
-              <item name="rede" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rathed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rathed" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -347,11 +299,12 @@
       <workItem from="1555453277100" duration="704000" />
       <workItem from="1555611057813" duration="2870000" />
       <workItem from="1555614112556" duration="95000" />
+      <workItem from="1555617541932" duration="761000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219933000" />
+    <option name="totallyTimeSpent" value="220720000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -366,12 +319,12 @@
     <frame x="1920" y="0" width="1600" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8568773" visible="true" weight="0.2966538" />
-      <window_info id="Structure" order="1" sideWeight="0.14312267" side_tool="true" visible="true" weight="0.2966538" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8563536" visible="true" weight="0.3005148" />
+      <window_info id="Structure" order="1" sideWeight="0.1436464" side_tool="true" visible="true" weight="0.3005148" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969433" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2948886" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28833553" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39847162" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -381,7 +334,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.22542594" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="CMake" order="12" weight="0.28964612" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.28833553" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -399,29 +352,10 @@
           <line>1</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/peer/Seed.h</url>
-          <line>8</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/include/c++/8.2.1/thread">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="112" column="4" selection-start-line="112" selection-start-column="4" selection-end-line="112" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/8.2.1/bits/stl_vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21780">
-          <caret line="1089" column="6" selection-start-line="1089" selection-start-column="6" selection-end-line="1089" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/8.2.1/bits/stl_algo.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78400">
@@ -628,24 +562,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/peer/Seed.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="43" column="14" selection-start-line="42" selection-end-line="43" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/bits/types/struct_timeval.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/peer/Seed.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1120">
-          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -666,23 +586,6 @@
     <entry file="file://$PROJECT_DIR$/rede/CamadaDeRede.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/rastreador/Rastreador.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="38" column="54" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="9" selection-end-line="41" selection-end-column="1" />
-          <folding>
-            <element signature="e#1#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/model.pb.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7840">
@@ -696,10 +599,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/include/c++/8.2.1/bits/invoke.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1880">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/8.2.1/thread">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3900">
+          <caret line="195" selection-start-line="195" selection-end-line="195" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding>
+            <element signature="e#1#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/rastreador/Rastreador.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="56" column="24" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
+        <state relative-caret-position="1088">
+          <caret line="116" column="43" selection-start-line="116" selection-start-column="43" selection-end-line="116" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rastreador/Rastreador.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="27" column="16" lean-forward="true" selection-start-line="27" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/peer/Seed.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="41" column="11" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/peer/Seed.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="124" column="38" lean-forward="true" selection-start-line="124" selection-start-column="38" selection-end-line="124" selection-end-column="38" />
         </state>
       </provider>
     </entry>

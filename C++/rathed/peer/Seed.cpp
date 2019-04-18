@@ -60,7 +60,7 @@ void Seed::run() {
         if (FD_ISSET(socket_fd, &readfds)) {
             FD_CLR(socket_fd, &readfds);
             std::cout << "Comunicação Cliente" << std::endl;
-            bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH_DATAG, 0, (struct sockaddr *) &client_address,
+            bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH, 0, (struct sockaddr *) &client_address,
                                   &address_length); //block call, will wait till client enters something, before proceeding
             rathed::Datagrama buf;
             buf.ParseFromArray(recieve_data, bytes_read);
@@ -112,7 +112,7 @@ void Seed::EnviarArquivo(rathed::Datagrama data) {
         total_bytes_read = data.packnumber();
         coded_input->Skip(data.packnumber());
         int antes = coded_input->CurrentPosition();
-        bytes_read = coded_input->ReadRaw(send_data, MAX_LENGTH_FILE);
+        bytes_read = coded_input->ReadRaw(send_data, MAX_LENGTH-20);
         int depois = coded_input->CurrentPosition();
         int size_bytes = depois - antes;
         datagrama.set_type(static_cast<rathed::DatagramaType>(1));
@@ -124,9 +124,9 @@ void Seed::EnviarArquivo(rathed::Datagrama data) {
                    (struct sockaddr *) &client_address, sizeof(struct sockaddr)) <= 0)
             error("Erro ao enviar 1");
 
-        total_bytes_read += bytes_read;
-        std::cout << "Total de Bytes File Enviados: " << total_bytes_read << " DE " << bytes_total << std::endl;
+        total_bytes_read += size_bytes;
 
+        std::cout << "Total de Bytes File Enviados: " << total_bytes_read << " DE " << bytes_total << std::endl;
         std::cout << "Bytes File: " << size_bytes << std::endl;
         std::cout << "Bytes Datagrama: " << datagrama.ByteSizeLong() << std::endl;
 
