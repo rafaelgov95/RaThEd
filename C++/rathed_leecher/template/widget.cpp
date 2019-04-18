@@ -6,7 +6,7 @@
 #include "ui_widget.h"
 #include <QFileDialog>
 #include <QDir>
-#include <peers/Leecher.h>
+#include <Leecher.h>
 
 void startLeecher(std::string hash, std::string path) {
     Leecher leecher;

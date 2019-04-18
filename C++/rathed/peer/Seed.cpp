@@ -24,12 +24,9 @@ Seed::Seed(int porta) {
     if ((socket_fd = socket(AF_INET, SOCK_DGRAM, 0)) == -1) {
         error("socket()");
     }
-    FD_ZERO(&socketoriginal);
     FD_ZERO(&readfds);
-    FD_SET(socket_fd, &socketoriginal);
-    FD_SET(socket_fd, &readfds);
-    numfd = socket_fd + 1;
-    tv.tv_sec = 0;
+    numfd = socket_fd+1;
+    address_length = sizeof(struct sockaddr); //tamanh do endereco ipv4
     rastreador_address.sin_family = AF_INET;
     rastreador_address.sin_port = htons(rastreadorPorta);
     rastreador_address.sin_addr.s_addr = INADDR_ANY;
@@ -38,26 +35,21 @@ Seed::Seed(int porta) {
     server_address.sin_port = htons(porta);
     server_address.sin_addr.s_addr = INADDR_ANY;
     bzero(&(rastreador_address.sin_zero), 8);
-
+    if (bind(socket_fd,
+             (struct sockaddr *) &server_address, sizeof(struct sockaddr)) == -1) // atribui ip
+    {
+        error("bind()"); // erro se der merd@
+    }
     run();
 
 }
 
 
 void Seed::run() {
-    if (bind(socket_fd,
-             (struct sockaddr *) &server_address, sizeof(struct sockaddr)) == -1) // atribui ip
-    {
-        error("bind()"); // erro se der merd@
-    }
-
-    address_length = sizeof(struct sockaddr); //tamanh do endereco ipv4
-
     atualizarRastreador("cc72fc24056ced9ce13a287ca1243d48","/home/rafael/Música/AlanWalker.mp3");
-
-    while (1) {
-        readfds = socketoriginal;
-        int recieve = select(numfd + 1, &readfds, NULL, NULL, &tv);
+    for (;;) {
+        FD_SET(socket_fd, &readfds);
+        int recieve = select(numfd, &readfds, NULL, NULL, NULL);
         if (recieve == -1) {
             perror("Erro select"); // erro no select()
         }

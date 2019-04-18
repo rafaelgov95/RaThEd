@@ -15,32 +15,37 @@ Rastreador::Rastreador(int porta) {
     if ((socket_fd = socket(AF_INET, SOCK_DGRAM, 0)) == -1) {
         error("socket()");
     }
-    FD_ZERO(&original_socket);
-    FD_ZERO(&readfds);
-    FD_SET(socket_fd, &original_socket);
-    FD_SET(socket_fd, &readfds);
+
+
 
     numfd = socket_fd + 1;
+    FD_ZERO(&readfds);
+
     tv.tv_sec = 0;
+    tv.tv_usec = 0;
     server_address.sin_family = AF_INET;
     server_address.sin_port = htons(porta);
     server_address.sin_addr.s_addr = INADDR_ANY;
     bzero(&(server_address.sin_zero), 8);
-    run();
-}
 
-void Rastreador::run() {
+    address_length = sizeof(struct sockaddr); //tamanh do endereco ipv4
     if (bind(socket_fd, (struct sockaddr *) &server_address, sizeof(struct sockaddr)) == -1) // atribui ip
     {
         error("bind()"); // erro se der merd@
     }
-    address_length = sizeof(struct sockaddr); //tamanh do endereco ipv4
+    run();
+}
+
+void Rastreador::run() {
+
     printf("\nRastreador Iniciado\n");
-    while (true) {
-        readfds = original_socket;
-        int recieve = select(numfd, &readfds, NULL, NULL, &tv);
+    for (;;) {
+        FD_SET(socket_fd, &readfds);
+        int recieve = select(numfd, &readfds, NULL, NULL, NULL);
         if (recieve == -1) {
             perror("Erro select"); // erro no select()
+        } if (recieve == 0) {
+            perror("0 select"); // erro no select()
         }
         if (FD_ISSET(socket_fd, &readfds)) {
             FD_CLR(socket_fd, &readfds);

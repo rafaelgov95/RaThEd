@@ -30,28 +30,35 @@
 class Seed {
 
 private:
-    int rastreadorPorta=8080;
-    fd_set socketoriginal;
+    int rastreadorPorta = 8080;
     fd_set readfds;
-    struct timeval tv;
-    int numfd = 1;
-    int socket_fd, bytes_read,bytes_total;
+    int numfd = 0;
+    int socket_fd, bytes_read, bytes_total;
     unsigned int address_length;
     char recieve_data[MAX_LENGTH_DATAG], send_data[MAX_LENGTH_FILE];
-    struct sockaddr_in server_address, client_address,rastreador_address;
-    std::vector<std::pair<std::string,std::string>> file;
+    struct sockaddr_in server_address, client_address, rastreador_address;
+    std::vector<std::pair<std::string, std::string>> file;
+
     void run();
-   void atualizarRastreador( std::string hash,std::string path);
+
+    void atualizarRastreador(std::string hash, std::string path);
+
     void tratarMensagem(rathed::Datagrama data);
+
     void EnviarArquivo(rathed::Datagrama data);
+
     void atualizacaoRealizada(rathed::Datagrama data);
+
     void consultaFileSize(rathed::Datagrama data);
+
     void confirmaEnvio(rathed::Datagrama *datagrama);
+
     void Desconectar();
+
 public:
     Seed(int porta);
-    ~Seed();
 
+    ~Seed();
 
 
 };

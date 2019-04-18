@@ -31,13 +31,11 @@
 class Rastreador {
 
 private:
-    fd_set original_socket;
     fd_set readfds;
-    struct timeval tv;
-    int numfd=1;
+    int numfd=0;
     int socket_fd, bytes_read;
     unsigned int address_length;
-    char recieve_data[MAX_LENGTH - 20],send_data[MAX_LENGTH - 20];
+    char recieve_data[MAX_LENGTH - 20];
     struct sockaddr_in server_address, client_address;
     std::vector<std::pair<std::string,std::vector<std::string>>> filesPeers;
 
