@@ -53,6 +53,9 @@ void Seed::run() {
         if (recieve == -1) {
             perror("Erro select"); // erro no select()
         }
+        if (recieve == 0) {
+            perror("0 select"); // erro no select()
+        }
 
         if (FD_ISSET(socket_fd, &readfds)) {
             FD_CLR(socket_fd, &readfds);

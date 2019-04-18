@@ -14,16 +14,14 @@
   <component name="ChangeListManager">
     <list default="true" id="c4a3b644-ab9a-4fb2-89e0-190f47fdc983" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../rathed/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/rathed.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/rathed.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/rathed.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/rathed.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/rathed.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/rathed.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/rathed.dir/peer/Seed.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/rathed.dir/peer/Seed.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/rathed.dir/rastreador/Rastreador.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/rathed.dir/rastreador/Rastreador.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/rathed" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/cmake-build-debug/rathed" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed/peer/Seed.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/peer/Seed.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/peer/Seed.h" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/peer/Seed.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed/rastreador/Rastreador.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/rastreador/Rastreador.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/rathed_leecher" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/rathed_leecher" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/widget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/template/widget.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/template/widget.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="80">
-              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -170,10 +168,11 @@
     <auto-save>true</auto-save>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="27" />
-    <option name="width" value="1920" />
-    <option name="height" value="1053" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1975" />
+    <option name="y" value="118" />
+    <option name="width" value="1431" />
+    <option name="height" value="591" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -181,6 +180,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -223,7 +223,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -293,29 +292,29 @@
       <workItem from="1555385958690" duration="8840000" />
       <workItem from="1555414188189" duration="19967000" />
       <workItem from="1555453260542" duration="736000" />
-      <workItem from="1555611003758" duration="1460000" />
+      <workItem from="1555611003758" duration="2054000" />
+      <workItem from="1555613971831" duration="284000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59169000" />
+    <option name="totallyTimeSpent" value="60047000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
+    <frame x="1920" y="0" width="1600" height="900" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14354323" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17503217" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969433" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2838428" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28309307" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.4683406" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.4678899" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32532752" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
@@ -560,7 +559,7 @@
     <entry file="file://$PROJECT_DIR$/template/widget.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
         </state>
       </provider>
     </entry>

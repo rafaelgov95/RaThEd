@@ -15,14 +15,8 @@ Rastreador::Rastreador(int porta) {
     if ((socket_fd = socket(AF_INET, SOCK_DGRAM, 0)) == -1) {
         error("socket()");
     }
-
-
-
     numfd = socket_fd + 1;
     FD_ZERO(&readfds);
-
-    tv.tv_sec = 0;
-    tv.tv_usec = 0;
     server_address.sin_family = AF_INET;
     server_address.sin_port = htons(porta);
     server_address.sin_addr.s_addr = INADDR_ANY;
@@ -40,8 +34,12 @@ void Rastreador::run() {
 
     printf("\nRastreador Iniciado\n");
     for (;;) {
+        perror("Entro"); // erro no select()
+
         FD_SET(socket_fd, &readfds);
         int recieve = select(numfd, &readfds, NULL, NULL, NULL);
+        perror("Entro 2"); // erro no select()
+
         if (recieve == -1) {
             perror("Erro select"); // erro no select()
         } if (recieve == 0) {
@@ -56,6 +54,8 @@ void Rastreador::run() {
             buf.ParseFromArray(recieve_data, bytes_read);
             selectOpcao(buf);
         }
+        perror("Terminou"); // erro no select()
+
     }
 
 }
