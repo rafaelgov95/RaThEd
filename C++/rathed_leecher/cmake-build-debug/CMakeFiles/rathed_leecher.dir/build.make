@@ -134,9 +134,22 @@ CMakeFiles/rathed_leecher.dir/template/widget.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rathed_leecher.dir/template/widget.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/template/widget.cpp -o CMakeFiles/rathed_leecher.dir/template/widget.cpp.s
 
+CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.o: CMakeFiles/rathed_leecher.dir/flags.make
+CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.o: ../rede/CamadaDeRede.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.o -c /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/rede/CamadaDeRede.cpp
+
+CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/rede/CamadaDeRede.cpp > CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.i
+
+CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/rede/CamadaDeRede.cpp -o CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.s
+
 CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.o: CMakeFiles/rathed_leecher.dir/flags.make
 CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.o: rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.o -c /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp
 
 CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.i: cmake_force
@@ -154,6 +167,7 @@ rathed_leecher_OBJECTS = \
 "CMakeFiles/rathed_leecher.dir/peer/Leecher.cpp.o" \
 "CMakeFiles/rathed_leecher.dir/model/model.pb.cc.o" \
 "CMakeFiles/rathed_leecher.dir/template/widget.cpp.o" \
+"CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.o" \
 "CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.o"
 
 # External object files for target rathed_leecher
@@ -164,19 +178,20 @@ rathed_leecher: CMakeFiles/rathed_leecher.dir/main.cpp.o
 rathed_leecher: CMakeFiles/rathed_leecher.dir/peer/Leecher.cpp.o
 rathed_leecher: CMakeFiles/rathed_leecher.dir/model/model.pb.cc.o
 rathed_leecher: CMakeFiles/rathed_leecher.dir/template/widget.cpp.o
+rathed_leecher: CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.o
 rathed_leecher: CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.o
 rathed_leecher: CMakeFiles/rathed_leecher.dir/build.make
-rathed_leecher: /usr/lib/libQt5Quick.so.5.12.2
-rathed_leecher: /usr/lib/libQt5MultimediaWidgets.so.5.12.2
+rathed_leecher: /usr/lib/libQt5Quick.so.5.12.3
+rathed_leecher: /usr/lib/libQt5MultimediaWidgets.so.5.12.3
 rathed_leecher: /usr/lib/libprotobuf.so
-rathed_leecher: /usr/lib/libQt5Qml.so.5.12.2
-rathed_leecher: /usr/lib/libQt5Widgets.so.5.12.2
-rathed_leecher: /usr/lib/libQt5Multimedia.so.5.12.2
-rathed_leecher: /usr/lib/libQt5Network.so.5.12.2
-rathed_leecher: /usr/lib/libQt5Gui.so.5.12.2
-rathed_leecher: /usr/lib/libQt5Core.so.5.12.2
+rathed_leecher: /usr/lib/libQt5Qml.so.5.12.3
+rathed_leecher: /usr/lib/libQt5Widgets.so.5.12.3
+rathed_leecher: /usr/lib/libQt5Multimedia.so.5.12.3
+rathed_leecher: /usr/lib/libQt5Network.so.5.12.3
+rathed_leecher: /usr/lib/libQt5Gui.so.5.12.3
+rathed_leecher: /usr/lib/libQt5Core.so.5.12.3
 rathed_leecher: CMakeFiles/rathed_leecher.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable rathed_leecher"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable rathed_leecher"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rathed_leecher.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -145,6 +145,7 @@ CMakeFiles/rathed_leecher.dir/model/model.pb.cc.o
  /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/model/model.pb.h
 CMakeFiles/rathed_leecher.dir/peer/Leecher.cpp.o
  ../model/model.pb.h
+ ../rede/CamadaDeRede.h
  ../util/util.h
  /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/peer/Leecher.cpp
  /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/peer/Leecher.h
@@ -421,9 +422,15 @@ CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.o
  /usr/include/qt/QtWidgets/qtwidgets-config.h
  /usr/include/qt/QtWidgets/qtwidgetsglobal.h
  /usr/include/qt/QtWidgets/qwidget.h
+CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.o
+ ../model/model.pb.h
+ ../util/util.h
+ /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/rede/CamadaDeRede.cpp
+ /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/rede/CamadaDeRede.h
 CMakeFiles/rathed_leecher.dir/template/widget.cpp.o
  ../model/model.pb.h
  ../peer/Leecher.h
+ ../rede/CamadaDeRede.h
  ../util/util.h
  /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/template/ui_widget.h
  /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/template/widget.cpp

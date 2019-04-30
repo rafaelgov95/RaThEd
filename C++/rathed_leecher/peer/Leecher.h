@@ -31,6 +31,7 @@
 #include "thread"
 #include "util.h"
 #include "model.pb.h"
+#include "CamadaDeRede.h"
 
 #define MAX_LENGTH 320
 

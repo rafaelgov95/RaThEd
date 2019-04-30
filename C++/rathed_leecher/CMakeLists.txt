@@ -23,13 +23,13 @@ protobuf_generate_cpp(model/model.pb.h model/model.pb.cc model/model.proto )
 find_package (Threads REQUIRED)
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(peer/ util/ model/ template/ resources/)
+include_directories(peer/ util/ model/ template/ resources/ rede/)
 
 
 qt5_wrap_ui(UI_HEADERS ${UI})
 
 add_executable(rathed_leecher main.cpp peer/Leecher.cpp peer/Leecher.h
-        util/util.h model/model.pb.cc model/model.pb.h template/widget.cpp template/widget.h template/ui_widget.h resources/buttons.qrc
+        util/util.h model/model.pb.cc model/model.pb.h template/widget.cpp template/widget.h template/ui_widget.h resources/buttons.qrc rede/CamadaDeRede.h rede/CamadaDeRede.cpp
         )
 set_target_properties(rathed_leecher PROPERTIES AUTOMOC TRUE)
 

@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/rathed_leecher.dir/peer/Leecher.cpp.o"
   "CMakeFiles/rathed_leecher.dir/model/model.pb.cc.o"
   "CMakeFiles/rathed_leecher.dir/template/widget.cpp.o"
+  "CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.o"
   "CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.o"
   "rathed_leecher.pdb"
   "rathed_leecher"

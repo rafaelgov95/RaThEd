@@ -50,6 +50,7 @@
 					<Add directory="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/model"/>
 					<Add directory="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/template"/>
 					<Add directory="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/resources"/>
+					<Add directory="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/rede"/>
 					<Add directory="/usr/include/qt"/>
 					<Add directory="/usr/include/qt/QtCore"/>
 					<Add directory="/usr/lib/qt/mkspecs/linux-g++"/>
@@ -98,6 +99,7 @@
 					<Add directory="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/model"/>
 					<Add directory="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/template"/>
 					<Add directory="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/resources"/>
+					<Add directory="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/rede"/>
 					<Add directory="/usr/include/qt"/>
 					<Add directory="/usr/include/qt/QtCore"/>
 					<Add directory="/usr/lib/qt/mkspecs/linux-g++"/>
@@ -166,6 +168,12 @@
 			<Option target="rathed_leecher"/>
 		</Unit>
 		<Unit filename="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/peer/Leecher.h">
+			<Option target="rathed_leecher"/>
+		</Unit>
+		<Unit filename="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/rede/CamadaDeRede.cpp">
+			<Option target="rathed_leecher"/>
+		</Unit>
+		<Unit filename="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/rede/CamadaDeRede.h">
 			<Option target="rathed_leecher"/>
 		</Unit>
 		<Unit filename="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/resources/buttons.qrc">

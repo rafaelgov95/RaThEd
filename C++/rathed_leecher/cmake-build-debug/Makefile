@@ -271,6 +271,33 @@ rathed_leecher_autogen/mocs_compilation.cpp.s:
 	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.s
 .PHONY : rathed_leecher_autogen/mocs_compilation.cpp.s
 
+rede/CamadaDeRede.o: rede/CamadaDeRede.cpp.o
+
+.PHONY : rede/CamadaDeRede.o
+
+# target to build an object file
+rede/CamadaDeRede.cpp.o:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.o
+.PHONY : rede/CamadaDeRede.cpp.o
+
+rede/CamadaDeRede.i: rede/CamadaDeRede.cpp.i
+
+.PHONY : rede/CamadaDeRede.i
+
+# target to preprocess a source file
+rede/CamadaDeRede.cpp.i:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.i
+.PHONY : rede/CamadaDeRede.cpp.i
+
+rede/CamadaDeRede.s: rede/CamadaDeRede.cpp.s
+
+.PHONY : rede/CamadaDeRede.s
+
+# target to generate assembly for a file
+rede/CamadaDeRede.cpp.s:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.s
+.PHONY : rede/CamadaDeRede.cpp.s
+
 template/widget.o: template/widget.cpp.o
 
 .PHONY : template/widget.o
@@ -323,6 +350,9 @@ help:
 	@echo "... rathed_leecher_autogen/mocs_compilation.o"
 	@echo "... rathed_leecher_autogen/mocs_compilation.i"
 	@echo "... rathed_leecher_autogen/mocs_compilation.s"
+	@echo "... rede/CamadaDeRede.o"
+	@echo "... rede/CamadaDeRede.i"
+	@echo "... rede/CamadaDeRede.s"
 	@echo "... template/widget.o"
 	@echo "... template/widget.i"
 	@echo "... template/widget.s"

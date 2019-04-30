@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/peer/Leecher.cpp" "/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/peer/Leecher.cpp.o"
   "/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp" "/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.o"
   "/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/rathed_leecher_autogen/mocs_compilation.cpp" "/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.o"
+  "/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/rede/CamadaDeRede.cpp" "/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.o"
   "/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/template/widget.cpp" "/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/template/widget.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
@@ -35,6 +36,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../model"
   "../template"
   "../resources"
+  "../rede"
   "/usr/include/qt"
   "/usr/include/qt/QtCore"
   "/usr/lib/qt/mkspecs/linux-g++"

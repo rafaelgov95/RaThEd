@@ -144,6 +144,7 @@ CMakeFiles/rathed_leecher.dir/model/model.pb.cc.o: ../model/model.pb.cc
 CMakeFiles/rathed_leecher.dir/model/model.pb.cc.o: ../model/model.pb.h
 
 CMakeFiles/rathed_leecher.dir/peer/Leecher.cpp.o: ../model/model.pb.h
+CMakeFiles/rathed_leecher.dir/peer/Leecher.cpp.o: ../rede/CamadaDeRede.h
 CMakeFiles/rathed_leecher.dir/peer/Leecher.cpp.o: ../util/util.h
 CMakeFiles/rathed_leecher.dir/peer/Leecher.cpp.o: ../peer/Leecher.cpp
 CMakeFiles/rathed_leecher.dir/peer/Leecher.cpp.o: ../peer/Leecher.h
@@ -421,8 +422,14 @@ CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.o: /us
 CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.o: /usr/include/qt/QtWidgets/qtwidgetsglobal.h
 CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.o: /usr/include/qt/QtWidgets/qwidget.h
 
+CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.o: ../model/model.pb.h
+CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.o: ../util/util.h
+CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.o: ../rede/CamadaDeRede.cpp
+CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.o: ../rede/CamadaDeRede.h
+
 CMakeFiles/rathed_leecher.dir/template/widget.cpp.o: ../model/model.pb.h
 CMakeFiles/rathed_leecher.dir/template/widget.cpp.o: ../peer/Leecher.h
+CMakeFiles/rathed_leecher.dir/template/widget.cpp.o: ../rede/CamadaDeRede.h
 CMakeFiles/rathed_leecher.dir/template/widget.cpp.o: ../util/util.h
 CMakeFiles/rathed_leecher.dir/template/widget.cpp.o: ../template/ui_widget.h
 CMakeFiles/rathed_leecher.dir/template/widget.cpp.o: ../template/widget.cpp

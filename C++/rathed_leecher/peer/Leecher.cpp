@@ -98,6 +98,10 @@ void Leecher::downloandP2P(sockaddr_in seed_address, std::string caminho, std::s
         bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH, 0, (struct sockaddr *) &seed_address,
                               &address_length);
         datagrama_buff.ParseFromArray(recieve_data, bytes_read);
+
+
+
+
         if (datagrama_buff.packnumber() >= total_bytes_file) {
             std::cout << "Foi Recebido COMANDO DE FIM!!" << std::endl;
             flag = false;
