@@ -61,12 +61,12 @@
 					<Add directory="/usr/include/qt/QtNetwork"/>
 					<Add directory="/usr/include/qt/QtMultimedia"/>
 					<Add directory="/usr/include/qt/QtMultimediaWidgets"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
@@ -110,12 +110,12 @@
 					<Add directory="/usr/include/qt/QtNetwork"/>
 					<Add directory="/usr/include/qt/QtMultimedia"/>
 					<Add directory="/usr/include/qt/QtMultimediaWidgets"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>

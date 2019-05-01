@@ -42,9 +42,12 @@ class Leecher {
 private:
     int socket_fd, bytes_read,total_bytes_file,rastreadorPorta = 8080;
     unsigned int address_length;
+    bool flag_trava = true;
     char recieve_data[MAX_LENGTH];
     struct sockaddr_in rastreador_address;
     std::vector<std::pair<std::string, std::vector<std::string>>> tableFiles;
+    CamadaDeRede *camadaDeRede;
+    void startTemporizador(std::string hash);
 
 public:
     Leecher();
@@ -58,7 +61,7 @@ public:
     bool consultarFileSize(std::string hash, sockaddr_in seed);
 
     std::vector<std::string> consultarRastreador(std::string hash);
-
+    long MyTempMS();
 };
 
 

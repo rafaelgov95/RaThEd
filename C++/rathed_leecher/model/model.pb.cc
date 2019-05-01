@@ -382,7 +382,7 @@ void Datagrama::SerializeWithCachedSizes(
   // required .rathed.DatagramaType Type = 1;
   if (cached_has_bits & 0x00000004u) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->type(), output);
+            1, this->type(0), output);
   }
 
   // required int32 PackNumber = 2;
@@ -413,7 +413,7 @@ void Datagrama::SerializeWithCachedSizes(
   // required .rathed.DatagramaType Type = 1;
   if (cached_has_bits & 0x00000004u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->type(), target);
+            1, this->type(0), target);
   }
 
   // required int32 PackNumber = 2;
@@ -457,7 +457,7 @@ size_t Datagrama::RequiredFieldsByteSizeFallback() const {
   if (has_type()) {
     // required .rathed.DatagramaType Type = 1;
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type(0));
   }
 
   return total_size;
@@ -484,7 +484,7 @@ size_t Datagrama::ByteSizeLong() const {
 
     // required .rathed.DatagramaType Type = 1;
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type(0));
 
   } else {
     total_size += RequiredFieldsByteSizeFallback();

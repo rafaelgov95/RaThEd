@@ -29,112 +29,119 @@ Leecher::Leecher() {
     rastreador_address.sin_port = htons(rastreadorPorta);
     rastreador_address.sin_addr.s_addr = INADDR_ANY;
     address_length = sizeof(struct sockaddr); //tamanh do endereco ipv4
+    camadaDeRede = new CamadaDeRede(socket_fd, rastreador_address);
 }
 
 
 void Leecher::run(std::string hash, std::string path) {
-    std::vector <std::string> total_peers = consultarRastreador(hash);
+    std::cout << "HASH: " << hash << std::endl;
+
+    std::vector<std::string> total_peers = consultarRastreador(hash);
     struct sockaddr_in seed_address[total_peers.size()];
     int file_size_peers[total_peers.size()];
 
     for (int i = 0; i < total_peers.size(); ++i) {
-        std::vector <std::string> primeiro_peer{my_split(total_peers[i], ':')};
+        std::vector<std::string> primeiro_peer{my_split(total_peers[i], ':')};
         std::cout << "IP: " << primeiro_peer[0] << std::endl;
         std::cout << "PORTA: " << primeiro_peer[1] << std::endl;
 
         bzero(&(seed_address[i].sin_zero), 8);
         seed_address[i].sin_family = AF_INET;
-//        inet_pton(AF_INET, "127.0.0.1", &server.sin_addr);
         seed_address[i].sin_port = htons(std::stoi(primeiro_peer[1]));
         inet_aton(primeiro_peer[0].c_str(), &seed_address[i].sin_addr);
         file_size_peers[i] = consultarFileSize(hash, seed_address[i]);
     }
 
+    std::cout << " 0" << std::endl;
 
     downloandP2P(seed_address[0], path, hash);
 }
 
-std::vector <std::string> Leecher::consultarRastreador(std::string hash) {
-    rathed::Datagrama _data = DataGrama(2, 0, hash.c_str());
-    if (sendto(socket_fd, DataGramaSerial(_data), _data.ByteSizeLong(), 0, (struct sockaddr *) &rastreador_address,
-               sizeof(struct sockaddr)) <= 0)
-        error("Erro ao enviar");
+long Leecher::MyTempMS() {
+    std::chrono::milliseconds ms = std::chrono::duration_cast<std::chrono::milliseconds>(
+            std::chrono::system_clock::now().time_since_epoch()
+    );
+    return ms.count();
+}
 
-    usleep(200);
 
-    bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH, 0, (struct sockaddr *) &rastreador_address,
-                          &address_length); //block call, will wait till client enters something, before proceeding
-    usleep(200);
+void Leecher::startTemporizador(std::string hash) {
+    usleep(20000);
+    camadaDeRede->InterfaceConsultarRastreador(hash);
+}
 
-    rathed::Datagrama datagrama;
-    datagrama.ParseFromArray(recieve_data, bytes_read);
-    std::cout << "DataGrama consultar Rastreador: " << datagrama.data() << std::endl;
+std::vector<std::string> Leecher::consultarRastreador(std::string hash) {
+    rathed::Datagrama datagrama_buff;
+    camadaDeRede->InterfaceConsultarRastreador(hash);
+    while (true) {
+        sem_wait(&camadaDeRede->mutex);
+        bool fila = camadaDeRede->filaDataGramas.empty();
+        if (!fila) {
 
-    std::vector <std::string> Peers_Com_File{my_split(datagrama.data(), ';')};
-    for (int i = 0; i < Peers_Com_File.size(); ++i) {
-        std::cout << "SEED: " << Peers_Com_File[i] << std::endl;
+            std::pair<long, rathed::Datagrama> pair = camadaDeRede->filaDataGramas.top();
+            camadaDeRede->filaDataGramas.pop();
+            for (;;) {
+                long t1 = pair.first;
+                long t2 = MyTempMS();
+                if (t1 <= t2) {
+                    std::vector<std::string> Peers_Com_File{
+                            my_split(pair.second.data(), ';')};
+                    for (int i = 0; i < Peers_Com_File.size(); ++i) {
 
+                        std::cout << "SEED: " << Peers_Com_File[i] << std::endl;
+                    }
+
+                    return Peers_Com_File;
+                }
+            }
+        } else {
+            camadaDeRede->InterfaceConsultarRastreador(hash);
+        }
     }
-    return Peers_Com_File;
 }
 
 void Leecher::downloandP2P(sockaddr_in seed_address, std::string caminho, std::string hash) {
-
-    int fd_arq;
-    rathed::Datagrama datagrama_buff;
-    fd_arq = open(caminho.c_str(), O_CREAT | O_WRONLY);
+    int fd_arq, buff_int = 0, buff_data = 0, cont_ack = 0;
+    fd_arq = open(caminho.c_str(), O_CREAT | O_WRONLY,0666);
     io::ZeroCopyOutputStream *raw_output = new io::FileOutputStream(fd_arq);
     auto *coded_output = new io::CodedOutputStream(raw_output);
-    int buff_int = 0, buff_data = 0, cont_ack = 0;
-    bool flag = true;
-    datagrama_buff = DataGrama(2, 0, hash);
-    std::cout << "Pedindo Arquivo para Peer" << std::endl;
-    if (sendto(socket_fd, DataGramaSerial(datagrama_buff), datagrama_buff.ByteSizeLong(), 0,
-               (struct sockaddr *) &seed_address, sizeof(struct sockaddr)) <= 0)
-        error("Erro ao enviar");
-
-    while (flag) {
-
-        bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH, 0, (struct sockaddr *) &seed_address,
-                              &address_length);
-        datagrama_buff.ParseFromArray(recieve_data, bytes_read);
-
-
-
-
-        if (datagrama_buff.packnumber() >= total_bytes_file) {
-            std::cout << "Foi Recebido COMANDO DE FIM!!" << std::endl;
-            flag = false;
+    bool flag_1 = true, flag_2;
+    (*camadaDeRede).InterfaceDownloandP2P(hash, buff_int, seed_address);
+    while (flag_1) {
+        flag_2 = true;
+        sem_wait(&camadaDeRede->mutex);
+        bool fila = camadaDeRede->filaDataGramas.empty();
+        if (!fila) {
+            std::pair<long, rathed::Datagrama> pair = camadaDeRede->filaDataGramas.top();
+            camadaDeRede->filaDataGramas.pop();
+            while (flag_2) {
+                usleep(1000);
+                long t1 = pair.first;
+                long t2 = MyTempMS();
+                if (t1 <= t2) {
+                    if (pair.second.packnumber() >= total_bytes_file) {
+                        std::cout << "Foi Recebido COMANDO DE FIM!!" << std::endl;
+                        flag_1 = flag_2 = false;
+                    } else {
+                        coded_output->WriteRaw(pair.second.data().c_str(), pair.second.data().size());
+                        buff_int += pair.second.data().size();
+                        buff_data += pair.second.ByteSizeLong();
+                        cont_ack++;
+                        std::cout << "Total Bytes Recebido File: " << buff_int << " DE " << total_bytes_file
+                                  << std::endl;
+                        std::cout << "Total Bytes Recebido Datagrama: " << buff_data << std::endl;
+                        (*camadaDeRede).InterfaceDownloandP2P(hash, buff_int, seed_address);
+                        flag_2 = false;
+                    }
+                }
+            }
         } else {
-            coded_output->WriteRaw(datagrama_buff.data().c_str(), datagrama_buff.data().size());
-            buff_int += datagrama_buff.data().size();
-            buff_data += bytes_read;
-            cont_ack++;
-            std::cout << "Total Bytes Recebido File: " << buff_int << " DE " << total_bytes_file << std::endl;
-            std::cout << "Total Bytes Recebido Datagrama: " << buff_data << std::endl;
-
-            usleep(3000);
-            datagrama_buff.set_type(static_cast<rathed::DatagramaType>(2));
-            datagrama_buff.set_packnumber(buff_int);
-            datagrama_buff.set_data(hash);
-            sendto(socket_fd, DataGramaSerial(datagrama_buff), datagrama_buff.ByteSizeLong(), 0,
-                   (struct sockaddr *) &seed_address,
-                   sizeof(struct sockaddr));
-            usleep(3000);
-
+            (*camadaDeRede).InterfaceDownloandP2P(hash, buff_int, seed_address);
         }
-
     }
-    datagrama_buff.set_type(static_cast<rathed::DatagramaType>(1));
-    datagrama_buff.set_packnumber(buff_int);
-    datagrama_buff.set_data("");
-
-    sendto(socket_fd, DataGramaSerial(datagrama_buff), datagrama_buff.ByteSizeLong(), 0,
-           (struct sockaddr *) &seed_address,
-           sizeof(struct sockaddr));
-    std::cout << "Foi Recebido Tudo!!" << std::endl;
     delete coded_output;
     delete raw_output;
+
 }
 
 
@@ -150,7 +157,7 @@ bool Leecher::consultarFileSize(std::string hash, sockaddr_in seed) {
         datagrama_buff.clear_data();
         bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH, 0,
                               (struct sockaddr *) &seed,
-                              &address_length); //block call, will wait till client enters something, before proceeding
+                              &address_length);
         datagrama_buff.ParseFromArray(recieve_data, bytes_read);
         if (datagrama_buff.packnumber() >= 0) {
             return total_bytes_file = datagrama_buff.packnumber();

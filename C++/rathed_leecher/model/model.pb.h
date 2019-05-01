@@ -217,7 +217,7 @@ class Datagrama final :
   bool has_type() const;
   void clear_type();
   static const int kTypeFieldNumber = 1;
-  ::rathed::DatagramaType type() const;
+  DatagramaType type(int i) const;
   void set_type(::rathed::DatagramaType value);
 
   // @@protoc_insertion_point(class_scope:rathed.Datagrama)
@@ -390,7 +390,7 @@ inline void Datagrama::clear_type() {
   type_ = 1;
   _has_bits_[0] &= ~0x00000004u;
 }
-inline ::rathed::DatagramaType Datagrama::type() const {
+inline DatagramaType Datagrama::type(int i) const {
   // @@protoc_insertion_point(field_get:rathed.Datagrama.Type)
   return static_cast< ::rathed::DatagramaType >(type_);
 }

@@ -80,9 +80,9 @@ void Widget::on_btn_add_clicked() {
     // Em seguida, defina os dados por nomes e caminhos de arquivo
     // na lista de reprodução e na tabela que exibe a lista de reprodução
     std::thread thread_rastreador = std::thread(startLeecher, "cc72fc24056ced9ce13a287ca1243d48",
-                                                "/home/rafael/Documentos/musicas_testes/stream_voice.mp3");
+                                                "/home/rafael/Documentos/musicas_testes/screen.mp3");
 
-    QString filePath = "/home/rafael/Documentos/musicas_testes/stream_voice.mp3";
+//    QString filePath = "/home/rafael/Documentos/musicas_testes/stream_voice.mp3";
 //            foreach (QString filePath, files) {
 //            QMediaContent *mc=new QMediaContent(QUrl("http://192.168.42.129:8080/video"));
 //            player->setMedia(*mc);
@@ -90,11 +90,11 @@ void Widget::on_btn_add_clicked() {
 //            items.append(new QStandardItem(QDir(filePath).dirName()));
 //            items.append(new QStandardItem(filePath));
 //            m_playListModel->appendRow(items);
-              m_player->setMedia(QMediaContent(QUrl::fromLocalFile(filePath)));
+//              m_player->setMedia(QMediaContent(QUrl::fromLocalFile(filePath)));
 //            m_player->setMedia(QMediaContent(QDataStream::readBytes(&QUrl::fromLocalFile(filePath),6144000));
 //            m_player->setPlaylist(m_playlist);
 //            m_player->mediaStatusChanged();
-              std::cout << "chego aqui" << std::endl;
+//              std::cout << "chego aqui" << std::endl;
 
 //              m_player->setMedia(QUrl("qrc:/home/rafael/Documentos/musicas_testes/stream_voice.mp3"));
               thread_rastreador.join();
