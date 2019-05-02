@@ -38,12 +38,11 @@ private:
     struct sockaddr_in rastreador_address;
     long rtt=20,F=35;
 
-
     rathed::Datagrama ConsultarRastreador(std::string hash);
     void StartTemporizacao(rathed::Datagrama data);
 public:
-    sem_t mutex;
-
+    sem_t mutex_pkg;
+    sem_t mutex_buffer;
 
     CamadaDeRede(int socket,struct sockaddr_in &rastreador);
     std::priority_queue<pack, std::vector<pack>, CompPack> filaDataGramas;
@@ -51,6 +50,7 @@ public:
 
     void InterfaceConsultarRastreador(std::string hash);
     void InterfaceDownloandP2P(std::string hash, long bytes,struct sockaddr_in seed_address) ;
+    void InterfaceConsultarFileSize(std::string hash, long bytes,struct sockaddr_in seed_address);
 
 
 };

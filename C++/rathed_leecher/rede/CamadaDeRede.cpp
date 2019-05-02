@@ -30,7 +30,7 @@ rathed::Datagrama CamadaDeRede::ConsultarRastreador(std::string hash) {
 
     rathed::Datagrama datagrama;
     datagrama.ParseFromArray(recieve_data, bytes_read);
-    std::cout << "CAMADA DE REDE DataGrama consultar Rastreador: " << datagrama.data() << std::endl;
+    std::cout << "CAMADA DE REDE - datagrama consultar Rastreador: " << datagrama.data() << std::endl;
     return datagrama;
 }
 
@@ -40,7 +40,7 @@ void CamadaDeRede::StartTemporizacao(rathed::Datagrama data) {
     int x = rand()%100+1; //distribuicao não sei fazer
     if (F >= x){
         std::cout<<"Pacote Perdido: "<<x<<std::endl;
-        sem_post(&mutex);
+        sem_post(&mutex_pkg);
 
     }else{
         int wx = rand()%20+1; //distribuicao não sei fazer
@@ -52,7 +52,7 @@ void CamadaDeRede::StartTemporizacao(rathed::Datagrama data) {
          tempofinal+=timeEnvio;
         std::cout<<"Pacote Recebido Fila: "<< ms.count() <<" Temporizador: "<<tempofinal <<" Tempo Envio:  "<< timeEnvio <<std::endl;
         filaDataGramas.push(std::make_pair(tempofinal,data));
-        sem_post(&mutex);
+        sem_post(&mutex_pkg);
     }
 }
 
@@ -65,7 +65,6 @@ void CamadaDeRede::InterfaceConsultarRastreador(std::string hash) {
 
 void CamadaDeRede::InterfaceDownloandP2P(std::string hash,long bytes,struct sockaddr_in seed_address ) {
     rathed::Datagrama data = DataGrama(2, bytes, hash);
-    std::cout << "Pedindo Arquivo para Peer" << std::endl;
     if (sendto(socket_fd, DataGramaSerial(data), data.ByteSizeLong(), 0,
                (struct sockaddr *) &seed_address, sizeof(struct sockaddr)) <= 0)
         error("Erro ao enviar");
@@ -73,7 +72,19 @@ void CamadaDeRede::InterfaceDownloandP2P(std::string hash,long bytes,struct sock
     bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH, 0, (struct sockaddr *) &seed_address,
                           &address_length);
     data.ParseFromArray(recieve_data, bytes_read);
-    std::cout<<"Teste datagrama bytesize: "<< data.ByteSizeLong()<<std::endl;
-    std::cout<<"Teste datagrama: "<< data.data().size()<<std::endl;
+    StartTemporizacao(data);
+}
+
+
+void CamadaDeRede::InterfaceConsultarFileSize(std::string hash,long bytes,struct sockaddr_in seed_address ) {
+    rathed::Datagrama data = DataGrama(3, 0, hash);
+
+    if (sendto(socket_fd, DataGramaSerial(data), data.ByteSizeLong(), 0,
+               (struct sockaddr *) &seed_address, sizeof(struct sockaddr)) <= 0)
+        error("Erro ao enviar");
+
+    bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH, 0, (struct sockaddr *) &seed_address,
+                          &address_length);
+    data.ParseFromArray(recieve_data, bytes_read);
     StartTemporizacao(data);
 }

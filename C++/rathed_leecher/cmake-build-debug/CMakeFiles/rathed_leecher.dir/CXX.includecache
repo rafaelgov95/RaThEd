@@ -95,8 +95,6 @@ QMediaPlayer
 -
 QMediaPlaylist
 -
-google/protobuf/io/zero_copy_stream_impl.h
--
 
 /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/peer/Leecher.h
 iostream
@@ -141,6 +139,8 @@ sys/fcntl.h
 -
 iostream
 /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/peer/iostream
+google/protobuf/io/zero_copy_stream_impl.h
+-
 vector
 /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/peer/vector
 thread
