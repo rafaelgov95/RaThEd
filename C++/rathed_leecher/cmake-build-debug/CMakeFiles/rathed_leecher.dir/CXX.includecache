@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+..//util/PrioritFIFO.h
+mutex
+-
+queue
+-
+model.pb.h
+../util/model.pb.h
+
 ../model/model.pb.h
 limits
 -
@@ -63,6 +71,16 @@ mutex
 -
 condition_variable
 -
+util/PrioritFIFO.h
+-
+
+../util/PrioritDataGramaFIFO.h
+mutex
+-
+queue
+-
+model.pb.h
+../util/model.pb.h
 
 ../util/util.h
 fstream
@@ -149,6 +167,12 @@ util.h
 /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/peer/util.h
 model.pb.h
 /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/peer/model.pb.h
+pthread.h
+-
+semaphore.h
+-
+PrioritDataGramaFIFO.h
+/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/peer/PrioritDataGramaFIFO.h
 CamadaDeRede.h
 /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/peer/CamadaDeRede.h
 

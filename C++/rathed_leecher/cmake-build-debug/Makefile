@@ -325,6 +325,60 @@ template/widget.cpp.s:
 	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/template/widget.cpp.s
 .PHONY : template/widget.cpp.s
 
+util/PrioritDataGramaFIFO.o: util/PrioritDataGramaFIFO.cpp.o
+
+.PHONY : util/PrioritDataGramaFIFO.o
+
+# target to build an object file
+util/PrioritDataGramaFIFO.cpp.o:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/util/PrioritDataGramaFIFO.cpp.o
+.PHONY : util/PrioritDataGramaFIFO.cpp.o
+
+util/PrioritDataGramaFIFO.i: util/PrioritDataGramaFIFO.cpp.i
+
+.PHONY : util/PrioritDataGramaFIFO.i
+
+# target to preprocess a source file
+util/PrioritDataGramaFIFO.cpp.i:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/util/PrioritDataGramaFIFO.cpp.i
+.PHONY : util/PrioritDataGramaFIFO.cpp.i
+
+util/PrioritDataGramaFIFO.s: util/PrioritDataGramaFIFO.cpp.s
+
+.PHONY : util/PrioritDataGramaFIFO.s
+
+# target to generate assembly for a file
+util/PrioritDataGramaFIFO.cpp.s:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/util/PrioritDataGramaFIFO.cpp.s
+.PHONY : util/PrioritDataGramaFIFO.cpp.s
+
+util/PrioritFIFO.o: util/PrioritFIFO.cpp.o
+
+.PHONY : util/PrioritFIFO.o
+
+# target to build an object file
+util/PrioritFIFO.cpp.o:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/util/PrioritFIFO.cpp.o
+.PHONY : util/PrioritFIFO.cpp.o
+
+util/PrioritFIFO.i: util/PrioritFIFO.cpp.i
+
+.PHONY : util/PrioritFIFO.i
+
+# target to preprocess a source file
+util/PrioritFIFO.cpp.i:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/util/PrioritFIFO.cpp.i
+.PHONY : util/PrioritFIFO.cpp.i
+
+util/PrioritFIFO.s: util/PrioritFIFO.cpp.s
+
+.PHONY : util/PrioritFIFO.s
+
+# target to generate assembly for a file
+util/PrioritFIFO.cpp.s:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/util/PrioritFIFO.cpp.s
+.PHONY : util/PrioritFIFO.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -356,6 +410,12 @@ help:
 	@echo "... template/widget.o"
 	@echo "... template/widget.i"
 	@echo "... template/widget.s"
+	@echo "... util/PrioritDataGramaFIFO.o"
+	@echo "... util/PrioritDataGramaFIFO.i"
+	@echo "... util/PrioritDataGramaFIFO.s"
+	@echo "... util/PrioritFIFO.o"
+	@echo "... util/PrioritFIFO.i"
+	@echo "... util/PrioritFIFO.s"
 .PHONY : help
 
 

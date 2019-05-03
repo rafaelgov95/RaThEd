@@ -188,6 +188,18 @@
 		<Unit filename="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/template/widget.h">
 			<Option target="rathed_leecher"/>
 		</Unit>
+		<Unit filename="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/util/PrioritDataGramaFIFO.cpp">
+			<Option target="rathed_leecher"/>
+		</Unit>
+		<Unit filename="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/util/PrioritDataGramaFIFO.h">
+			<Option target="rathed_leecher"/>
+		</Unit>
+		<Unit filename="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/util/PrioritFIFO.cpp">
+			<Option target="rathed_leecher"/>
+		</Unit>
+		<Unit filename="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/util/PrioritFIFO.h">
+			<Option target="rathed_leecher"/>
+		</Unit>
 		<Unit filename="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/util/util.h">
 			<Option target="rathed_leecher"/>
 		</Unit>

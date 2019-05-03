@@ -14,18 +14,11 @@
 #include <thread>
 #include <mutex>
 #include <condition_variable>
+#include <util/PrioritFIFO.h>
+
 #define MAX_LENGTH 320
 
 
-typedef std::pair<long, rathed::Datagrama> pack;
-
-class CompPack
-{
-public:
-    bool operator () (pack lhs, pack rhs) {
-        return lhs.first > rhs.first;
-    }
-};
 
 
 class CamadaDeRede {
@@ -36,18 +29,13 @@ private:
     unsigned int address_length;
     char recieve_data[MAX_LENGTH];
     struct sockaddr_in rastreador_address;
-    long rtt=20,F=35;
-
+    long rtt=20,F=5;
+    std::mutex m,mm;
     rathed::Datagrama ConsultarRastreador(std::string hash);
     void StartTemporizacao(rathed::Datagrama data);
 public:
-    sem_t mutex_pkg;
-    sem_t mutex_buffer;
-
     CamadaDeRede(int socket,struct sockaddr_in &rastreador);
-    std::priority_queue<pack, std::vector<pack>, CompPack> filaDataGramas;
-
-
+    PrioritFIFO filaDataGramas;
     void InterfaceConsultarRastreador(std::string hash);
     void InterfaceDownloandP2P(std::string hash, long bytes,struct sockaddr_in seed_address) ;
     void InterfaceConsultarFileSize(std::string hash, long bytes,struct sockaddr_in seed_address);

@@ -25,7 +25,6 @@ Leecher::Leecher() {
     rastreador_address.sin_family = AF_INET;
     rastreador_address.sin_port = htons(rastreadorPorta);
     rastreador_address.sin_addr.s_addr = INADDR_ANY;
-    address_length = sizeof(struct sockaddr); //tamanh do endereco ipv4
     camadaDeRede = new CamadaDeRede(socket_fd, rastreador_address);
 }
 
@@ -50,13 +49,50 @@ void Leecher::run(std::string hash, std::string path) {
     int fd_arq = open(path.c_str(), O_CREAT | O_WRONLY, 0666);
     io::ZeroCopyOutputStream *raw_output = new io::FileOutputStream(fd_arq);
     auto *coded_output = new io::CodedOutputStream(raw_output);
+    int buff_count = 0, round = 0;
+    bool flag = true;
+    while (flag) {
+        round += 1;
+        int threads_round = 0;
+        camadaDeRede->filaDataGramas.clear();
+        for (int i = 0; i < 4; ++i) {
+            if (total_bytes_file > buff_count) {
+                threads[i] = std::thread(&Leecher::downloandP2P, this, seed_address[i], hash, buff_count);
+                usleep(1000);
+                std::cout << "Thread " << i << "PACK: " << buff_count << std::endl;
+                buff_count += 310;
+                threads_round++;
 
-    downloandP2P(seed_address[0], path, hash, coded_output);
+            } else {
+                i = 5;
+                flag = false;
+            }
+
+        }
+        for (int j = 0; j < threads_round; ++j) {
+            threads[j].join();
+        }
+
+//        for (int j = 0; j < 4; ++j) {
+//            threads[j].detach();
+//        }
+
+        while (!filaBuffer.empty()) {
+            rathed::Datagrama data;
+            filaBuffer.next(data);
+            std::cout << "Gravando PACOTE: " << data.packnumber() << std::endl;
+            coded_output->WriteRaw(data.data().c_str(), data.data().size());
+        }
+    }
+
+
+    std::cout << "FIM " << std::endl;
 
     delete coded_output;
     delete raw_output;
     close(fd_arq);
 }
+
 
 long Leecher::MyTempMS() {
     std::chrono::milliseconds ms = std::chrono::duration_cast<std::chrono::milliseconds>(
@@ -65,17 +101,10 @@ long Leecher::MyTempMS() {
     return ms.count();
 }
 
-
-void Leecher::startTemporizador(std::string hash) {
-    usleep(20000);
-    camadaDeRede->InterfaceConsultarRastreador(hash);
-}
-
 std::vector<std::string> Leecher::consultarRastreador(std::string hash) {
-    rathed::Datagrama datagrama_buff;
     camadaDeRede->InterfaceConsultarRastreador(hash);
     while (true) {
-        sem_wait(&camadaDeRede->mutex_pkg);
+//        sem_wait(&camadaDeRede->mutex_pkg);
         bool fila = camadaDeRede->filaDataGramas.empty();
         if (!fila) {
             std::pair<long, rathed::Datagrama> pair = camadaDeRede->filaDataGramas.top();
@@ -100,46 +129,27 @@ std::vector<std::string> Leecher::consultarRastreador(std::string hash) {
     }
 }
 
-void Leecher::downloandP2P(sockaddr_in seed_address, std::string caminho, std::string hash,
-                           io::CodedOutputStream *coded_output) {
-    int buff_data = 0;
+void Leecher::downloandP2P(sockaddr_in seed_address, std::string hash, long number_pack) {
+
     bool flag_1 = true, flag_2;
-    (*camadaDeRede).InterfaceDownloandP2P(hash, buff_int, seed_address);
     while (flag_1) {
         flag_2 = true;
-        sem_wait(&camadaDeRede->mutex_pkg);
-        bool fila = camadaDeRede->filaDataGramas.empty();
-        if (!fila) {
+        std::pair<long, rathed::Datagrama> pair;
+        if (camadaDeRede->filaDataGramas.myPack(number_pack, pair)) {
             while (flag_2) {
-                long t1 = camadaDeRede->filaDataGramas.top().first;
+                long t1 = pair.first;
                 long t2 = MyTempMS();
                 if (t1 <= t2) {
-                    std::pair<long, rathed::Datagrama> pair = camadaDeRede->filaDataGramas.top();
-                    camadaDeRede->filaDataGramas.pop();
-                    memcpy(buffer, pair.second.data().c_str(), pair.second.data().size());
-                    buff_int += pair.second.data().size();
-                    buff_data += pair.second.ByteSizeLong();
-                    coded_output->WriteRaw( buffer, pair.second.data().size());
-                    std::cout << "Total Bytes Recebido File: " << buff_int << " DE " << total_bytes_file
-                              << std::endl;
-                    std::cout << "Total Bytes Recebido Datagrama: " << buff_data << std::endl;
-                    std::cout << "DataGrama PackNumber: " << pair.second.packnumber() << std::endl;
-
-                    (*camadaDeRede).InterfaceDownloandP2P(hash, buff_int, seed_address);
-                    if (buff_int == total_bytes_file) {
-                        flag_1 = false;
-                        std::cout << "FIM DA GRAVACAO!!" << std::endl;
-                    }
-                    flag_2 = false;
-
+                    filaBuffer.push(pair.second);
+                    std::cout << "Pacote: " << pair.second.packnumber() << " Copiado" << std::endl;
+                    flag_1 = flag_2 = false;
                 } else {
-                    usleep(1000);
                 }
             }
         } else {
-            (*camadaDeRede).InterfaceDownloandP2P(hash, buff_int, seed_address);
+            std::cout << "AQUI: " <<std::endl;
+            camadaDeRede->InterfaceDownloandP2P(hash, number_pack, seed_address);
         }
-
 
     }
 }
@@ -148,7 +158,7 @@ void Leecher::downloandP2P(sockaddr_in seed_address, std::string caminho, std::s
 long Leecher::consultarFileSize(std::string hash, sockaddr_in seed) {
     camadaDeRede->InterfaceConsultarFileSize(hash, 0, seed);
     while (true) {
-        sem_wait(&camadaDeRede->mutex_pkg);
+//        sem_wait(&camadaDeRede->mutex_pkg);
         bool fila = camadaDeRede->filaDataGramas.empty();
         if (!fila) {
             std::pair<long, rathed::Datagrama> pair = camadaDeRede->filaDataGramas.top();

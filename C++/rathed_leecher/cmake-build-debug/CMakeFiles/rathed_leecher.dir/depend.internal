@@ -144,8 +144,10 @@ CMakeFiles/rathed_leecher.dir/model/model.pb.cc.o
  /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/model/model.pb.cc
  /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/model/model.pb.h
 CMakeFiles/rathed_leecher.dir/peer/Leecher.cpp.o
+ ..//util/PrioritFIFO.h
  ../model/model.pb.h
  ../rede/CamadaDeRede.h
+ ../util/PrioritDataGramaFIFO.h
  ../util/util.h
  /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/peer/Leecher.cpp
  /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/peer/Leecher.h
@@ -423,14 +425,17 @@ CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.o
  /usr/include/qt/QtWidgets/qtwidgetsglobal.h
  /usr/include/qt/QtWidgets/qwidget.h
 CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.o
+ ..//util/PrioritFIFO.h
  ../model/model.pb.h
  ../util/util.h
  /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/rede/CamadaDeRede.cpp
  /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/rede/CamadaDeRede.h
 CMakeFiles/rathed_leecher.dir/template/widget.cpp.o
+ ..//util/PrioritFIFO.h
  ../model/model.pb.h
  ../peer/Leecher.h
  ../rede/CamadaDeRede.h
+ ../util/PrioritDataGramaFIFO.h
  ../util/util.h
  /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/template/ui_widget.h
  /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/template/widget.cpp
@@ -610,3 +615,11 @@ CMakeFiles/rathed_leecher.dir/template/widget.cpp.o
  /usr/include/qt/QtWidgets/qtwidgets-config.h
  /usr/include/qt/QtWidgets/qtwidgetsglobal.h
  /usr/include/qt/QtWidgets/qwidget.h
+CMakeFiles/rathed_leecher.dir/util/PrioritDataGramaFIFO.cpp.o
+ ../model/model.pb.h
+ /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/util/PrioritDataGramaFIFO.cpp
+ /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/util/PrioritDataGramaFIFO.h
+CMakeFiles/rathed_leecher.dir/util/PrioritFIFO.cpp.o
+ ../model/model.pb.h
+ /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/util/PrioritFIFO.cpp
+ /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/util/PrioritFIFO.h

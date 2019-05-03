@@ -32,6 +32,9 @@
 #include "thread"
 #include "util.h"
 #include "model.pb.h"
+#include <pthread.h>
+#include <semaphore.h>
+#include "PrioritDataGramaFIFO.h"
 
 #include "CamadaDeRede.h"
 
@@ -39,27 +42,31 @@
 #define MAX_LENGTH_BUFFER ((MAX_LENGTH-10)*4)
 
 namespace io = google::protobuf::io;
+struct comp{
+    bool operator()(const rathed::Datagrama& a,const rathed::Datagrama& b){
+        return a.packnumber()>b.packnumber();
+    }
+};
 
 class Leecher {
 
 private:
-    int socket_fd,buff_int = 0, threads,total_bytes_file,rastreadorPorta = 8080;
-    unsigned int address_length;
-    bool flag_trava = true;
-    char recieve_data[MAX_LENGTH];
+    int socket_fd, buff_int = 0, num_threads,total_bytes_file,rastreadorPorta = 8080;
+    std::thread threads[4];
     char buffer[MAX_LENGTH_BUFFER];
+    PrioritDataGramaFIFO filaBuffer;
+
     struct sockaddr_in rastreador_address;
-    std::vector<std::pair<std::string, std::vector<std::string>>> tableFiles;
     CamadaDeRede *camadaDeRede;
-    void startTemporizador(std::string hash);
-    pthread_t *thread_id;
+
 public:
+    sem_t mutex;
     Leecher();
     ~Leecher();
 
     void run(std::string hash, std::string path);
 
-    void downloandP2P(sockaddr_in seed_address,std::string path,std::string hash, io::CodedOutputStream *coded_output);
+    void downloandP2P(sockaddr_in seed_address,std::string hash,long buff_int);
 
     long consultarFileSize(std::string hash, sockaddr_in seed);
 

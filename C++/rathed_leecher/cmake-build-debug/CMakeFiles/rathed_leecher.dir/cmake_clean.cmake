@@ -8,6 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/rathed_leecher.dir/model/model.pb.cc.o"
   "CMakeFiles/rathed_leecher.dir/template/widget.cpp.o"
   "CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.o"
+  "CMakeFiles/rathed_leecher.dir/util/PrioritFIFO.cpp.o"
+  "CMakeFiles/rathed_leecher.dir/util/PrioritDataGramaFIFO.cpp.o"
   "CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.o"
   "rathed_leecher.pdb"
   "rathed_leecher"
