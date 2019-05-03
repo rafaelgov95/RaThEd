@@ -55,14 +55,14 @@ void CamadaDeRede::StartTemporizacao(rathed::Datagrama data) {
 }
 
 
-void CamadaDeRede::InterfaceConsultarRastreador(std::string hash) {
+void CamadaDeRede::InterfaceConsultarRastreador(const std::string& hash) {
 
     rathed::Datagrama data = ConsultarRastreador(hash);
     StartTemporizacao(data);
 }
 
 
-void CamadaDeRede::InterfaceDownloandP2P(std::string hash, long bytes, struct sockaddr_in seed_address) {
+void CamadaDeRede::InterfaceDownloandP2P(const std::string& hash, long bytes, struct sockaddr_in seed_address) {
     std::lock_guard<std::mutex> lock(m);
     rathed::Datagrama data = DataGrama(2, bytes, hash);
     if (sendto(socket_fd, DataGramaSerial(data), data.ByteSizeLong(), 0,
@@ -76,7 +76,7 @@ void CamadaDeRede::InterfaceDownloandP2P(std::string hash, long bytes, struct so
 }
 
 
-void CamadaDeRede::InterfaceConsultarFileSize(std::string hash, long bytes, struct sockaddr_in seed_address) {
+void CamadaDeRede::InterfaceConsultarFileSize(const std::string& hash, long bytes, struct sockaddr_in seed_address) {
     rathed::Datagrama data = DataGrama(3, 0, hash);
 
     if (sendto(socket_fd, DataGramaSerial(data), data.ByteSizeLong(), 0,

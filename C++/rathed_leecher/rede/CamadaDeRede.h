@@ -36,9 +36,9 @@ private:
 public:
     CamadaDeRede(int socket,struct sockaddr_in &rastreador);
     PrioritFIFO filaDataGramas;
-    void InterfaceConsultarRastreador(std::string hash);
-    void InterfaceDownloandP2P(std::string hash, long bytes,struct sockaddr_in seed_address) ;
-    void InterfaceConsultarFileSize(std::string hash, long bytes,struct sockaddr_in seed_address);
+    void InterfaceConsultarRastreador(const std::string& hash);
+    void InterfaceDownloandP2P(const std::string& hash, long bytes, struct sockaddr_in seed_address) ;
+    void InterfaceConsultarFileSize(const std::string& hash, long bytes, struct sockaddr_in seed_address);
 
 
 };

@@ -39,38 +39,28 @@
 #include "CamadaDeRede.h"
 
 #define MAX_LENGTH 320
-#define MAX_LENGTH_BUFFER ((MAX_LENGTH-10)*4)
 
 namespace io = google::protobuf::io;
-struct comp{
-    bool operator()(const rathed::Datagrama& a,const rathed::Datagrama& b){
-        return a.packnumber()>b.packnumber();
-    }
-};
 
 class Leecher {
 
 private:
-    int socket_fd, buff_int = 0, num_threads,total_bytes_file,rastreadorPorta = 8080;
+    int socket_fd,total_bytes_file,rastreadorPorta = 8080;
     std::thread threads[4];
-    char buffer[MAX_LENGTH_BUFFER];
     PrioritDataGramaFIFO filaBuffer;
-
     struct sockaddr_in rastreador_address;
     CamadaDeRede *camadaDeRede;
 
 public:
-    sem_t mutex;
     Leecher();
     ~Leecher();
 
-    void run(std::string hash, std::string path);
+    void run(const std::string& hash, std::string path);
+    std::vector<std::string> consultarRastreador(const std::string& hash);
+    long consultarFileSize(const std::string& hash, sockaddr_in seed);
+    void iniciaDownloadP2P(const std::string& hash, const std::string& path, struct sockaddr_in seed_address[]);
+    void downloandP2P(sockaddr_in seed_address,const std::string& hash,long buff_int);
 
-    void downloandP2P(sockaddr_in seed_address,std::string hash,long buff_int);
-
-    long consultarFileSize(std::string hash, sockaddr_in seed);
-
-    std::vector<std::string> consultarRastreador(std::string hash);
     long MyTempMS();
 };
 

@@ -16,10 +16,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4a3b644-ab9a-4fb2-89e0-190f47fdc983" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/util/PrioritDataGramaFIFO.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/PrioritDataGramaFIFO.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/PrioritFIFO.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/PrioritFIFO.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/3.13.4/CMakeCCompiler.cmake" beforeDir="false" />
@@ -38,35 +34,10 @@
       <change beforePath="$PROJECT_DIR$/../rathed/peer/Seed.h" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/peer/Seed.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed/rastreador/Rastreador.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/rastreador/Rastreador.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed/util/util.h" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/util/util.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/peer/Leecher.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/template/widget.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/template/widget.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher_autogen.dir/AutogenInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher_autogen.dir/AutogenInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher_autogen.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher_autogen.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/rathed_leecher" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/rathed_leecher" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/rathed_leecher.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/rathed_leecher.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/peer/Leecher.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/peer/Leecher.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/peer/Leecher.h" beforeDir="false" afterPath="$PROJECT_DIR$/peer/Leecher.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rede/CamadaDeRede.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/rede/CamadaDeRede.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rede/CamadaDeRede.h" beforeDir="false" afterPath="$PROJECT_DIR$/rede/CamadaDeRede.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/widget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/template/widget.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,21 +52,17 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/peer/Leecher.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="139" column="36" selection-start-line="139" selection-start-column="36" selection-end-line="139" selection-end-column="36" />
+            <state relative-caret-position="104">
+              <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
               <folding>
+                <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#41#59#0" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="mock:///disassembly">
-          <provider selected="true" editor-type-id="memory-view" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -107,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/peer/Leecher.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="59" column="18" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+            <state relative-caret-position="54">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
               <folding>
                 <element signature="e#98#117#0" expanded="true" />
               </folding>
@@ -120,10 +87,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/util/PrioritDataGramaFIFO.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rede/CamadaDeRede.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
-              <caret line="73" selection-start-line="73" selection-end-line="73" />
+            <state relative-caret-position="162">
+              <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
               <folding>
                 <element signature="e#41#66#0" expanded="true" />
               </folding>
@@ -143,8 +119,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rede/CamadaDeRede.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+            <state relative-caret-position="20">
+              <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
               <folding>
                 <element signature="e#106#125#0" expanded="true" />
               </folding>
@@ -221,11 +197,11 @@
         <option value="$PROJECT_DIR$/util/PrioritDataGramaFIFO.h" />
         <option value="$PROJECT_DIR$/util/PrioritDataGramaFIFO.cpp" />
         <option value="$PROJECT_DIR$/util/PrioritFIFO.h" />
-        <option value="$PROJECT_DIR$/peer/Leecher.h" />
-        <option value="$PROJECT_DIR$/rede/CamadaDeRede.cpp" />
         <option value="$PROJECT_DIR$/util/PrioritFIFO.cpp" />
         <option value="$PROJECT_DIR$/rede/CamadaDeRede.h" />
+        <option value="$PROJECT_DIR$/rede/CamadaDeRede.cpp" />
         <option value="$PROJECT_DIR$/peer/Leecher.cpp" />
+        <option value="$PROJECT_DIR$/peer/Leecher.h" />
       </list>
     </option>
   </component>
@@ -379,12 +355,12 @@
       <workItem from="1556819775527" duration="8320000" />
       <workItem from="1556843339064" duration="6087000" />
       <workItem from="1556849906125" duration="3527000" />
-      <workItem from="1556883357562" duration="22959000" />
+      <workItem from="1556883357562" duration="24785000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189896000" />
+    <option name="totallyTimeSpent" value="191722000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -404,7 +380,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969433" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41415465" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.51769334" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5910878" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -435,37 +411,37 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
-          <line>139</line>
+          <line>140</line>
           <option name="timeStamp" value="149" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
-          <line>140</line>
+          <line>141</line>
           <option name="timeStamp" value="150" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
-          <line>142</line>
+          <line>143</line>
           <option name="timeStamp" value="151" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
-          <line>141</line>
+          <line>142</line>
           <option name="timeStamp" value="152" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
-          <line>144</line>
+          <line>145</line>
           <option name="timeStamp" value="153" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
-          <line>143</line>
+          <line>144</line>
           <option name="timeStamp" value="154" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
-          <line>145</line>
+          <line>146</line>
           <option name="timeStamp" value="155" />
         </line-breakpoint>
       </breakpoints>
@@ -744,30 +720,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/PrioritDataGramaFIFO.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding>
-            <element signature="e#116#132#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/model.pb.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-91">
           <caret line="91" column="6" selection-start-line="91" selection-start-column="6" selection-end-line="91" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/peer/Leecher.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="59" column="18" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
-          <folding>
-            <element signature="e#98#117#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -804,8 +760,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rede/CamadaDeRede.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+        <state relative-caret-position="20">
+          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
           <folding>
             <element signature="e#106#125#0" expanded="true" />
           </folding>
@@ -814,20 +770,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rede/CamadaDeRede.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
+        <state relative-caret-position="162">
+          <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
           <folding>
             <element signature="e#41#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/util/PrioritDataGramaFIFO.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/peer/Leecher.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="139" column="36" selection-start-line="139" selection-start-column="36" selection-end-line="139" selection-end-column="36" />
+        <state relative-caret-position="104">
+          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
           <folding>
+            <element signature="e#0#18#0" expanded="true" />
             <element signature="e#41#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/peer/Leecher.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="e#98#117#0" expanded="true" />
           </folding>
         </state>
       </provider>
