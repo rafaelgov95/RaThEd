@@ -60,7 +60,6 @@ public:
     long consultarFileSize(const std::string& hash, sockaddr_in seed);
     void iniciaDownloadP2P(const std::string& hash, const std::string& path, struct sockaddr_in seed_address[]);
     void downloandP2P(sockaddr_in seed_address,const std::string& hash,long buff_int);
-
     long MyTempMS();
 };
 

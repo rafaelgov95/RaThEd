@@ -29,16 +29,17 @@ private:
     unsigned int address_length;
     char recieve_data[MAX_LENGTH];
     struct sockaddr_in rastreador_address;
+    PrioritFIFO filaDataGramas;
     long rtt=20,F=5;
     std::mutex m,mm;
     rathed::Datagrama ConsultarRastreador(std::string hash);
     void StartTemporizacao(rathed::Datagrama data);
 public:
     CamadaDeRede(int socket,struct sockaddr_in &rastreador);
-    PrioritFIFO filaDataGramas;
     void InterfaceConsultarRastreador(const std::string& hash);
     void InterfaceDownloandP2P(const std::string& hash, long bytes, struct sockaddr_in seed_address) ;
     void InterfaceConsultarFileSize(const std::string& hash, long bytes, struct sockaddr_in seed_address);
+    PrioritFIFO& get_FilaBuffer();
 
 
 };

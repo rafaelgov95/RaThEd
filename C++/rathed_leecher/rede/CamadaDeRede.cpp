@@ -17,26 +17,9 @@ CamadaDeRede::CamadaDeRede(int socket, struct sockaddr_in &rastreador) : socket_
 }
 
 
-rathed::Datagrama CamadaDeRede::ConsultarRastreador(std::string hash) {
-    rathed::Datagrama _data = DataGrama(2, 0, hash.c_str());
-    if (sendto(socket_fd, DataGramaSerial(_data), _data.ByteSizeLong(), 0, (struct sockaddr *) &rastreador_address,
-               sizeof(struct sockaddr)) <= 0)
-        error("Erro ao enviar");
-    bytes_read = 0;
-
-    bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH, 0, (struct sockaddr *) &rastreador_address,
-                          &address_length); //block call, will wait till client enters something, before proceeding
-
-
-    rathed::Datagrama datagrama;
-    datagrama.ParseFromArray(recieve_data, bytes_read);
-    std::cout << "CAMADA DE REDE - datagrama consultar Rastreador: " << datagrama.data() << std::endl;
-    return datagrama;
-}
-
-
 void CamadaDeRede::StartTemporizacao(rathed::Datagrama data) {
     std::lock_guard<std::mutex> lock(mm);
+
     int x = rand() % 100 + 1; //distribuicao não sei fazer
     if (F >= x) {
         std::cout << "Pacote Perdido: " << x << std::endl;
@@ -49,34 +32,44 @@ void CamadaDeRede::StartTemporizacao(rathed::Datagrama data) {
         long tempofinal = ms.count();
         tempofinal += timeEnvio;
         std::cout << "Pacote Recebido Fila: " << ms.count() << " Temporizador: " << tempofinal << " Tempo Envio:  "
-                  << timeEnvio << " | "<<data.packnumber()<< std::endl;
+                  << timeEnvio << " | " << data.packnumber() << std::endl;
         filaDataGramas.push(std::make_pair(tempofinal, data));
     }
 }
 
 
-void CamadaDeRede::InterfaceConsultarRastreador(const std::string& hash) {
+void CamadaDeRede::InterfaceConsultarRastreador(const std::string &hash) {
 
-    rathed::Datagrama data = ConsultarRastreador(hash);
+    rathed::Datagrama data = DataGrama(2, 0, hash.c_str());
+    if (sendto(socket_fd, DataGramaSerial(data), data.ByteSizeLong(), 0, (struct sockaddr *) &rastreador_address,
+               sizeof(struct sockaddr)) <= 0)
+        error("Erro ao enviar");
+    bytes_read = 0;
+
+    bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH, 0, (struct sockaddr *) &rastreador_address,
+                          &address_length);
+    data.clear_data();
+    data.ParseFromArray(recieve_data, bytes_read);
+    std::cout << "CAMADA DE REDE - datagrama consultar Rastreador: " << data.data() << std::endl;
     StartTemporizacao(data);
 }
 
 
-void CamadaDeRede::InterfaceDownloandP2P(const std::string& hash, long bytes, struct sockaddr_in seed_address) {
+void CamadaDeRede::InterfaceDownloandP2P(const std::string &hash, long bytes, struct sockaddr_in seed_address) {
     std::lock_guard<std::mutex> lock(m);
     rathed::Datagrama data = DataGrama(2, bytes, hash);
     if (sendto(socket_fd, DataGramaSerial(data), data.ByteSizeLong(), 0,
                (struct sockaddr *) &seed_address, sizeof(struct sockaddr)) <= 0)
         error("Erro ao enviar");
-
     bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH, 0, (struct sockaddr *) &seed_address,
                           &address_length);
+    data.clear_data();
     data.ParseFromArray(recieve_data, bytes_read);
     StartTemporizacao(data);
 }
 
 
-void CamadaDeRede::InterfaceConsultarFileSize(const std::string& hash, long bytes, struct sockaddr_in seed_address) {
+void CamadaDeRede::InterfaceConsultarFileSize(const std::string &hash, long bytes, struct sockaddr_in seed_address) {
     rathed::Datagrama data = DataGrama(3, 0, hash);
 
     if (sendto(socket_fd, DataGramaSerial(data), data.ByteSizeLong(), 0,
@@ -85,6 +78,11 @@ void CamadaDeRede::InterfaceConsultarFileSize(const std::string& hash, long byte
 
     bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH, 0, (struct sockaddr *) &seed_address,
                           &address_length);
+    data.clear_data();
     data.ParseFromArray(recieve_data, bytes_read);
     StartTemporizacao(data);
+}
+
+PrioritFIFO &CamadaDeRede::get_FilaBuffer() {
+    return filaDataGramas;
 }

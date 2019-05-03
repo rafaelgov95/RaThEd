@@ -62,7 +62,7 @@ void Leecher::iniciaDownloadP2P(const std::string& hash, const std::string& path
     while (flag) {
         round += 1;
         int threads_round = 0;
-        camadaDeRede->filaDataGramas.clear();
+        camadaDeRede->get_FilaBuffer();
         for (int i = 0; i < 4; ++i) {
             if (total_bytes_file > buff_count) {
                 threads[i] = std::thread(&Leecher::downloandP2P, this, seed_address[i], hash, buff_count);
@@ -106,10 +106,10 @@ long Leecher::MyTempMS() {
 std::vector<std::string> Leecher::consultarRastreador(const std::string& hash) {
     camadaDeRede->InterfaceConsultarRastreador(hash);
     while (true) {
-        bool fila = camadaDeRede->filaDataGramas.empty();
+        bool fila = camadaDeRede->get_FilaBuffer().empty();
         if (!fila) {
-            std::pair<long, rathed::Datagrama> pair = camadaDeRede->filaDataGramas.top();
-            camadaDeRede->filaDataGramas.pop();
+            std::pair<long, rathed::Datagrama> pair = camadaDeRede->get_FilaBuffer().top();
+            camadaDeRede->get_FilaBuffer().pop();
             for (;;) {
                 long t1 = pair.first;
                 long t2 = MyTempMS();
@@ -136,7 +136,7 @@ void Leecher::downloandP2P(sockaddr_in seed_address, const std::string& hash, lo
     while (flag_1) {
         flag_2 = true;
         std::pair<long, rathed::Datagrama> pair;
-        if (camadaDeRede->filaDataGramas.myPack(number_pack, pair)) {
+        if (camadaDeRede->get_FilaBuffer().myPack(number_pack, pair)) {
             while (flag_2) {
                 long t1 = pair.first;
                 long t2 = MyTempMS();
@@ -159,10 +159,10 @@ void Leecher::downloandP2P(sockaddr_in seed_address, const std::string& hash, lo
 long Leecher::consultarFileSize(const std::string& hash, sockaddr_in seed) {
     camadaDeRede->InterfaceConsultarFileSize(hash, 0, seed);
     while (true) {
-        bool fila = camadaDeRede->filaDataGramas.empty();
+        bool fila = camadaDeRede->get_FilaBuffer().empty();
         if (!fila) {
-            std::pair<long, rathed::Datagrama> pair = camadaDeRede->filaDataGramas.top();
-            camadaDeRede->filaDataGramas.pop();
+            std::pair<long, rathed::Datagrama> pair = camadaDeRede->get_FilaBuffer().top();
+            camadaDeRede->get_FilaBuffer().pop();
             for (;;) {
                 long t1 = pair.first;
                 long t2 = MyTempMS();
@@ -175,5 +175,7 @@ long Leecher::consultarFileSize(const std::string& hash, sockaddr_in seed) {
         }
     }
 }
+
+
 
 
