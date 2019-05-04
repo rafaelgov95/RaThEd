@@ -18,7 +18,6 @@ CamadaDeRede::CamadaDeRede(int socket, struct sockaddr_in &rastreador) : socket_
 
 
 void CamadaDeRede::StartTemporizacao(rathed::Datagrama data) {
-    std::lock_guard<std::mutex> lock(mm);
 
     int x = rand() % 100 + 1; //distribuicao não sei fazer
     if (F >= x) {

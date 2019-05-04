@@ -30,7 +30,7 @@
 class Seed {
 
 private:
-    int rastreadorPorta = 8080;
+    int R=2,rastreadorPorta = 8080;
     fd_set readfds;
     int numfd = 0;
     int socket_fd, bytes_read, bytes_total;
@@ -39,19 +39,17 @@ private:
     struct sockaddr_in server_address, client_address, rastreador_address;
     std::vector<std::pair<std::string, std::string>> file;
 
-    void run();
+    void Run();
 
-    void atualizarRastreador(std::string hash, std::string path);
+    void AtualizarRastreador(const std::string& hash,const std::string& path);
 
-    void tratarMensagem(rathed::Datagrama data);
+    void TratarMensagem(rathed::Datagrama& data);
 
-    void EnviarArquivo(rathed::Datagrama data);
+    void EnviarArquivo(rathed::Datagrama& data);
 
-    void atualizacaoRealizada(rathed::Datagrama data);
+    void AtualizacaoRealizada(rathed::Datagrama& data);
 
-    void consultaFileSize(rathed::Datagrama data);
-
-    void confirmaEnvio(rathed::Datagrama *datagrama);
+    void ConsultaFileSize(rathed::Datagrama& data);
 
     void Desconectar();
 

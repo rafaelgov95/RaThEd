@@ -49,29 +49,29 @@ void Leecher::run(const std::string& hash, std::string path) {
         file_size_peers[i] = consultarFileSize(hash, seed_address[i]);
     }
     total_bytes_file = file_size_peers[0];
-    iniciaDownloadP2P(path,hash,seed_address);
+    iniciaDownloadP2P(hash,path,seed_address);
 
 }
 void Leecher::iniciaDownloadP2P(const std::string& hash, const std::string& path, struct sockaddr_in seed_address[]){
 
     int fd_arq = open(path.c_str(), O_CREAT | O_WRONLY, 0666);
     io::ZeroCopyOutputStream *raw_output = new io::FileOutputStream(fd_arq);
-    auto *coded_output = new io::CodedOutputStream(raw_output,(4*310));
+    auto *coded_output = new io::CodedOutputStream(raw_output);
     int buff_count = 0, round = 0;
     bool flag = true;
+    long tempInicio,tempFim,tempResult;
     while (flag) {
         round += 1;
         int threads_round = 0;
-        camadaDeRede->get_FilaBuffer();
-        for (int i = 0; i < 4; ++i) {
+        camadaDeRede->get_FilaBuffer().clear();
+        while (threads_round < 4) {
+             tempInicio=MyTempMS();
             if (total_bytes_file > buff_count) {
-                threads[i] = std::thread(&Leecher::downloandP2P, this, seed_address[i], hash, buff_count);
-                std::cout <<"TOTAL: "<<total_bytes_file<<" Thread " << i << "PACK: " << buff_count << std::endl;
+                threads[threads_round] = std::thread(&Leecher::downloandP2P, this, seed_address[threads_round], hash, buff_count);
+                std::cout <<"TOTAL: "<<total_bytes_file<<" Thread " << threads_round << "PACK: " << buff_count << std::endl;
                 buff_count += 310;
                 threads_round++;
-
             } else {
-                i = 5;
                 flag = false;
             }
 
@@ -80,13 +80,16 @@ void Leecher::iniciaDownloadP2P(const std::string& hash, const std::string& path
             threads[j].join();
         }
 
-
         while (!filaBuffer.empty()) {
             rathed::Datagrama data;
             filaBuffer.next(data);
             std::cout << "Gravando PACOTE: " << data.packnumber() << std::endl;
             coded_output->WriteRaw(data.data().c_str(), data.data().size());
         }
+        tempFim=MyTempMS();
+        tempResult=tempFim-tempInicio;
+        std::cout << "Gravado em : " <<tempResult << std::endl;
+
     }
     std::cout << "FIM " << std::endl;
 
@@ -148,7 +151,6 @@ void Leecher::downloandP2P(sockaddr_in seed_address, const std::string& hash, lo
                 }
             }
         } else {
-            std::cout << "AQUI: " <<std::endl;
             camadaDeRede->InterfaceDownloandP2P(hash, number_pack, seed_address);
         }
 

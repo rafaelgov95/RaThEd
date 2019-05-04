@@ -17,7 +17,7 @@
 namespace io = google::protobuf::io;
 
 Seed::~Seed() {
-
+    close(socket_fd);
 }
 
 Seed::Seed(int porta) {
@@ -25,8 +25,8 @@ Seed::Seed(int porta) {
         error("socket()");
     }
     FD_ZERO(&readfds);
-    numfd = socket_fd+1;
-    address_length = sizeof(struct sockaddr); //tamanh do endereco ipv4
+    numfd = socket_fd + 1;
+    address_length = sizeof(struct sockaddr);
     rastreador_address.sin_family = AF_INET;
     rastreador_address.sin_port = htons(rastreadorPorta);
     rastreador_address.sin_addr.s_addr = INADDR_ANY;
@@ -36,17 +36,17 @@ Seed::Seed(int porta) {
     server_address.sin_addr.s_addr = INADDR_ANY;
     bzero(&(rastreador_address.sin_zero), 8);
     if (bind(socket_fd,
-             (struct sockaddr *) &server_address, sizeof(struct sockaddr)) == -1) // atribui ip
+             (struct sockaddr *) &server_address, sizeof(struct sockaddr)) == -1)
     {
-        error("bind()"); // erro se der merd@
+        error("bind()");
     }
-    run();
+    Run();
 
 }
 
 
-void Seed::run() {
-    atualizarRastreador("cc72fc24056ced9ce13a287ca1243d48","/home/rafael/Música/AlanWalker.mp3");
+void Seed::Run() {
+    AtualizarRastreador("cc72fc24056ced9ce13a287ca1243d48", "/home/rafael/Downloads/t.mp3");
     for (;;) {
         FD_SET(socket_fd, &readfds);
         int recieve = select(numfd, &readfds, NULL, NULL, NULL);
@@ -64,27 +64,42 @@ void Seed::run() {
                                   &address_length); //block call, will wait till client enters something, before proceeding
             rathed::Datagrama buf;
             buf.ParseFromArray(recieve_data, bytes_read);
-            tratarMensagem(buf);
+            TratarMensagem(buf);
 
         }
     }
 }
 
-void Seed::tratarMensagem(rathed::Datagrama data) {
-    if (data.type() == 1) {
-        Desconectar();
-    } else if (data.type() == 2) {
-        EnviarArquivo(data);
-    } else if (data.type() == 3) {
-        consultaFileSize(data);
-    } else if (data.type() == 4) {
-        atualizacaoRealizada(data);
-
+void Seed::TratarMensagem(rathed::Datagrama& data) {
+    int valor = rand() % (10 + 1);
+    if (valor > R) {
+        std::cout << "Bloco Dispinivel: " << std::endl;
+        std::cout << "Enviar Bloco Dispinivel!" << std::endl;
+        switch (data.type()) {
+            case 1:
+                Desconectar();
+                break;
+            case 2:
+                EnviarArquivo(data);
+                break;
+            case 3:
+                ConsultaFileSize(data);
+                break;
+            case 4:
+                AtualizacaoRealizada(data);
+                break;
+        }
+    } else {
+        std::cout << "Bloco Não Dispinivel!: " << std::endl;
+        mySleep(20);
+        std::cout << "Consultar Bloco....." << std::endl;
+        TratarMensagem(data);
     }
+
 
 }
 
-void Seed::consultaFileSize(rathed::Datagrama data) {
+void Seed::ConsultaFileSize(rathed::Datagrama& data) {
     auto it = std::find_if(file.begin(), file.end(), CompareHash(data.data()));
     if (it.base() != nullptr && data.packnumber() >= 0) {
         bytes_total = fileSize(it.base()->second.c_str());
@@ -100,7 +115,7 @@ void Seed::consultaFileSize(rathed::Datagrama data) {
 
 }
 
-void Seed::EnviarArquivo(rathed::Datagrama data) {
+void Seed::EnviarArquivo(rathed::Datagrama& data) {
     auto it = std::find_if(file.begin(), file.end(), CompareHash(data.data()));
     rathed::Datagrama datagrama;
 
@@ -108,18 +123,16 @@ void Seed::EnviarArquivo(rathed::Datagrama data) {
         int fd_arq = open(it.base()->second.c_str(), O_RDONLY);
         int total_bytes_read = 0;
         io::ZeroCopyInputStream *raw_input = new io::FileInputStream(fd_arq);
-        io::CodedInputStream *coded_input = new io::CodedInputStream(raw_input);
+        auto *coded_input = new io::CodedInputStream(raw_input);
         total_bytes_read = data.packnumber();
         coded_input->Skip(data.packnumber());
         int antes = coded_input->CurrentPosition();
-        bytes_read = coded_input->ReadRaw(send_data, MAX_LENGTH-20);
+        bytes_read = coded_input->ReadRaw(send_data, MAX_LENGTH - 10);
         int depois = coded_input->CurrentPosition();
         int size_bytes = depois - antes;
         datagrama.set_type(static_cast<rathed::DatagramaType>(1));
         datagrama.set_packnumber(data.packnumber());
         datagrama.set_data(send_data, size_bytes);
-        usleep(3000);
-
         if (sendto(socket_fd, DataGramaSerial(datagrama), datagrama.ByteSizeLong(), 0,
                    (struct sockaddr *) &client_address, sizeof(struct sockaddr)) <= 0)
             error("Erro ao enviar 1");
@@ -129,9 +142,9 @@ void Seed::EnviarArquivo(rathed::Datagrama data) {
         std::cout << "Total de Bytes File Enviados: " << total_bytes_read << " DE " << bytes_total << std::endl;
         std::cout << "Bytes File: " << size_bytes << std::endl;
         std::cout << "Bytes Datagrama: " << datagrama.ByteSizeLong() << std::endl;
+        std::cout << "Packnumber: " << datagrama.packnumber() << std::endl;
 
 
-        usleep(3000);
     } else {
         if (
                 sendto(socket_fd,
@@ -142,8 +155,7 @@ void Seed::EnviarArquivo(rathed::Datagrama data) {
 }
 
 
-
-void Seed::atualizarRastreador(std::string hash,std::string path) {
+void Seed::AtualizarRastreador(const std::string& hash, const std::string& path) {
     std::cout << "atualizarRastreador Seed: " << std::endl;
     std::pair<std::string, std::string> arquivo = std::make_pair(hash,
                                                                  path);
@@ -158,9 +170,8 @@ void Seed::atualizarRastreador(std::string hash,std::string path) {
 
 }
 
-void Seed::atualizacaoRealizada(rathed::Datagrama data) {
+void Seed::AtualizacaoRealizada(rathed::Datagrama& data) {
     std::cout << "TIPO: " << data.type() << "| OK |" << std::endl;
-
 }
 
 void Seed::Desconectar() {

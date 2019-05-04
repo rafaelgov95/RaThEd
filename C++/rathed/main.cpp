@@ -5,23 +5,20 @@
 #include "Rastreador.h"
 #include "Seed.h"
 
-void startSimuladorDeRede(){
 
-}
-
-void startRastreador(int portaRastreador) {
+void StartRastreador(int portaRastreador) {
     Rastreador rastreador(portaRastreador);
 }
 
-void startSeed(int porta){
+void StartSeed(int porta){
 
     Seed s(porta);
-};
+}
 
-void startSeeds(std::thread threads_seeds[],int portaBase) {
+void StartSeeds(std::thread threads_seeds[],int portaBase) {
 
-    for (int i = 1; i <=4; ++i) {
-        threads_seeds[i]=std::thread(startSeed,portaBase+i);
+    for (int i = 0; i < 4; ++i) {
+        threads_seeds[i]=std::thread(StartSeed,portaBase+(i+1));
     }
 }
 
@@ -29,14 +26,13 @@ void startSeeds(std::thread threads_seeds[],int portaBase) {
 int main(int argc, char * argv[])
 {
 
-    std::thread threads_seeds[5];
-    std::thread thread_rastreador(startRastreador, 8080);
+    std::thread threads_seeds[4];
+    std::thread thread_rastreador(StartRastreador, 8080);
     sleep(2);
-    startSeeds(threads_seeds,8080);
+    StartSeeds(threads_seeds,8080);
     thread_rastreador.join();
-    for (int i = 1; i <=4; ++i) {
+    for (int i = 0; i <4; ++i) {
         threads_seeds[i].join();
     }
-
 
 }

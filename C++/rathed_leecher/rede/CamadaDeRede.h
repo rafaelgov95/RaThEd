@@ -31,7 +31,7 @@ private:
     struct sockaddr_in rastreador_address;
     PrioritFIFO filaDataGramas;
     long rtt=20,F=5;
-    std::mutex m,mm;
+    std::mutex m;
     rathed::Datagrama ConsultarRastreador(std::string hash);
     void StartTemporizacao(rathed::Datagrama data);
 public:

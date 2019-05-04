@@ -34,16 +34,14 @@ void Rastreador::run() {
 
     printf("\nRastreador Iniciado\n");
     for (;;) {
-        perror("Entro"); // erro no select()
-
         FD_SET(socket_fd, &readfds);
         int recieve = select(numfd, &readfds, NULL, NULL, NULL);
-        perror("Entro 2"); // erro no select()
+        perror("Solicitação"); // erro no select()
 
         if (recieve == -1) {
-            perror("Erro select"); // erro no select()
+            perror("-1 Erro select"); // erro no select()
         } if (recieve == 0) {
-            perror("0 select"); // erro no select()
+            perror("0 Erro select"); // erro no select()
         }
         if (FD_ISSET(socket_fd, &readfds)) {
             FD_CLR(socket_fd, &readfds);
@@ -54,7 +52,7 @@ void Rastreador::run() {
             buf.ParseFromArray(recieve_data, bytes_read);
             selectOpcao(buf);
         }
-        perror("Terminou"); // erro no select()
+        perror("Fecho Solicitação"); // erro no select()
 
     }
 
@@ -93,7 +91,7 @@ void Rastreador::enviarPeers(std::string peers) {
 }
 
 void Rastreador::consultaFiles(rathed::Datagrama &data) {
-
+    std::cout << "Teste DATA "<<data.data() << std::endl;
     auto it = std::find_if(filesPeers.begin(), filesPeers.end(), CompareHashPeer(data.data()));
     if (it.base() != nullptr) {
         std::string tmp;

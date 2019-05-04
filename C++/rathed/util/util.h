@@ -11,6 +11,23 @@
 #include "vector"
 #include "string"
 
+#ifdef __linux__
+#include <unistd.h>
+#endif
+#ifdef __WIN32__
+#include <windows.h>
+#endif
+
+static void mySleep(int sleepMs)
+{
+#ifdef __linux__
+    usleep(sleepMs * 1000);   // usleep takes sleep time in us (1 millionth of a second)
+#endif
+#ifdef  __WIN32__
+    Sleep(sleepMs);
+#endif
+}
+
 struct CompareHash {
     CompareHash(const std::string val) : val_(val) {}
 
