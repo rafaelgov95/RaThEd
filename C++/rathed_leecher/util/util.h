@@ -71,6 +71,13 @@ datagrama.SerializeToArray(buffer, size);
 return buffer;
 }
 
+static long MyTempMS() {
+    std::chrono::milliseconds ms = std::chrono::duration_cast<std::chrono::milliseconds>(
+            std::chrono::system_clock::now().time_since_epoch()
+    );
+    return ms.count();
+}
+
 //std::streampos fileSize( const char* filePath ){
 //
 //    std::streampos fsize = 0;

@@ -8,9 +8,9 @@
 #include <QDir>
 #include <Leecher.h>
 
-void startLeecher(std::string hash, std::string path) {
+void StartLeecher(std::string hash, std::string path) {
     Leecher leecher;
-    leecher.run(hash, path);
+    leecher.Run(hash, path);
 
 }
 
@@ -79,7 +79,7 @@ void Widget::on_btn_add_clicked() {
 
     // Em seguida, defina os dados por nomes e caminhos de arquivo
     // na lista de reprodução e na tabela que exibe a lista de reprodução
-    std::thread thread_rastreador = std::thread(startLeecher, "cc72fc24056ced9ce13a287ca1243d48",
+    std::thread thread_rastreador = std::thread(StartLeecher, "cc72fc24056ced9ce13a287ca1243d48",
                                                 "/home/rafael/Documentos/musicas_testes/vai_teia.mp3");
 
 //    QString filePath = "/home/rafael/Documentos/musicas_testes/stream_voice.mp3";

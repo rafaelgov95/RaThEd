@@ -25,21 +25,17 @@ class CamadaDeRede {
 
 private:
 
-    int socket_fd, bytes_read;
-    unsigned int address_length;
+    unsigned int socket_fd, bytes_read,address_length;
     char recieve_data[MAX_LENGTH];
     struct sockaddr_in rastreador_address;
     PrioritFIFO filaDataGramas;
-    long rtt=20,F=5;
+    long rtt=20,F=0;
     std::mutex m;
-    rathed::Datagrama ConsultarRastreador(std::string hash);
-    void StartTemporizacao(rathed::Datagrama data);
+    void StartTemporizacao(const rathed::Datagrama& data);
 public:
-    CamadaDeRede(int socket,struct sockaddr_in &rastreador);
-    void InterfaceConsultarRastreador(const std::string& hash);
-    void InterfaceDownloandP2P(const std::string& hash, long bytes, struct sockaddr_in seed_address) ;
-    void InterfaceConsultarFileSize(const std::string& hash, long bytes, struct sockaddr_in seed_address);
-    PrioritFIFO& get_FilaBuffer();
+    CamadaDeRede(unsigned int socket, struct sockaddr_in &rastreador);
+    void InterfaceRede(short type,const char* hash, long bytes, struct sockaddr_in* seed_address) ;
+    PrioritFIFO& InterfaceGetFilaBuffer();
 
 
 };

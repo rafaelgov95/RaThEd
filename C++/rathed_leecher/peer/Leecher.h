@@ -5,16 +5,6 @@
 #ifndef UNTITLED_LEECHERS_H
 #define UNTITLED_LEECHERS_H
 
-#include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <arpa/inet.h>
-#include <netinet/in.h>
-
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -24,19 +14,21 @@
 #include <errno.h>
 #include <string.h>
 #include <stdlib.h>
-#include <sys/select.h>//use select() for multiplexing
-#include <sys/fcntl.h> // for non-blocking
-#include "iostream"
+#include <sys/select.h>
+#include <sys/fcntl.h>
 #include <google/protobuf/io/zero_copy_stream_impl.h>
-#include "vector"
+#include <math.h>
+#include <semaphore.h>
 #include "thread"
+#include "pthread.h"
+#include "vector"
+#include "iostream"
 #include "util.h"
 #include "model.pb.h"
-#include <pthread.h>
-#include <semaphore.h>
 #include "PrioritDataGramaFIFO.h"
 
 #include "CamadaDeRede.h"
+
 
 #define MAX_LENGTH 320
 
@@ -45,22 +37,35 @@ namespace io = google::protobuf::io;
 class Leecher {
 
 private:
-    int socket_fd,total_bytes_file[4],rastreadorPorta = 8080;
+    int socket_fd, total_bytes_file[8], rastreadorPorta = 8080, numthreads = 4;
     std::thread threads[4];
     PrioritDataGramaFIFO filaBuffer;
     struct sockaddr_in rastreador_address;
     CamadaDeRede *camadaDeRede;
+    rathed::Datagrama
+
+    EnviarDataGramaParaRede(short type, const char* hash, long bytes, struct sockaddr_in *pointer_address);
+
+
+    std::vector<std::string> ConsultarRastreador(const char* hash);
+
+    long ConsultarFileSize(const char* hash,struct sockaddr_in* pointer_address);
+
+    void IniciarDownloadP2P(const char* hash, const char* path, struct sockaddr_in seed_address[]);
+
+    void DownloandP2P(const char* hash, long bytes, struct sockaddr_in* pointer_addresss);
+
 
 public:
     Leecher();
+
     ~Leecher();
 
-    void Run(const std::string& hash, const std::string& path);
-    std::vector<std::string> ConsultarRastreador(const std::string& hash);
-    long ConsultarFileSize(const std::string& hash, sockaddr_in seed);
-    void IniciarDownloadP2P(const std::string& hash, const std::string& path, struct sockaddr_in seed_address[]);
-    void DownloandP2P(const std::string& hash, long bytes, sockaddr_in seed_address);
-    long MyTempMS();
+    void Run(std::string hash, std::string path);
+
+
+
+
 };
 
 

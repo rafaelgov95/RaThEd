@@ -39,15 +39,18 @@ pack PrioritFIFO::top() {
     return fila.top();
 }
 
-bool PrioritFIFO::myPack(long packnumber, pack &data) {
+bool PrioritFIFO::myPack(short type,long packnumber, pack &data) {
     std::lock_guard<std::mutex> lock(m);
     if (!fila.empty()) {
-        if (fila.top().second.packnumber() == packnumber) {
+        if (fila.top().second.packnumber() == packnumber && type==2 ) {
+            data = fila.top();
+            fila.pop();
+            return true;
+        }else{
             data = fila.top();
             fila.pop();
             return true;
         }
-        fila.pop();
     }
     return false;
 }

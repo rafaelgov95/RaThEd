@@ -26,7 +26,7 @@ public:
     void push(const pack& elem);
     bool next(pack &elem);
     void  pop ();
-    bool myPack(long bytes,pack &data);
+    bool myPack(short type,long bytes,pack &data);
     void  clear( );
     bool  empty( );
     pack  top ();
