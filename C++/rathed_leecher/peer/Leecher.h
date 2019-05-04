@@ -45,7 +45,7 @@ namespace io = google::protobuf::io;
 class Leecher {
 
 private:
-    int socket_fd,total_bytes_file,rastreadorPorta = 8080;
+    int socket_fd,total_bytes_file[4],rastreadorPorta = 8080;
     std::thread threads[4];
     PrioritDataGramaFIFO filaBuffer;
     struct sockaddr_in rastreador_address;
@@ -55,11 +55,11 @@ public:
     Leecher();
     ~Leecher();
 
-    void run(const std::string& hash, std::string path);
-    std::vector<std::string> consultarRastreador(const std::string& hash);
-    long consultarFileSize(const std::string& hash, sockaddr_in seed);
-    void iniciaDownloadP2P(const std::string& hash, const std::string& path, struct sockaddr_in seed_address[]);
-    void downloandP2P(sockaddr_in seed_address,const std::string& hash,long buff_int);
+    void Run(const std::string& hash, const std::string& path);
+    std::vector<std::string> ConsultarRastreador(const std::string& hash);
+    long ConsultarFileSize(const std::string& hash, sockaddr_in seed);
+    void IniciarDownloadP2P(const std::string& hash, const std::string& path, struct sockaddr_in seed_address[]);
+    void DownloandP2P(const std::string& hash, long bytes, sockaddr_in seed_address);
     long MyTempMS();
 };
 

@@ -19,6 +19,7 @@
 
 Leecher::~Leecher() {
     close(socket_fd);
+    free(camadaDeRede);
 }
 
 Leecher::Leecher() {
@@ -33,10 +34,9 @@ Leecher::Leecher() {
 }
 
 
-void Leecher::run(const std::string& hash, std::string path) {
-    std::vector<std::string> total_peers = consultarRastreador(hash);
+void Leecher::Run(const std::string& hash, const std::string& path) {
+    std::vector<std::string> total_peers = ConsultarRastreador(hash);
     struct sockaddr_in seed_address[total_peers.size()];
-    int file_size_peers[total_peers.size()];
 
     for (int i = 0; i < total_peers.size(); ++i) {
         std::vector<std::string> primeiro_peer{my_split(total_peers[i], ':')};
@@ -46,13 +46,13 @@ void Leecher::run(const std::string& hash, std::string path) {
         seed_address[i].sin_family = AF_INET;
         seed_address[i].sin_port = htons(std::stoi(primeiro_peer[1]));
         inet_aton(primeiro_peer[0].c_str(), &seed_address[i].sin_addr);
-        file_size_peers[i] = consultarFileSize(hash, seed_address[i]);
+        total_bytes_file[i] = ConsultarFileSize(hash, seed_address[i]);
     }
-    total_bytes_file = file_size_peers[0];
-    iniciaDownloadP2P(hash,path,seed_address);
+
+    IniciarDownloadP2P(hash,path,seed_address);
 
 }
-void Leecher::iniciaDownloadP2P(const std::string& hash, const std::string& path, struct sockaddr_in seed_address[]){
+void Leecher::IniciarDownloadP2P(const std::string& hash, const std::string& path, struct sockaddr_in seed_address[]){
 
     int fd_arq = open(path.c_str(), O_CREAT | O_WRONLY, 0666);
     io::ZeroCopyOutputStream *raw_output = new io::FileOutputStream(fd_arq);
@@ -66,8 +66,8 @@ void Leecher::iniciaDownloadP2P(const std::string& hash, const std::string& path
         camadaDeRede->get_FilaBuffer().clear();
         while (threads_round < 4) {
              tempInicio=MyTempMS();
-            if (total_bytes_file > buff_count) {
-                threads[threads_round] = std::thread(&Leecher::downloandP2P, this, seed_address[threads_round], hash, buff_count);
+            if (total_bytes_file[0] > buff_count) {
+                threads[threads_round] = std::thread(&Leecher::DownloandP2P, this, seed_address[threads_round], hash, buff_count);
                 std::cout <<"TOTAL: "<<total_bytes_file<<" Thread " << threads_round << "PACK: " << buff_count << std::endl;
                 buff_count += 310;
                 threads_round++;
@@ -106,7 +106,7 @@ long Leecher::MyTempMS() {
     return ms.count();
 }
 
-std::vector<std::string> Leecher::consultarRastreador(const std::string& hash) {
+std::vector<std::string> Leecher::ConsultarRastreador(const std::string& hash) {
     camadaDeRede->InterfaceConsultarRastreador(hash);
     while (true) {
         bool fila = camadaDeRede->get_FilaBuffer().empty();
@@ -121,7 +121,7 @@ std::vector<std::string> Leecher::consultarRastreador(const std::string& hash) {
                             my_split(pair.second.data(), ';')};
                     for (int i = 0; i < Peers_Com_File.size(); ++i) {
 
-                        std::cout << "SEED: " << Peers_Com_File[i] << std::endl;
+                        std::cout << "SEED: "<< i << ":" << Peers_Com_File[i] << std::endl;
                     }
 
                     return Peers_Com_File;
@@ -133,32 +133,32 @@ std::vector<std::string> Leecher::consultarRastreador(const std::string& hash) {
     }
 }
 
-void Leecher::downloandP2P(sockaddr_in seed_address, const std::string& hash, long number_pack) {
+void Leecher::DownloandP2P(const std::string& hash, long bytes, sockaddr_in seed_address,) {
 
     bool flag_1 = true, flag_2;
     while (flag_1) {
         flag_2 = true;
-        std::pair<long, rathed::Datagrama> pair;
-        if (camadaDeRede->get_FilaBuffer().myPack(number_pack, pair)) {
+        std::pair<long, rathed::Datagrama> data;
+        if (camadaDeRede->get_FilaBuffer().myPack(bytes, data)) {
             while (flag_2) {
-                long t1 = pair.first;
+                long t1 = data.first;
                 long t2 = MyTempMS();
                 if (t1 <= t2) {
-                    filaBuffer.push(pair.second);
-                    std::cout << "Pacote: " << pair.second.packnumber() << " Copiado" << std::endl;
+                    filaBuffer.push(data.second);
+                    std::cout << "Pacote: " << data.second.packnumber() << " Copiado" << std::endl;
                     flag_1 = flag_2 = false;
                 } else {
                 }
             }
         } else {
-            camadaDeRede->InterfaceDownloandP2P(hash, number_pack, seed_address);
+            camadaDeRede->InterfaceDownloandP2P(hash, bytes, seed_address);
         }
 
     }
 }
 
 
-long Leecher::consultarFileSize(const std::string& hash, sockaddr_in seed) {
+long Leecher::ConsultarFileSize(const std::string& hash, sockaddr_in seed) {
     camadaDeRede->InterfaceConsultarFileSize(hash, 0, seed);
     while (true) {
         bool fila = camadaDeRede->get_FilaBuffer().empty();

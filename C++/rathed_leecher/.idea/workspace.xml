@@ -5,8 +5,8 @@
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="rathed_leecher" targetName="rathed_leecher" />
       <config projectName="rathed_leecher" targetName="rathed_leecher_autogen" />
+      <config projectName="rathed_leecher" targetName="rathed_leecher" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -16,28 +16,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4a3b644-ab9a-4fb2-89e0-190f47fdc983" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../rathed/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/3.13.4/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/3.13.4/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/3.13.4/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/3.13.4/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/3.13.4/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/3.13.4/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/3.13.4/CompilerIdC/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/3.13.4/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/3.13.4/CompilerIdCXX/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/rathed_autogen/moc_predefs.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/rathed_autogen/mocs_compilation.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/peer/Seed.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/peer/Seed.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/peer/Seed.h" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/peer/Seed.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/rastreador/Rastreador.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/rastreador/Rastreador.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/util/util.h" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/util/util.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/peer/Leecher.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/peer/Leecher.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/peer/Leecher.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rede/CamadaDeRede.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/rede/CamadaDeRede.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rede/CamadaDeRede.h" beforeDir="false" afterPath="$PROJECT_DIR$/rede/CamadaDeRede.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/peer/Leecher.h" beforeDir="false" afterPath="$PROJECT_DIR$/peer/Leecher.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,21 +50,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/peer/Leecher.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="87" column="9" lean-forward="true" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
+            <state relative-caret-position="1558">
+              <caret line="108" column="53" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="53" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#41#59#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/include/c++/8.3.0/thread">
+        <entry file="file:///usr/include/c++/8.3.0/bits/stl_vector.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="169" column="4" selection-start-line="169" selection-start-column="4" selection-end-line="169" selection-end-column="4" />
+            <state relative-caret-position="207">
+              <caret line="475" column="6" selection-start-line="475" selection-start-column="6" selection-end-line="475" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -91,7 +71,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file:///usr/include/google/protobuf/io/coded_stream.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-81">
+            <state relative-caret-position="14920">
               <caret line="746" column="11" selection-start-line="746" selection-start-column="11" selection-end-line="746" selection-end-column="11" />
             </state>
           </provider>
@@ -100,7 +80,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/PrioritDataGramaFIFO.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="480">
               <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
             </state>
           </provider>
@@ -109,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/peer/Leecher.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="62" column="17" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="17" />
+            <state relative-caret-position="418">
+              <caret line="58" column="31" lean-forward="true" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
               <folding>
                 <element signature="e#98#117#0" expanded="true" />
               </folding>
@@ -121,7 +101,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file:///usr/include/google/protobuf/io/zero_copy_stream_impl.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
+            <state relative-caret-position="2940">
               <caret line="147" column="47" selection-start-line="147" selection-start-column="32" selection-end-line="147" selection-end-column="47" />
             </state>
           </provider>
@@ -130,7 +110,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/PrioritDataGramaFIFO.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="360">
               <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
             </state>
           </provider>
@@ -140,7 +120,7 @@
         <entry file="file://$PROJECT_DIR$/rede/CamadaDeRede.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="296">
-              <caret line="84" column="27" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
+              <caret line="56" column="19" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
               <folding>
                 <element signature="e#41#66#0" expanded="true" />
               </folding>
@@ -151,8 +131,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rede/CamadaDeRede.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+            <state relative-caret-position="640">
+              <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
               <folding>
                 <element signature="e#106#125#0" expanded="true" />
               </folding>
@@ -163,7 +143,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/PrioritFIFO.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
+            <state relative-caret-position="560">
               <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
               <folding>
                 <element signature="e#116#132#0" expanded="true" />
@@ -182,7 +162,11 @@
       <find>consultarRastreador</find>
       <find>aqui</find>
       <find>coded_output</find>
+      <find>Consultar</find>
     </findStrings>
+    <replaceStrings>
+      <replace>data</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -213,9 +197,9 @@
         <option value="$PROJECT_DIR$/util/PrioritFIFO.h" />
         <option value="$PROJECT_DIR$/util/PrioritFIFO.cpp" />
         <option value="$PROJECT_DIR$/rede/CamadaDeRede.cpp" />
-        <option value="$PROJECT_DIR$/peer/Leecher.h" />
         <option value="$PROJECT_DIR$/rede/CamadaDeRede.h" />
         <option value="$PROJECT_DIR$/peer/Leecher.cpp" />
+        <option value="$PROJECT_DIR$/peer/Leecher.h" />
       </list>
     </option>
   </component>
@@ -227,9 +211,9 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1920" />
-    <option name="width" value="1600" />
-    <option name="height" value="900" />
+    <option name="y" value="27" />
+    <option name="width" value="1920" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -237,7 +221,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -283,6 +266,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -370,11 +354,12 @@
       <workItem from="1556843339064" duration="6087000" />
       <workItem from="1556849906125" duration="3527000" />
       <workItem from="1556883357562" duration="29806000" />
+      <workItem from="1556932698909" duration="1330000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196743000" />
+    <option name="totallyTimeSpent" value="198073000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -386,9 +371,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="0" width="1600" height="900" extended-state="6" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24839126" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17716116" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -401,14 +387,14 @@
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.47876447" weight="0.42201835" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4993565" weight="0.32503277" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.2007722" side_tool="true" visible="true" weight="0.42201835" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.2007722" side_tool="true" visible="true" weight="0.2914847" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.37876803" />
       <window_info anchor="bottom" id="GenProtobuf-Output" order="13" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.077220075" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.05389541" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,13 +480,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
           <caret line="74" column="14" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/8.3.0/bits/stl_vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="475" column="6" selection-start-line="475" selection-start-column="6" selection-end-line="475" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -602,23 +581,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/teste1.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-          <folding>
-            <element signature="e#41#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main1.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="14" selection-end-line="33" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/util/teste1.cpp" />
+    <entry file="file://$PROJECT_DIR$/main1.cpp" />
     <entry file="file:///usr/include/c++/8.3.0/x86_64-pc-linux-gnu/bits/c++allocator.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
@@ -703,9 +667,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/include/c++/8.3.0/thread">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3380">
+          <caret line="169" column="4" selection-start-line="169" selection-start-column="4" selection-end-line="169" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/google/protobuf/io/coded_stream.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14920">
+          <caret line="746" column="11" selection-start-line="746" selection-start-column="11" selection-end-line="746" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/PrioritDataGramaFIFO.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/google/protobuf/io/zero_copy_stream_impl.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2940">
+          <caret line="147" column="47" selection-start-line="147" selection-start-column="32" selection-end-line="147" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/PrioritDataGramaFIFO.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rede/CamadaDeRede.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+          <folding>
+            <element signature="e#106#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/util/PrioritFIFO.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
+        <state relative-caret-position="560">
           <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
           <folding>
             <element signature="e#116#132#0" expanded="true" />
@@ -713,65 +722,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/PrioritDataGramaFIFO.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util/PrioritDataGramaFIFO.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/google/protobuf/io/zero_copy_stream_impl.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="147" column="47" selection-start-line="147" selection-start-column="32" selection-end-line="147" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/google/protobuf/io/coded_stream.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-81">
-          <caret line="746" column="11" selection-start-line="746" selection-start-column="11" selection-end-line="746" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/8.3.0/thread">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="169" column="4" selection-start-line="169" selection-start-column="4" selection-end-line="169" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rede/CamadaDeRede.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
-          <caret line="84" column="27" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
+          <caret line="56" column="19" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
           <folding>
             <element signature="e#41#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rede/CamadaDeRede.h">
+    <entry file="file:///usr/include/c++/8.3.0/bits/stl_vector.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
-          <folding>
-            <element signature="e#106#125#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="207">
+          <caret line="475" column="6" selection-start-line="475" selection-start-column="6" selection-end-line="475" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/peer/Leecher.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="62" column="17" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="17" />
+        <state relative-caret-position="418">
+          <caret line="58" column="31" lean-forward="true" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
           <folding>
             <element signature="e#98#117#0" expanded="true" />
           </folding>
@@ -780,11 +751,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/peer/Leecher.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="87" column="9" lean-forward="true" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
+        <state relative-caret-position="1558">
+          <caret line="108" column="53" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="53" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#41#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
