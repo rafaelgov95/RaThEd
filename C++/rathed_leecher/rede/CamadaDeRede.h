@@ -25,11 +25,11 @@ class CamadaDeRede {
 
 private:
 
-    unsigned int socket_fd, bytes_read,address_length;
+    unsigned int socket_fd,bytes_read,address_length;
     char recieve_data[MAX_LENGTH];
     struct sockaddr_in rastreador_address;
     PrioritFIFO filaDataGramas;
-    long rtt=20,F=0;
+    long rtt=20,F=2;
     std::mutex m;
     void StartTemporizacao(const rathed::Datagrama& data);
 public:

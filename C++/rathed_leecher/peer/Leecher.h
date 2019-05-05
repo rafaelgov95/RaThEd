@@ -37,7 +37,7 @@ namespace io = google::protobuf::io;
 class Leecher {
 
 private:
-    int socket_fd, total_bytes_file[8], rastreadorPorta = 8080, numthreads = 4;
+    int socket_fd, total_bytes_file[4], rastreadorPorta = 8080, numthreads = 4;
     std::thread threads[4];
     PrioritDataGramaFIFO filaBuffer;
     struct sockaddr_in rastreador_address;

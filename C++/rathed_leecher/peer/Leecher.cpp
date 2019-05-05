@@ -41,6 +41,8 @@ void Leecher::Run(std::string hash, std::string path) {
         seed_address[i].sin_port = htons(std::stoi(primeiro_peer[1]));
         inet_aton(primeiro_peer[0].c_str(), &seed_address[i].sin_addr);
         total_bytes_file[i] = ConsultarFileSize(hash.c_str(), &seed_address[i]);
+        std::cout << "Teste total_bytes_file : " << total_bytes_file[i] << std::endl;
+
     }
     IniciarDownloadP2P(hash.c_str(), path.c_str(), seed_address);
 
@@ -53,38 +55,32 @@ void Leecher::IniciarDownloadP2P(const char *hash, const char *path, struct sock
     io::ZeroCopyOutputStream *raw_output = new io::FileOutputStream(fd_arq);
     auto *coded_output = new io::CodedOutputStream(raw_output);
     bool flag = true;
+
     while (flag) {
         round += 1;
         int threads_round = 0;
         camadaDeRede->InterfaceGetFilaBuffer().clear();
+        tempInicio = MyTempMS();
         while (threads_round < numthreads) {
-            tempInicio = MyTempMS();
             if (total_bytes_file[0] > bytes_file) {
-                if (threads_round > 4) {
-                    threads[threads_round] = std::thread(&Leecher::DownloandP2P, this, hash, bytes_file,
-                                                         &seed_address[threads_round - 4]);
-//                std::cout <<"TOTAL: "<<total_bytes_file[0]<<" Thread " << threads_round << "PACK: " << bytes_file << std::endl;
-                } else {
-                    threads[threads_round] = std::thread(&Leecher::DownloandP2P, this, hash, bytes_file,
-                                                         &seed_address[threads_round]);
-                }
+                threads[threads_round] = std::thread(&Leecher::DownloandP2P, this, hash, bytes_file,
+                                                     &seed_address[threads_round]);
                 bytes_file += 310;
                 threads_round++;
-
             } else {
                 flag = false;
             }
         }
-
-        for (int j = 0; j < threads_round; ++j) {
-            threads[j].join();
+        for (int i = 0; i < threads_round ; ++i) {
+            threads[i].join();
         }
+
         while (!filaBuffer.empty()) {
             rathed::Datagrama data;
             filaBuffer.next(data);
-//            std::cout << "Gravando PACOTE: " << data.packnumber() << std::endl;
             coded_output->WriteRaw(data.data().c_str(), data.data().size());
         }
+
         tempFim = MyTempMS();
         tempResult = tempFim - tempInicio;
         tempResulTotal += tempResult;
@@ -107,8 +103,9 @@ void Leecher::IniciarDownloadP2P(const char *hash, const char *path, struct sock
 
 
     }
-    std::cout << "FIM " << std::endl;
 
+
+    std::cout << "FIM " << std::endl;
     delete coded_output;
     delete raw_output;
     close(fd_arq);
@@ -118,9 +115,10 @@ void Leecher::IniciarDownloadP2P(const char *hash, const char *path, struct sock
 rathed::Datagrama
 Leecher::EnviarDataGramaParaRede(short type, const char *hash, long bytes, struct sockaddr_in *pointer_address) {
     std::pair<long, rathed::Datagrama> data;
+    int round = 0;
     while (true) {
         camadaDeRede->InterfaceRede(type, hash, bytes, pointer_address);
-        if (camadaDeRede->InterfaceGetFilaBuffer().myPack(type,bytes, data)) {
+        if (camadaDeRede->InterfaceGetFilaBuffer().myPack(type, bytes, data, round)) {
             while (true) {
                 long t1 = data.first;
                 long t2 = MyTempMS();
@@ -128,6 +126,8 @@ Leecher::EnviarDataGramaParaRede(short type, const char *hash, long bytes, struc
                     return data.second;
                 }
             }
+        }else{
+            usleep(1000);
         }
     }
 }
@@ -144,8 +144,7 @@ std::vector<std::string> Leecher::ConsultarRastreador(const char *hash) {
 }
 
 void Leecher::DownloandP2P(const char *hash, long bytes, sockaddr_in *seed_address) {
-    rathed::Datagrama data = EnviarDataGramaParaRede(2, hash, bytes, seed_address);
-    filaBuffer.push(data);
+    filaBuffer.push(EnviarDataGramaParaRede(2, hash, bytes, seed_address));
 }
 
 

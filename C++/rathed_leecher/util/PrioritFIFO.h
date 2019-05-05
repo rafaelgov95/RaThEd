@@ -24,12 +24,9 @@ private:
     std::mutex m;
 public:
     void push(const pack& elem);
-    bool next(pack &elem);
-    void  pop ();
-    bool myPack(short type,long bytes,pack &data);
+    bool myPack(short type,long bytes,pack &data, short round);
     void  clear( );
-    bool  empty( );
-    pack  top ();
+
 
 };
 
