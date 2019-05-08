@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/rede/CamadaDeRede.cpp" description="filaDataGramas.push(std::make_pair(tempofinal, dat..." line="27" />
+    <bookmark url="file://$PROJECT_DIR$/rede/CamadaDeRede.cpp" description="filaDataGramas.push(std::make_pair(tempofinal, dat..." line="26" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
@@ -17,14 +17,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c4a3b644-ab9a-4fb2-89e0-190f47fdc983" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../rathed/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/rathed.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/rathed.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/rathed.dir/peer/Seed.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/cmake-build-debug/CMakeFiles/rathed.dir/peer/Seed.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/cmake-build-debug/rathed" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/cmake-build-debug/rathed" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed/peer/Seed.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/peer/Seed.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed/peer/Seed.h" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/peer/Seed.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed_leecher.dir/peer/Leecher.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/peer/Leecher.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/peer/Leecher.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/widget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/template/widget.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/peer/Leecher.h" beforeDir="false" afterPath="$PROJECT_DIR$/peer/Leecher.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rede/CamadaDeRede.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/rede/CamadaDeRede.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/util.h" beforeDir="false" afterPath="$PROJECT_DIR$/util/util.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/peer/Leecher.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="70" column="21" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
+            <state relative-caret-position="136">
+              <caret line="131" column="27" selection-start-line="131" selection-start-column="27" selection-end-line="131" selection-end-column="27" />
               <folding>
                 <element signature="e#42#62#0" expanded="true" />
               </folding>
@@ -87,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/template/widget.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="163">
-              <caret line="80" column="51" lean-forward="true" selection-start-line="79" selection-start-column="51" selection-end-line="80" selection-end-column="51" />
+              <caret line="80" column="51" selection-start-line="79" selection-start-column="51" selection-end-line="80" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -100,15 +97,6 @@
               <folding>
                 <element signature="e#41#60#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/include/qt/QtWidgets/qlcdnumber.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1880">
-              <caret line="94" column="9" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -128,8 +116,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/peer/Leecher.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+            <state relative-caret-position="136">
+              <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/util/util.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="55" column="7" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -137,8 +134,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rede/CamadaDeRede.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+            <state relative-caret-position="370">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="e#41#66#0" expanded="true" />
               </folding>
@@ -149,8 +146,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rede/CamadaDeRede.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+            <state relative-caret-position="163">
+              <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
               <folding>
                 <element signature="e#106#125#0" expanded="true" />
               </folding>
@@ -196,7 +193,6 @@
         <option value="$PROJECT_DIR$/util/teste1.cpp" />
         <option value="$PROJECT_DIR$/util/PrioritDataGramaFIFO.h" />
         <option value="$PROJECT_DIR$/util/PrioritDataGramaFIFO.cpp" />
-        <option value="$PROJECT_DIR$/util/util.h" />
         <option value="$PROJECT_DIR$/util/PrioritFIFO.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/util/Temporizador.cpp" />
@@ -205,9 +201,10 @@
         <option value="$PROJECT_DIR$/template/widget.h" />
         <option value="$PROJECT_DIR$/util/PrioritFIFO.cpp" />
         <option value="$PROJECT_DIR$/rede/CamadaDeRede.h" />
+        <option value="$PROJECT_DIR$/template/widget.cpp" />
         <option value="$PROJECT_DIR$/rede/CamadaDeRede.cpp" />
         <option value="$PROJECT_DIR$/peer/Leecher.h" />
-        <option value="$PROJECT_DIR$/template/widget.cpp" />
+        <option value="$PROJECT_DIR$/util/util.h" />
         <option value="$PROJECT_DIR$/peer/Leecher.cpp" />
       </list>
     </option>
@@ -377,12 +374,12 @@
       <workItem from="1557233498732" duration="7965000" />
       <workItem from="1557252980143" duration="5238000" />
       <workItem from="1557261022338" duration="4360000" />
-      <workItem from="1557275110115" duration="17344000" />
+      <workItem from="1557275110115" duration="17693000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="300202000" />
+    <option name="totallyTimeSpent" value="300551000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -399,16 +396,16 @@
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50177306" side_tool="true" weight="0.23037323" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49822694" visible="true" weight="0.24581431" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49822694" visible="true" weight="0.24581431" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969433" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7203842" weight="0.32171157" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7203842" visible="true" weight="0.2646593" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8740662" weight="0.23771791" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49893278" weight="0.3286026" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info active="true" anchor="bottom" id="Messages" order="8" sideWeight="0.8041622" visible="true" weight="0.4183835" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.8041622" weight="0.4183835" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49733192" weight="0.3242358" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010672" side_tool="true" weight="0.37772927" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4994664" weight="0.32969433" />
@@ -750,13 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/util.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/model.pb.cc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -885,13 +875,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/peer/Leecher.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
@@ -902,37 +885,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/widget.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="80" column="51" lean-forward="true" selection-start-line="79" selection-start-column="51" selection-end-line="80" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rede/CamadaDeRede.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-          <folding>
-            <element signature="e#41#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rede/CamadaDeRede.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+        <state relative-caret-position="163">
+          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
           <folding>
             <element signature="e#106#125#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/rede/CamadaDeRede.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#41#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/widget.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="80" column="51" selection-start-line="79" selection-start-column="51" selection-end-line="80" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/util.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="55" column="7" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/peer/Leecher.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/peer/Leecher.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="70" column="21" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
+        <state relative-caret-position="136">
+          <caret line="131" column="27" selection-start-line="131" selection-start-column="27" selection-end-line="131" selection-end-column="27" />
           <folding>
             <element signature="e#42#62#0" expanded="true" />
           </folding>

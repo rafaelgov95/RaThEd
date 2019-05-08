@@ -129,7 +129,7 @@ void Leecher::IniciarDownloadP2PSequencial(const char *hash, const char *path, s
 void Leecher::IniciarDownloadP2PAleatorio(const char *hash, const char *path, sockaddr_in *seed_address) {
     long tempInicio = 0, tempFim = 0, tempResult = 0, tempResulTotal = 0;
     int fd_arq = open(path, O_CREAT | O_WRONLY,
-                      0666), bytes_file = 0, round = 0, jitter = 0, jitterImp = 0, jitterPar = 0;
+                      0666), round = 0, jitter = 0, jitterImp = 0, jitterPar = 0;
     io::ZeroCopyOutputStream *raw_output = new io::FileOutputStream(fd_arq);
     auto *coded_output = new io::CodedOutputStream(raw_output);
     bool flag = true;

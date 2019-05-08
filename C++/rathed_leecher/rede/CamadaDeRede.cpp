@@ -21,7 +21,6 @@ void CamadaDeRede::StartTemporizacao(const rathed::Datagrama &data) {
 
     int x = rand() % 100 + 1; //distribuicao não sei fazer
     if (F > x) {
-//        std::cout<<"Falha: "<<x<< std::endl;
     } else {
         int wx = 0;
         int timeEnvio = rtt + wx;// tempodoTime

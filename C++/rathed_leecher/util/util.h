@@ -53,7 +53,11 @@ static void error(char *message) {
     perror(message);
     exit(1);
 }
-
+struct ComparableBuffer{
+    explicit ComparableBuffer(rathed::Datagrama &data):data(data){}
+    rathed::Datagrama data;
+    bool operator <(ComparableBuffer const& other)const{return data.packnumber()<other.data.packnumber();}
+};
 
 static rathed::Datagrama DataGrama(int type, int32_t packNumber,std::string bytes) {
     rathed::Datagrama new_data;

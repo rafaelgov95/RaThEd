@@ -40,11 +40,7 @@
 namespace io = google::protobuf::io;
 
 
-struct ComparableBuffer{
-    explicit ComparableBuffer(rathed::Datagrama &data):data(data){}
-    rathed::Datagrama data;
-    bool operator <(ComparableBuffer const& other)const{return data.packnumber()<other.data.packnumber();}
-};
+
 
 class Leecher {
 
