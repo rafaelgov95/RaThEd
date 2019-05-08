@@ -31,7 +31,7 @@
 class Seed {
 
 private:
-    int R=1,rastreadorPorta = 8080;
+    int R=4,rastreadorPorta = 8080;
     fd_set readfds;
     int numfd = 0;
     int socket_fd, bytes_read, bytes_total;

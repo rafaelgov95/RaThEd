@@ -47,8 +47,8 @@ Seed::Seed(int porta) {
 
 void Seed::Run() {
 
-//    AtualizarRastreador("cc72fc24056ced9ce13a287ca1243d48", "/home/rafael/Downloads/t.mp3");
-    AtualizarRastreador("cc72fc24056ced9ce13a287ca1243d48", "/home/rafael/Downloads/rafael.txt");
+    AtualizarRastreador("cc72fc24056ced9ce13a287ca1243d48", "/home/rafael/Downloads/t.mp3");
+//    AtualizarRastreador("cc72fc24056ced9ce13a287ca1243d48", "/home/rafael/Downloads/rafael.txt");
 
 
 

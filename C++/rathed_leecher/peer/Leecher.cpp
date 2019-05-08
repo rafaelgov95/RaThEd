@@ -68,14 +68,14 @@ void Leecher::IniciarDownloadP2PSequencial(const char *hash, const char *path, s
                       0666), bytes_file = 1, round = 0, jitter = 0, jitterImp = 0, jitterPar = 0;
     io::ZeroCopyOutputStream *raw_output = new io::FileOutputStream(fd_arq);
     auto *coded_output = new io::CodedOutputStream(raw_output);
-    bool flag = true;
+    bool flag,flag_2;
+    flag = flag_2 = true;
 
     while (flag) {
         round += 1;
         int threads_round = 0;
         camadaDeRede->InterfaceGetFilaBuffer().clear();
         tempInicio = MyTempMS();
-        bool flag_2 = true;
         while (threads_round < numthreads && flag_2) {
             if (total_de_pacotes + 1 > bytes_file) {
                 threads[threads_round] = std::thread(&Leecher::DownloandP2P, this, hash, bytes_file,
@@ -95,7 +95,7 @@ void Leecher::IniciarDownloadP2PSequencial(const char *hash, const char *path, s
             filaBuffer.next(data);
             coded_output->WriteRaw(data.data().c_str(), data.data().size());
         }
-        if (!flag_2) {
+        if (flag_2) {
             tempFim = MyTempMS();
             tempResult = tempFim - tempInicio;
             tempResulTotal += tempResult;
