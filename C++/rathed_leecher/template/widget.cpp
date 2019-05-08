@@ -75,10 +75,10 @@ void Widget::on_btn_add_clicked() {
 
     // Em seguida, defina os dados por nomes e caminhos de arquivo
     // na lista de reprodução e na tabela que exibe a lista de reprodução
-//    leecher.Run("cc72fc24056ced9ce13a287ca1243d48",
-//                "/home/rafael/Documentos/musicas_testes/vai_teia.txt",1);
     leecher.Run("cc72fc24056ced9ce13a287ca1243d48",
-                "/home/rafael/Documentos/musicas_testes/vai_teia.mp3",1);
+                "/home/rafael/Documentos/musicas_testes/vai_teia.txt",1);
+//    leecher.Run("cc72fc24056ced9ce13a287ca1243d48",
+//                "/home/rafael/Documentos/musicas_testes/vai_teia.mp3",1);
 //    QString filePath = "/home/rafael/Documentos/musicas_testes/stream_voice.mp3";
 //            foreach (QString filePath, files) {
 //            QMediaContent *mc=new QMediaContent(QUrl("http://192.168.42.129:8080/video"));

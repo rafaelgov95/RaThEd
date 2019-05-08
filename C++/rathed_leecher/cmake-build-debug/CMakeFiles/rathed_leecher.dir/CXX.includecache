@@ -25,6 +25,8 @@ util/util.h
 -
 CamadaDeRede.h
 ../util/CamadaDeRede.h
+PrioritDataGramaFIFO.h
+../util/PrioritDataGramaFIFO.h
 
 ..//util/util.h
 fstream

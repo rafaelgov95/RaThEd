@@ -68,7 +68,7 @@ void Leecher::IniciarDownloadP2PSequencial(const char *hash, const char *path, s
                       0666), num_pacote = 1, round = 0, jitter = 0, jitterImp = 0, jitterPar = 0;
     io::ZeroCopyOutputStream *raw_output = new io::FileOutputStream(fd_arq);
     auto *coded_output = new io::CodedOutputStream(raw_output);
-    bool flag,flag_2;
+    bool flag, flag_2;
     flag = flag_2 = true;
 
     while (flag) {
@@ -120,7 +120,7 @@ void Leecher::IniciarDownloadP2PSequencial(const char *hash, const char *path, s
     }
 
 
-    std::cout << "FIM TOTAL DE: " << coded_output->ByteCount()<< " Bytes Gravados"<<std::endl;
+    std::cout << "FIM TOTAL DE: " << coded_output->ByteCount() << " Bytes Gravados" << std::endl;
     delete coded_output;
     delete raw_output;
     close(fd_arq);
@@ -129,7 +129,7 @@ void Leecher::IniciarDownloadP2PSequencial(const char *hash, const char *path, s
 void Leecher::IniciarDownloadP2PAleatorio(const char *hash, const char *path, sockaddr_in *seed_address) {
     long tempInicio = 0, tempFim = 0, tempResult = 0, tempResulTotal = 0;
     int fd_arq = open(path, O_CREAT | O_WRONLY,
-                      0666), num_pacote=1, round = 0, jitter = 0, jitterImp = 0, jitterPar = 0;
+                      0666), num_pacote = 1, round = 0, jitter = 0, jitterImp = 0, jitterPar = 0;
     io::ZeroCopyOutputStream *raw_output = new io::FileOutputStream(fd_arq);
     auto *coded_output = new io::CodedOutputStream(raw_output);
     bool flag = true;
@@ -199,7 +199,7 @@ void Leecher::IniciarDownloadP2PAleatorio(const char *hash, const char *path, so
     }
 
 
-    std::cout << "FIM TOTAL DE: " << coded_output->ByteCount()<< " Bytes Gravados"<<std::endl;
+    std::cout << "FIM TOTAL DE: " << coded_output->ByteCount() << " Bytes Gravados" << std::endl;
     delete coded_output;
     delete raw_output;
     close(fd_arq);
@@ -214,31 +214,19 @@ Leecher::EnviarDataGramaParaRede(long temp, short type, const char *hash, long b
     std::promise<void> done;
     std::shared_future<void> done_future(done.get_future());
     int round = 0;
-    bool isTemporizador = false;
-    while (true) {
+    Temporizador *temporizador;
+    bool flag = true;
+    while (flag) {
         camadaDeRede->InterfaceRede(type, hash, bytes, pointer_address);
-        long isTimeOutput = MyTempMS();
-//        if (((isTimeOutput-temp)>10) || camadaDeRede->InterfaceGetFilaBuffer().myPack(type, bytes, data, round)) {
-        if (camadaDeRede->InterfaceGetFilaBuffer().myPack(type, bytes, data, round)) {
 
-//            if(isTemporizador) {
-//                done.set_value();
-//                isTemporizador=false;
-//            }
-            while (true) {
-                long t1 = data.first;
-                long t2 = MyTempMS();
-                if (t1 <= t2) {
-                    return data.second;
-                }
-//                else if((isTimeOutput-temp)>10 && type==2){
-//                    return data.second;
-//                }
-            }
-        } else {
-//            isTemporizador=true;
-//            Temporizador t1(done_future,10ms,camadaDeRede, type, hash,  bytes, pointer_address);
-//            auto x = t1.run();
+        //            temporizador= new Temporizador(done_future,std::chrono::milliseconds((MyTempMS() - data.first)),filaBuffer,data.second);
+//            temporizador->run();
+//            flag=false;
+        if (camadaDeRede->InterfaceGetFilaBuffer().myPack(type, bytes, data, round)) {
+            int tempoEspera = (MyTempMS() - data.first) * -1000;
+            usleep(tempoEspera);
+            return data.second;
+
         }
     }
 }

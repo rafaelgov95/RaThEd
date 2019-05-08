@@ -3,6 +3,8 @@
 
 CMakeFiles/rathed_leecher.dir/main.cpp.o: ../peer/Leecher.h
 CMakeFiles/rathed_leecher.dir/main.cpp.o: ../util/PrioritFIFO.h
+CMakeFiles/rathed_leecher.dir/main.cpp.o: ../util/Temporizador.h
+CMakeFiles/rathed_leecher.dir/main.cpp.o: ../util/util.h
 CMakeFiles/rathed_leecher.dir/main.cpp.o: ../model/model.pb.h
 CMakeFiles/rathed_leecher.dir/main.cpp.o: ../rede/CamadaDeRede.h
 CMakeFiles/rathed_leecher.dir/main.cpp.o: ../template/widget.h
@@ -645,6 +647,7 @@ CMakeFiles/rathed_leecher.dir/util/Temporizador.cpp.o: ../util/util.h
 CMakeFiles/rathed_leecher.dir/util/Temporizador.cpp.o: ../model/model.pb.h
 CMakeFiles/rathed_leecher.dir/util/Temporizador.cpp.o: ../rede/CamadaDeRede.h
 CMakeFiles/rathed_leecher.dir/util/Temporizador.cpp.o: ../util/util.h
+CMakeFiles/rathed_leecher.dir/util/Temporizador.cpp.o: ../util/PrioritDataGramaFIFO.h
 CMakeFiles/rathed_leecher.dir/util/Temporizador.cpp.o: ../util/Temporizador.cpp
 CMakeFiles/rathed_leecher.dir/util/Temporizador.cpp.o: ../util/Temporizador.h
 

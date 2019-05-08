@@ -4,6 +4,8 @@
 CMakeFiles/rathed_leecher.dir/main.cpp.o
  ..//peer/Leecher.h
  ..//util/PrioritFIFO.h
+ ..//util/Temporizador.h
+ ..//util/util.h
  ../model/model.pb.h
  ../rede/CamadaDeRede.h
  ../template/widget.h
@@ -646,5 +648,6 @@ CMakeFiles/rathed_leecher.dir/util/Temporizador.cpp.o
  ../model/model.pb.h
  ../rede/CamadaDeRede.h
  ../util/util.h
+ /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/util/PrioritDataGramaFIFO.h
  /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/util/Temporizador.cpp
  /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/util/Temporizador.h
