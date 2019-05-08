@@ -10,6 +10,7 @@
 #include <QStandardItemModel>
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
+#include <peer/Leecher.h>
 
 namespace Ui {
     class Widget;
@@ -33,6 +34,7 @@ private:
     QStandardItemModel  *m_playListModel;   // Modelo de dados da lista de reprodução para exibição
     QMediaPlayer        *m_player;          // Jogador pista
     QMediaPlaylist      *m_playlist;        // Lista de reprodução do player
+    Leecher leecher;
 };
 
 #endif //RATHED_LEECHER_WIDGET_H

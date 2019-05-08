@@ -200,6 +200,12 @@
 		<Unit filename="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/util/PrioritFIFO.h">
 			<Option target="rathed_leecher"/>
 		</Unit>
+		<Unit filename="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/util/Temporizador.cpp">
+			<Option target="rathed_leecher"/>
+		</Unit>
+		<Unit filename="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/util/Temporizador.h">
+			<Option target="rathed_leecher"/>
+		</Unit>
 		<Unit filename="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/util/util.h">
 			<Option target="rathed_leecher"/>
 		</Unit>

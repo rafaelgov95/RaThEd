@@ -39,6 +39,16 @@ private:
     std::string val_;
 };
 
+struct CompareLong {
+    CompareLong(const long val) : val_(val) {}
+
+    bool operator()(const long &element) const {
+        return val_ == element;
+    }
+
+private:
+    long val_;
+};
 struct CompareHashPeer {
     CompareHashPeer(const std::string val) : val_(val) {}
 

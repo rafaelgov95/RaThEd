@@ -379,6 +379,33 @@ util/PrioritFIFO.cpp.s:
 	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/util/PrioritFIFO.cpp.s
 .PHONY : util/PrioritFIFO.cpp.s
 
+util/Temporizador.o: util/Temporizador.cpp.o
+
+.PHONY : util/Temporizador.o
+
+# target to build an object file
+util/Temporizador.cpp.o:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/util/Temporizador.cpp.o
+.PHONY : util/Temporizador.cpp.o
+
+util/Temporizador.i: util/Temporizador.cpp.i
+
+.PHONY : util/Temporizador.i
+
+# target to preprocess a source file
+util/Temporizador.cpp.i:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/util/Temporizador.cpp.i
+.PHONY : util/Temporizador.cpp.i
+
+util/Temporizador.s: util/Temporizador.cpp.s
+
+.PHONY : util/Temporizador.s
+
+# target to generate assembly for a file
+util/Temporizador.cpp.s:
+	$(MAKE) -f CMakeFiles/rathed_leecher.dir/build.make CMakeFiles/rathed_leecher.dir/util/Temporizador.cpp.s
+.PHONY : util/Temporizador.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -416,6 +443,9 @@ help:
 	@echo "... util/PrioritFIFO.o"
 	@echo "... util/PrioritFIFO.i"
 	@echo "... util/PrioritFIFO.s"
+	@echo "... util/Temporizador.o"
+	@echo "... util/Temporizador.i"
+	@echo "... util/Temporizador.s"
 .PHONY : help
 
 

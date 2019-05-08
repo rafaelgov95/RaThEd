@@ -45,7 +45,7 @@ private:
     void enviarPeers(std::string hash);
 
 public:
-    Rastreador(int porta);
+    Rastreador(unsigned int porta);
     ~Rastreador();
 
     void consultaFiles(rathed::Datagrama &data);

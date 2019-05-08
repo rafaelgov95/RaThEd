@@ -15,9 +15,9 @@ void StartSeed(int porta){
     Seed s(porta);
 }
 
-void StartSeeds(std::thread threads_seeds[],int portaBase) {
+void StartSeeds(std::thread threads_seeds[],int numThreads,int portaBase) {
 
-    for (int i = 0; i < 4; ++i) {
+    for (int i = 0; i < numThreads; ++i) {
         threads_seeds[i]=std::thread(StartSeed,portaBase+(i+1));
     }
 }
@@ -25,14 +25,15 @@ void StartSeeds(std::thread threads_seeds[],int portaBase) {
 
 int main(int argc, char * argv[])
 {
-
-    std::thread threads_seeds[4];
+    int numThreads=4;
+    std::thread threads_seeds[numThreads];
     std::thread thread_rastreador(StartRastreador, 8080);
-    sleep(2);
-    StartSeeds(threads_seeds,8080);
+    sleep(1);
+    StartSeeds(threads_seeds,numThreads,8080);
+    sleep(1);
     thread_rastreador.join();
-    for (int i = 0; i <4; ++i) {
-        threads_seeds[i].join();
+    for (auto & threads_seed : threads_seeds) {
+        threads_seed.join();
     }
 
 }

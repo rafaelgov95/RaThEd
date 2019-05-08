@@ -8,15 +8,19 @@
 #include <QDir>
 #include <Leecher.h>
 
+//void StartLeecher(std::string hash, std::string path) {
+//    Leecher leecher;
+//    leecher.Run(hash, path);
+//
+//}
 
 Widget::Widget(QWidget *parent) :
         QWidget(parent),
         ui(new Ui::Widget) {
     ui->setupUi(this);
-
     m_playListModel = new QStandardItemModel(this);
     ui->playlistView->setModel(m_playListModel);    // defini modelo de dados
-    ui->lcdNumber->display(QString::number(leecher.velocidade,'f',4));
+
     // Definir cabecalhos da tabela
     m_playListModel->setHorizontalHeaderLabels(QStringList() << tr("Audio Stream")
                                                              << tr("Audio Path"));
@@ -29,6 +33,7 @@ Widget::Widget(QWidget *parent) :
 
     // Habilida o ajuste do tamanho da ultima coluna visivel
     ui->playlistView->horizontalHeader()->setStretchLastSection(true);
+//    ui->playlistView.set
     m_player = new QMediaPlayer(this);          // Inicializar Play
     m_playlist = new QMediaPlaylist(m_player);  // Iniciliar lista de repoducao
     m_player->setPlaylist(m_playlist);          // Instale a lista de reprodução no player
@@ -45,7 +50,7 @@ Widget::Widget(QWidget *parent) :
     connect(ui->btn_stop, &QToolButton::clicked, m_player, &QMediaPlayer::stop);
     connect(ui->volume, &QSlider::valueChanged, m_player, &QMediaPlayer::setVolume); // conectando volume
 
-//    connect(leecher.total_bytes_baixados,ui->lcdNumber,&QLCDNumber::value);
+
     // Quando um clique duplo na faixa da tabela, defina a faixa na lista de reprodução
     connect(ui->playlistView, &QTableView::doubleClicked, [this](const QModelIndex &index) {
         m_playlist->setCurrentIndex(index.row());
@@ -75,10 +80,9 @@ void Widget::on_btn_add_clicked() {
 
     // Em seguida, defina os dados por nomes e caminhos de arquivo
     // na lista de reprodução e na tabela que exibe a lista de reprodução
-    leecher.Run("cc72fc24056ced9ce13a287ca1243d48",
-                "/home/rafael/Documentos/musicas_testes/vai_teia.txt",1);
-//    leecher.Run("cc72fc24056ced9ce13a287ca1243d48",
-//                "/home/rafael/Documentos/musicas_testes/vai_teia.mp3",1);
+//    std::thread thread_rastreador = std::thread(&Leecher::Run, "cc72fc24056ced9ce13a287ca1243d48",
+//                                                "/home/rafael/Documentos/musicas_testes/vai_teia.mp3");
+leecher.Run( "cc72fc24056ced9ce13a287ca1243d48","/home/rafael/Documentos/musicas_testes/vai_teia.mp3");
 //    QString filePath = "/home/rafael/Documentos/musicas_testes/stream_voice.mp3";
 //            foreach (QString filePath, files) {
 //            QMediaContent *mc=new QMediaContent(QUrl("http://192.168.42.129:8080/video"));

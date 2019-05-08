@@ -14,6 +14,34 @@ queue
 model.pb.h
 ../util/model.pb.h
 
+..//util/Temporizador.h
+iostream
+-
+future
+-
+chrono
+-
+util/util.h
+-
+CamadaDeRede.h
+../util/CamadaDeRede.h
+
+..//util/util.h
+fstream
+-
+model.pb.h
+-
+iostream
+../util/iostream
+vector
+../util/vector
+string
+../util/string
+unistd.h
+-
+windows.h
+-
+
 ../model/model.pb.h
 limits
 -
@@ -115,8 +143,12 @@ QMediaPlayer
 -
 QMediaPlaylist
 -
+util/Temporizador.h
+-
 
 /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/peer/Leecher.h
+utility
+-
 sys/types.h
 -
 sys/socket.h
@@ -161,6 +193,16 @@ PrioritDataGramaFIFO.h
 /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/peer/PrioritDataGramaFIFO.h
 CamadaDeRede.h
 /home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/peer/CamadaDeRede.h
+assert.h
+-
+chrono
+-
+future
+-
+QtCore/QString
+-
+set
+-
 
 /usr/include/qt/QtCore/QSharedDataPointer
 qshareddata.h

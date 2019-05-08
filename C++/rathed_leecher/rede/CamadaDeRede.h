@@ -29,15 +29,14 @@ private:
     char recieve_data[MAX_LENGTH];
     struct sockaddr_in rastreador_address;
     PrioritFIFO filaDataGramas;
-    long rtt=20,F=2;
+    long rtt=20,F=30;
     std::mutex m;
     void StartTemporizacao(const rathed::Datagrama& data);
+
 public:
     CamadaDeRede(unsigned int socket, struct sockaddr_in &rastreador);
     void InterfaceRede(short type,const char* hash, long bytes, struct sockaddr_in* seed_address) ;
     PrioritFIFO& InterfaceGetFilaBuffer();
-
-
 };
 
 

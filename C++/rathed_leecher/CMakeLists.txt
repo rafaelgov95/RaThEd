@@ -30,7 +30,7 @@ qt5_wrap_ui(UI_HEADERS ${UI})
 
 add_executable(rathed_leecher main.cpp peer/Leecher.cpp peer/Leecher.h
         util/util.h model/model.pb.cc model/model.pb.h template/widget.cpp template/widget.h template/ui_widget.h resources/buttons.qrc rede/CamadaDeRede.h rede/CamadaDeRede.cpp util/PrioritFIFO.cpp  util/PrioritFIFO.h
-        util/PrioritDataGramaFIFO.cpp util/PrioritDataGramaFIFO.h
+        util/PrioritDataGramaFIFO.cpp util/PrioritDataGramaFIFO.h util/Temporizador.cpp util/Temporizador.h
         )
 set_target_properties(rathed_leecher PROPERTIES AUTOMOC TRUE)
 

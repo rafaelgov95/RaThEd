@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'widget.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.3
+** Created by: Qt User Interface Compiler version 5.12.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -14,7 +14,6 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QSlider>
@@ -39,7 +38,6 @@ public:
     QToolButton *btn_previous;
     QToolButton *btn_next;
     QSlider *volume;
-    QLCDNumber *lcdNumber;
 
     void setupUi(QWidget *Widget)
     {
@@ -59,7 +57,7 @@ public:
         currentTrack->setGeometry(QRect(150, 70, 161, 16));
         progressBar = new QProgressBar(Widget);
         progressBar->setObjectName(QString::fromUtf8("progressBar"));
-        progressBar->setGeometry(QRect(110, 40, 361, 20));
+        progressBar->setGeometry(QRect(10, 40, 461, 20));
         progressBar->setValue(0);
         layoutWidget = new QWidget(Widget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
@@ -123,9 +121,6 @@ public:
 
         horizontalLayout->addWidget(volume);
 
-        lcdNumber = new QLCDNumber(Widget);
-        lcdNumber->setObjectName(QString::fromUtf8("lcdNumber"));
-        lcdNumber->setGeometry(QRect(20, 40, 64, 23));
 
         retranslateUi(Widget);
 

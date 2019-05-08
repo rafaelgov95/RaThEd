@@ -15,19 +15,19 @@ void PrioritFIFO::clear() {
 }
 
 
-bool PrioritFIFO::myPack(short type,long packnumber, pack &data, short round) {
+bool PrioritFIFO::myPack(short type, long packnumber, pack &data, short round) {
     std::lock_guard<std::mutex> lock(m);
     if (!fila.empty()) {
-        if (fila.top().second.packnumber() == packnumber && type==2 ) {
+//        if (fila.top().second.packnumber() == packnumber && type == 2) {
             data = fila.top();
             fila.pop();
             return true;
-        }else if(type==3){
+//        } else if (type == 3) {
             data = fila.top();
             fila.pop();
             return true;
-        }
-        fila.pop();
+//        }
+//        fila.pop();
     }
     return false;
 }

@@ -109,4 +109,6 @@ util.h
 /home/rafael/Documentos/Projetos/RaThEd/C++/rathed/peer/util.h
 unistd.h
 -
+queue
+-
 

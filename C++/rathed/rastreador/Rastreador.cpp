@@ -11,7 +11,8 @@ Rastreador::~Rastreador() {
 }
 
 // public functions
-Rastreador::Rastreador(int porta) {
+Rastreador::Rastreador(unsigned int porta) {
+    srand((unsigned int) time(NULL));
     if ((socket_fd = socket(AF_INET, SOCK_DGRAM, 0)) == -1) {
         error("socket()");
     }
@@ -118,12 +119,12 @@ void Rastreador::atualizarPeer(rathed::Datagrama data) {
 
     auto it = std::find_if(filesPeers.begin(), filesPeers.end(), CompareHashPeer(data.data()));
     if (it.base() == nullptr) {
-        std::cout << "ID NULL: " << result << std::endl;
+        std::cout << "HASH ADICIONADA: " << data.data() << std::endl;
         _data.second.emplace_back(result);
         filesPeers.push_back(_data);
 
     } else {
-        std::cout << "ID: " << it.base()->second.size() << " | " << it.base()->first << data.data() << std::endl;
+        std::cout <<"OUTROS " << it.base()->second.size() <<" PEERS COM ESTA HASH "<< " | " << it.base()->first << std::endl;
         it.base()->second.emplace_back(result);
 
     }

@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/template/widget.cpp" "/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/template/widget.cpp.o"
   "/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/util/PrioritDataGramaFIFO.cpp" "/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/util/PrioritDataGramaFIFO.cpp.o"
   "/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/util/PrioritFIFO.cpp" "/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/util/PrioritFIFO.cpp.o"
+  "/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/util/Temporizador.cpp" "/home/rafael/Documentos/Projetos/RaThEd/C++/rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/util/Temporizador.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

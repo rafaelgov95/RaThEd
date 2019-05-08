@@ -6,8 +6,8 @@
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_WIDGET_H
-#define UI_WIDGET_H
+#ifndef WIDGET_H
+#define WIDGET_H
 
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
@@ -151,4 +151,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // UI_WIDGET_H
+#endif // WIDGET_H
