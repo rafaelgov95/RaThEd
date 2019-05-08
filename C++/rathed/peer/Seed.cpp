@@ -74,21 +74,21 @@ void Seed::Run() {
     }
 }
 
-void Seed::IsEnviarMesnagem(rathed::Datagrama &data, int opcao) {
+void Seed::IsTypeEnviar(rathed::Datagrama &data, int opcao) {
     if (opcao == 1) {
         int valor = rand() % (10 + 1);
         if (valor > R) {
             std::cout << "Bloco Dispinivel: " << std::endl;
             std::cout << "Enviar Bloco Dispinivel!" << std::endl;
-            EnviarArquivoSequencial(data);
+            EnviarSequencial(data);
         } else {
             std::cout << "Bloco Não Dispinivel!: " << std::endl;
             mySleep(20);
             std::cout << "Consultar Bloco....." << std::endl;
-            IsEnviarMesnagem(data, 1);
+            IsTypeEnviar(data, 1);
         }
     } else if (opcao==2) {
-        EnviarArquivoAleatorio(data);
+        EnviarAleatorio(data);
     }
 }
 
@@ -100,7 +100,7 @@ void Seed::TratarMensagem(rathed::Datagrama &data) {
             Desconectar();
             break;
         case 2:
-            IsEnviarMesnagem(data,1);
+            IsTypeEnviar(data,1);
             break;
         case 3:
             ConsultaFileSize(data);
@@ -153,7 +153,7 @@ rathed::Datagrama Seed::check_list_enviados(int x) {
 }
 
 
-void Seed::EnviarArquivoAleatorio(rathed::Datagrama &data) {
+void Seed::EnviarAleatorio(rathed::Datagrama &data) {
 
 
     auto it = std::find_if(file.begin(), file.end(), CompareHash(data.data()));
@@ -178,7 +178,7 @@ void Seed::EnviarArquivoAleatorio(rathed::Datagrama &data) {
     }
 }
 
-void Seed::EnviarArquivoSequencial(rathed::Datagrama &data) {
+void Seed::EnviarSequencial(rathed::Datagrama &data) {
     auto it_find = std::find_if(file.begin(), file.end(), CompareHash(data.data()));
     rathed::Datagrama datagrama;
     if (it_find.base() != nullptr && data.packnumber() > 0) {

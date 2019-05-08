@@ -49,8 +49,8 @@ private:
 
     void TratarMensagem(rathed::Datagrama& data);
 
-    void EnviarArquivoAleatorio(rathed::Datagrama& data);
-    void EnviarArquivoSequencial(rathed::Datagrama& data);
+    void EnviarAleatorio(rathed::Datagrama& data);
+    void EnviarSequencial(rathed::Datagrama& data);
 
     void AtualizacaoRealizada(rathed::Datagrama& data);
 
@@ -58,7 +58,7 @@ private:
 
     void Desconectar();
 
-    void IsEnviarMesnagem(rathed::Datagrama& dat, int type);
+    void IsTypeEnviar(rathed::Datagrama& data, int opcao);
 
 public:
     Seed(int porta);
