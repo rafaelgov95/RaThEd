@@ -20,8 +20,6 @@
       <change beforePath="$PROJECT_DIR$/../rathed/peer/Seed.h" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed/peer/Seed.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/peer/Leecher.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/peer/Leecher.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/peer/Leecher.h" beforeDir="false" afterPath="$PROJECT_DIR$/peer/Leecher.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rede/CamadaDeRede.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/rede/CamadaDeRede.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/util.h" beforeDir="false" afterPath="$PROJECT_DIR$/util/util.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/peer/Leecher.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="131" column="27" selection-start-line="131" selection-start-column="27" selection-end-line="131" selection-end-column="27" />
+            <state relative-caret-position="202">
+              <caret line="24" column="26" lean-forward="true" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
               <folding>
                 <element signature="e#42#62#0" expanded="true" />
               </folding>
@@ -102,22 +100,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template/widget.h">
+        <entry file="file://$PROJECT_DIR$/peer/Leecher.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="11" />
-              <folding>
-                <element signature="e#107#125#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="162">
+              <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/peer/Leecher.h">
+        <entry file="file://$PROJECT_DIR$/util/PrioritDataGramaFIFO.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+            <state relative-caret-position="182">
+              <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -203,8 +198,8 @@
         <option value="$PROJECT_DIR$/rede/CamadaDeRede.h" />
         <option value="$PROJECT_DIR$/template/widget.cpp" />
         <option value="$PROJECT_DIR$/rede/CamadaDeRede.cpp" />
-        <option value="$PROJECT_DIR$/peer/Leecher.h" />
         <option value="$PROJECT_DIR$/util/util.h" />
+        <option value="$PROJECT_DIR$/peer/Leecher.h" />
         <option value="$PROJECT_DIR$/peer/Leecher.cpp" />
       </list>
     </option>
@@ -374,12 +369,12 @@
       <workItem from="1557233498732" duration="7965000" />
       <workItem from="1557252980143" duration="5238000" />
       <workItem from="1557261022338" duration="4360000" />
-      <workItem from="1557275110115" duration="17693000" />
+      <workItem from="1557275110115" duration="18012000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="300551000" />
+    <option name="totallyTimeSpent" value="300870000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -396,17 +391,17 @@
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50177306" side_tool="true" weight="0.23037323" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49822694" visible="true" weight="0.24581431" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49822694" visible="true" weight="0.24581431" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969433" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7203842" visible="true" weight="0.2646593" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7203842" weight="0.2646593" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8740662" weight="0.23771791" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49893278" weight="0.3286026" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.8041622" weight="0.4183835" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49733192" weight="0.3242358" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49733192" visible="true" weight="0.04754358" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010672" side_tool="true" weight="0.37772927" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4994664" weight="0.32969433" />
       <window_info anchor="bottom" id="CMake" order="12" sideWeight="0.49893278" weight="0.37772927" />
@@ -733,13 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/PrioritDataGramaFIFO.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/8.3.0/bits/stl_queue.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
@@ -919,17 +907,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/util/PrioritDataGramaFIFO.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/peer/Leecher.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+        <state relative-caret-position="162">
+          <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/peer/Leecher.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="131" column="27" selection-start-line="131" selection-start-column="27" selection-end-line="131" selection-end-column="27" />
+        <state relative-caret-position="202">
+          <caret line="24" column="26" lean-forward="true" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
           <folding>
             <element signature="e#42#62#0" expanded="true" />
           </folding>

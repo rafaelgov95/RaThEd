@@ -48,7 +48,7 @@ private:
     int socket_fd, total_bytes_file[4], rastreadorPorta = 8080, numthreads = 4;
     std::thread threads[4];
     PrioritDataGramaFIFO filaBuffer;
-    std::set<ComparableBuffer>tempBuffer;
+    std::set<ComparableBuffer>setBuffer;
     struct sockaddr_in rastreador_address;
     CamadaDeRede *camadaDeRede;
     int total_de_pacotes;
@@ -64,7 +64,7 @@ private:
 
     void IniciarDownloadP2PAleatorio(const char* hash, const char* path, struct sockaddr_in seed_address[]);
 
-    void DownloandP2P(const char* hash, long bytes, struct sockaddr_in* pointer_addresss);
+    void DownloandP2P(const char* hash, long num_pacote, struct sockaddr_in* pointer_addresss);
 
 public:
     Leecher();

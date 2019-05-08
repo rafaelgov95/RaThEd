@@ -65,7 +65,7 @@ void Leecher::Run(std::string hash, std::string path, int type_download) {
 void Leecher::IniciarDownloadP2PSequencial(const char *hash, const char *path, struct sockaddr_in seed_address[]) {
     long tempInicio = 0, tempFim = 0, tempResult = 0, tempResulTotal = 0;
     int fd_arq = open(path, O_CREAT | O_WRONLY,
-                      0666), bytes_file = 1, round = 0, jitter = 0, jitterImp = 0, jitterPar = 0;
+                      0666), num_pacote = 1, round = 0, jitter = 0, jitterImp = 0, jitterPar = 0;
     io::ZeroCopyOutputStream *raw_output = new io::FileOutputStream(fd_arq);
     auto *coded_output = new io::CodedOutputStream(raw_output);
     bool flag,flag_2;
@@ -77,10 +77,10 @@ void Leecher::IniciarDownloadP2PSequencial(const char *hash, const char *path, s
         camadaDeRede->InterfaceGetFilaBuffer().clear();
         tempInicio = MyTempMS();
         while (threads_round < numthreads && flag_2) {
-            if (total_de_pacotes + 1 > bytes_file) {
-                threads[threads_round] = std::thread(&Leecher::DownloandP2P, this, hash, bytes_file,
+            if (total_de_pacotes + 1 > num_pacote) {
+                threads[threads_round] = std::thread(&Leecher::DownloandP2P, this, hash, num_pacote,
                                                      &seed_address[threads_round]);
-                bytes_file += 1;
+                num_pacote += 1;
                 threads_round++;
             } else {
                 flag = flag_2 = false;
@@ -129,13 +129,10 @@ void Leecher::IniciarDownloadP2PSequencial(const char *hash, const char *path, s
 void Leecher::IniciarDownloadP2PAleatorio(const char *hash, const char *path, sockaddr_in *seed_address) {
     long tempInicio = 0, tempFim = 0, tempResult = 0, tempResulTotal = 0;
     int fd_arq = open(path, O_CREAT | O_WRONLY,
-                      0666), round = 0, jitter = 0, jitterImp = 0, jitterPar = 0;
+                      0666), num_pacote=1, round = 0, jitter = 0, jitterImp = 0, jitterPar = 0;
     io::ZeroCopyOutputStream *raw_output = new io::FileOutputStream(fd_arq);
     auto *coded_output = new io::CodedOutputStream(raw_output);
     bool flag = true;
-    long inicioDownload = 1;
-
-    std::cout << "tTtal_de_pacotes: " << total_de_pacotes << std::endl;
 
     while (flag) {
         round += 1;
@@ -143,12 +140,11 @@ void Leecher::IniciarDownloadP2PAleatorio(const char *hash, const char *path, so
         camadaDeRede->InterfaceGetFilaBuffer().clear();
         tempInicio = MyTempMS();
         while (threads_round < numthreads && flag) {
-            if (total_de_pacotes + 1 > inicioDownload) {
-                threads[threads_round] = std::thread(&Leecher::DownloandP2P, this, hash, inicioDownload,
+            if (total_de_pacotes + 1 > num_pacote) {
+                threads[threads_round] = std::thread(&Leecher::DownloandP2P, this, hash, num_pacote,
                                                      &seed_address[threads_round]);
                 threads_round++;
             } else {
-                std::cout << "FIM" << std::endl;
                 flag = false;
             }
         }
@@ -159,25 +155,25 @@ void Leecher::IniciarDownloadP2PAleatorio(const char *hash, const char *path, so
         while (!filaBuffer.empty()) {
             rathed::Datagrama data;
             filaBuffer.next(data);
-            tempBuffer.emplace(data);
+            setBuffer.emplace(data);
         }
-        if ((*tempBuffer.begin()).data.packnumber() == -1) {
+        if ((*setBuffer.begin()).data.packnumber() == -1) {
             flag = false;
         } else {
 
             bool flag_entrou_gravacao = false;
-            while (inicioDownload == (*tempBuffer.begin()).data.packnumber()) {
+            while (num_pacote == (*setBuffer.begin()).data.packnumber()) {
                 if (flag_entrou_gravacao) {
                     tempInicio = MyTempMS();
                 }
                 flag_entrou_gravacao = true;
-                rathed::Datagrama data = (*tempBuffer.begin()).data;
+                rathed::Datagrama data = (*setBuffer.begin()).data;
                 coded_output->WriteRaw(data.data().c_str(), data.data().size());
-                inicioDownload += 1;
+                num_pacote += 1;
 //                std::cout << "2 Numer Pack: " << " Gravados ate Agora no Buffer: " << coded_output->ByteCount()
 //                          << " Gravando Bytes: " << data.data().size() << " Packnumber: "
 //                          << data.packnumber() << " inicioDownload: " << inicioDownload << std::endl;
-                tempBuffer.erase(tempBuffer.begin());
+                setBuffer.erase(setBuffer.begin());
                 tempFim = MyTempMS();
                 tempResult = tempFim - tempInicio;
                 tempResulTotal += tempResult;
@@ -203,7 +199,7 @@ void Leecher::IniciarDownloadP2PAleatorio(const char *hash, const char *path, so
     }
 
 
-    std::cout << "FIM " << std::endl;
+    std::cout << "FIM TOTAL DE: " << coded_output->ByteCount()<< " Bytes Gravados"<<std::endl;
     delete coded_output;
     delete raw_output;
     close(fd_arq);
@@ -259,9 +255,9 @@ std::vector<std::string> Leecher::ConsultarRastreador(const char *hash) {
 
 }
 
-void Leecher::DownloandP2P(const char *hash, long bytes, sockaddr_in *seed_address) {
+void Leecher::DownloandP2P(const char *hash, long num_pacote, sockaddr_in *seed_address) {
     long time = MyTempMS();
-    filaBuffer.push(EnviarDataGramaParaRede(time, 2, hash, bytes, seed_address));
+    filaBuffer.push(EnviarDataGramaParaRede(time, 2, hash, num_pacote, seed_address));
 }
 
 
