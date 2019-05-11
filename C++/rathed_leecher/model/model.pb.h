@@ -191,10 +191,10 @@ class Datagrama final :
 
   // accessors -------------------------------------------------------
 
-  // required bytes Data = 3;
+  // required bytes Data = 4;
   bool has_data() const;
   void clear_data();
-  static const int kDataFieldNumber = 3;
+  static const int kDataFieldNumber = 4;
   const ::std::string& data() const;
   void set_data(const ::std::string& value);
   #if LANG_CXX11
@@ -206,10 +206,17 @@ class Datagrama final :
   ::std::string* release_data();
   void set_allocated_data(::std::string* data);
 
-  // required int32 PackNumber = 2;
+  // optional int32 SeqNumber = 2;
+  bool has_seqnumber() const;
+  void clear_seqnumber();
+  static const int kSeqNumberFieldNumber = 2;
+  ::google::protobuf::int32 seqnumber() const;
+  void set_seqnumber(::google::protobuf::int32 value);
+
+  // required int32 PackNumber = 3;
   bool has_packnumber() const;
   void clear_packnumber();
-  static const int kPackNumberFieldNumber = 2;
+  static const int kPackNumberFieldNumber = 3;
   ::google::protobuf::int32 packnumber() const;
   void set_packnumber(::google::protobuf::int32 value);
 
@@ -217,7 +224,7 @@ class Datagrama final :
   bool has_type() const;
   void clear_type();
   static const int kTypeFieldNumber = 1;
-  DatagramaType type(int i) const;
+  ::rathed::DatagramaType type() const;
   void set_type(::rathed::DatagramaType value);
 
   // @@protoc_insertion_point(class_scope:rathed.Datagrama)
@@ -231,6 +238,7 @@ class Datagrama final :
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::internal::ArenaStringPtr data_;
+  ::google::protobuf::int32 seqnumber_;
   ::google::protobuf::int32 packnumber_;
   int type_;
   friend struct ::TableStruct_model_2eproto;
@@ -339,7 +347,7 @@ class VectorString final :
 
   // accessors -------------------------------------------------------
 
-  // repeated string peer = 1;
+  // repeated string peers = 1;
   int peers_size() const;
   void clear_peers();
   static const int kPeersFieldNumber = 1;
@@ -384,42 +392,60 @@ class VectorString final :
 
 // required .rathed.DatagramaType Type = 1;
 inline bool Datagrama::has_type() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 inline void Datagrama::clear_type() {
   type_ = 1;
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000008u;
 }
-inline DatagramaType Datagrama::type(int i) const {
+inline ::rathed::DatagramaType Datagrama::type() const {
   // @@protoc_insertion_point(field_get:rathed.Datagrama.Type)
   return static_cast< ::rathed::DatagramaType >(type_);
 }
 inline void Datagrama::set_type(::rathed::DatagramaType value) {
   assert(::rathed::DatagramaType_IsValid(value));
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
   type_ = value;
   // @@protoc_insertion_point(field_set:rathed.Datagrama.Type)
 }
 
-// required int32 PackNumber = 2;
-inline bool Datagrama::has_packnumber() const {
+// optional int32 SeqNumber = 2;
+inline bool Datagrama::has_seqnumber() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Datagrama::clear_seqnumber() {
+  seqnumber_ = 0;
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline ::google::protobuf::int32 Datagrama::seqnumber() const {
+  // @@protoc_insertion_point(field_get:rathed.Datagrama.SeqNumber)
+  return seqnumber_;
+}
+inline void Datagrama::set_seqnumber(::google::protobuf::int32 value) {
+  _has_bits_[0] |= 0x00000002u;
+  seqnumber_ = value;
+  // @@protoc_insertion_point(field_set:rathed.Datagrama.SeqNumber)
+}
+
+// required int32 PackNumber = 3;
+inline bool Datagrama::has_packnumber() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
 }
 inline void Datagrama::clear_packnumber() {
   packnumber_ = 0;
-  _has_bits_[0] &= ~0x00000002u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline ::google::protobuf::int32 Datagrama::packnumber() const {
   // @@protoc_insertion_point(field_get:rathed.Datagrama.PackNumber)
   return packnumber_;
 }
 inline void Datagrama::set_packnumber(::google::protobuf::int32 value) {
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000004u;
   packnumber_ = value;
   // @@protoc_insertion_point(field_set:rathed.Datagrama.PackNumber)
 }
 
-// required bytes Data = 3;
+// required bytes Data = 4;
 inline bool Datagrama::has_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -483,7 +509,7 @@ inline void Datagrama::set_allocated_data(::std::string* data) {
 
 // VectorString
 
-// repeated string peer = 1;
+// repeated string peers = 1;
 inline int VectorString::peers_size() const {
   return peers_.size();
 }
@@ -491,64 +517,64 @@ inline void VectorString::clear_peers() {
   peers_.Clear();
 }
 inline const ::std::string& VectorString::peers(int index) const {
-  // @@protoc_insertion_point(field_get:rathed.VectorString.peer)
+  // @@protoc_insertion_point(field_get:rathed.VectorString.peers)
   return peers_.Get(index);
 }
 inline ::std::string* VectorString::mutable_peers(int index) {
-  // @@protoc_insertion_point(field_mutable:rathed.VectorString.peer)
+  // @@protoc_insertion_point(field_mutable:rathed.VectorString.peers)
   return peers_.Mutable(index);
 }
 inline void VectorString::set_peers(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:rathed.VectorString.peer)
+  // @@protoc_insertion_point(field_set:rathed.VectorString.peers)
   peers_.Mutable(index)->assign(value);
 }
 #if LANG_CXX11
 inline void VectorString::set_peers(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:rathed.VectorString.peer)
+  // @@protoc_insertion_point(field_set:rathed.VectorString.peers)
   peers_.Mutable(index)->assign(std::move(value));
 }
 #endif
 inline void VectorString::set_peers(int index, const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   peers_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:rathed.VectorString.peer)
+  // @@protoc_insertion_point(field_set_char:rathed.VectorString.peers)
 }
 inline void VectorString::set_peers(int index, const char* value, size_t size) {
   peers_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:rathed.VectorString.peer)
+  // @@protoc_insertion_point(field_set_pointer:rathed.VectorString.peers)
 }
 inline ::std::string* VectorString::add_peers() {
-  // @@protoc_insertion_point(field_add_mutable:rathed.VectorString.peer)
+  // @@protoc_insertion_point(field_add_mutable:rathed.VectorString.peers)
   return peers_.Add();
 }
 inline void VectorString::add_peers(const ::std::string& value) {
   peers_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:rathed.VectorString.peer)
+  // @@protoc_insertion_point(field_add:rathed.VectorString.peers)
 }
 #if LANG_CXX11
 inline void VectorString::add_peers(::std::string&& value) {
   peers_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:rathed.VectorString.peer)
+  // @@protoc_insertion_point(field_add:rathed.VectorString.peers)
 }
 #endif
 inline void VectorString::add_peers(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   peers_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:rathed.VectorString.peer)
+  // @@protoc_insertion_point(field_add_char:rathed.VectorString.peers)
 }
 inline void VectorString::add_peers(const char* value, size_t size) {
   peers_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:rathed.VectorString.peer)
+  // @@protoc_insertion_point(field_add_pointer:rathed.VectorString.peers)
 }
 inline const ::google::protobuf::RepeatedPtrField<::std::string>&
 VectorString::peers() const {
-  // @@protoc_insertion_point(field_list:rathed.VectorString.peer)
+  // @@protoc_insertion_point(field_list:rathed.VectorString.peers)
   return peers_;
 }
 inline ::google::protobuf::RepeatedPtrField<::std::string>*
 VectorString::mutable_peers() {
-  // @@protoc_insertion_point(field_mutable_list:rathed.VectorString.peer)
+  // @@protoc_insertion_point(field_mutable_list:rathed.VectorString.peers)
   return &peers_;
 }
 

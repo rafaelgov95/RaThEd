@@ -9,25 +9,36 @@ void PrioritFIFO::push(const pack &elem) {
     fila.push(elem);
 }
 
+
 void PrioritFIFO::clear() {
     std::priority_queue<pack, std::vector<pack>, compPackPair> empty;
     std::swap(fila, empty);
 }
 
-
-bool PrioritFIFO::myPack(short type, long packnumber, pack &data, short round) {
+bool PrioritFIFO::myPack(short type, long packnumber, pack &data, short type_dow,short round) {
     std::lock_guard<std::mutex> lock(m);
     if (!fila.empty()) {
-//        if (fila.top().second.packnumber() == packnumber && type == 2) {
+        if (type == 2 && type_dow == 2) {
             data = fila.top();
             fila.pop();
             return true;
-//        } else if (type == 3) {
+        } else if (fila.top().second.packnumber() == packnumber && type == 2 && type_dow == 1) {
             data = fila.top();
             fila.pop();
             return true;
-//        }
-//        fila.pop();
+        }else if (type == 2 && type_dow == 1 && round==1) {
+            fila.pop();
+        } else if (type == 1 ) {
+            data = fila.top();
+            fila.pop();
+            return true;
+        }else if(type==3)  {
+            data = fila.top();
+            fila.pop();
+            return true;
+        }else{
+            fila.pop();
+        }
     }
     return false;
 }

@@ -70,10 +70,12 @@ const ::google::protobuf::uint32 TableStruct_model_2eproto::offsets[] PROTOBUF_S
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::rathed::Datagrama, type_),
+  PROTOBUF_FIELD_OFFSET(::rathed::Datagrama, seqnumber_),
   PROTOBUF_FIELD_OFFSET(::rathed::Datagrama, packnumber_),
   PROTOBUF_FIELD_OFFSET(::rathed::Datagrama, data_),
-  2,
+  3,
   1,
+  2,
   0,
   PROTOBUF_FIELD_OFFSET(::rathed::VectorString, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::rathed::VectorString, _internal_metadata_),
@@ -84,8 +86,8 @@ const ::google::protobuf::uint32 TableStruct_model_2eproto::offsets[] PROTOBUF_S
   ~0u,
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 8, sizeof(::rathed::Datagrama)},
-  { 11, 17, sizeof(::rathed::VectorString)},
+  { 0, 9, sizeof(::rathed::Datagrama)},
+  { 13, 19, sizeof(::rathed::VectorString)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -100,16 +102,17 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 };
 
 const char descriptor_table_protodef_model_2eproto[] =
-  "\n\013model.proto\022\006rathed\"R\n\tDatagrama\022#\n\004Ty"
-  "pe\030\001 \002(\0162\025.rathed.DatagramaType\022\022\n\nPackN"
-  "umber\030\002 \002(\005\022\014\n\004Data\030\003 \002(\014\"\035\n\014VectorStrin"
-  "g\022\r\n\005peers\030\001 \003(\t*<\n\rDatagramaType\022\007\n\003ACK"
-  "\020\001\022\007\n\003SND\020\002\022\007\n\003SYN\020\003\022\007\n\003UPD\020\004\022\007\n\003LST\020\005"
+  "\n\013model.proto\022\006rathed\"e\n\tDatagrama\022#\n\004Ty"
+  "pe\030\001 \002(\0162\025.rathed.DatagramaType\022\021\n\tSeqNu"
+  "mber\030\002 \001(\005\022\022\n\nPackNumber\030\003 \002(\005\022\014\n\004Data\030\004"
+  " \002(\014\"\035\n\014VectorString\022\r\n\005peers\030\001 \003(\t*<\n\rD"
+  "atagramaType\022\007\n\003ACK\020\001\022\007\n\003SND\020\002\022\007\n\003SYN\020\003\022"
+  "\007\n\003UPD\020\004\022\007\n\003LST\020\005"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_model_2eproto = {
   false, InitDefaults_model_2eproto, 
   descriptor_table_protodef_model_2eproto,
-  "model.proto", &assign_descriptors_table_model_2eproto, 198,
+  "model.proto", &assign_descriptors_table_model_2eproto, 217,
 };
 
 void AddDescriptors_model_2eproto() {
@@ -147,10 +150,13 @@ void Datagrama::InitAsDefaultInstance() {
 class Datagrama::HasBitSetters {
  public:
   static void set_has_type(Datagrama* msg) {
-    msg->_has_bits_[0] |= 0x00000004u;
+    msg->_has_bits_[0] |= 0x00000008u;
+  }
+  static void set_has_seqnumber(Datagrama* msg) {
+    msg->_has_bits_[0] |= 0x00000002u;
   }
   static void set_has_packnumber(Datagrama* msg) {
-    msg->_has_bits_[0] |= 0x00000002u;
+    msg->_has_bits_[0] |= 0x00000004u;
   }
   static void set_has_data(Datagrama* msg) {
     msg->_has_bits_[0] |= 0x00000001u;
@@ -159,6 +165,7 @@ class Datagrama::HasBitSetters {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Datagrama::kTypeFieldNumber;
+const int Datagrama::kSeqNumberFieldNumber;
 const int Datagrama::kPackNumberFieldNumber;
 const int Datagrama::kDataFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -177,9 +184,9 @@ Datagrama::Datagrama(const Datagrama& from)
   if (from.has_data()) {
     data_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.data_);
   }
-  ::memcpy(&packnumber_, &from.packnumber_,
+  ::memcpy(&seqnumber_, &from.seqnumber_,
     static_cast<size_t>(reinterpret_cast<char*>(&type_) -
-    reinterpret_cast<char*>(&packnumber_)) + sizeof(type_));
+    reinterpret_cast<char*>(&seqnumber_)) + sizeof(type_));
   // @@protoc_insertion_point(copy_constructor:rathed.Datagrama)
 }
 
@@ -187,7 +194,9 @@ void Datagrama::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_Datagrama_model_2eproto.base);
   data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  packnumber_ = 0;
+  ::memset(&seqnumber_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&packnumber_) -
+      reinterpret_cast<char*>(&seqnumber_)) + sizeof(packnumber_));
   type_ = 1;
 }
 
@@ -219,8 +228,10 @@ void Datagrama::Clear() {
   if (cached_has_bits & 0x00000001u) {
     data_.ClearNonDefaultToEmptyNoArena();
   }
-  if (cached_has_bits & 0x00000006u) {
-    packnumber_ = 0;
+  if (cached_has_bits & 0x0000000eu) {
+    ::memset(&seqnumber_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&packnumber_) -
+        reinterpret_cast<char*>(&seqnumber_)) + sizeof(packnumber_));
     type_ = 1;
   }
   _has_bits_.Clear();
@@ -252,16 +263,23 @@ const char* Datagrama::_InternalParse(const char* begin, const char* end, void* 
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // required int32 PackNumber = 2;
+      // optional int32 SeqNumber = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        msg->set_seqnumber(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // required int32 PackNumber = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
         msg->set_packnumber(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // required bytes Data = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+      // required bytes Data = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         object = msg->mutable_data();
@@ -327,9 +345,22 @@ bool Datagrama::MergePartialFromCodedStream(
         break;
       }
 
-      // required int32 PackNumber = 2;
+      // optional int32 SeqNumber = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+          HasBitSetters::set_has_seqnumber(this);
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &seqnumber_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // required int32 PackNumber = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
           HasBitSetters::set_has_packnumber(this);
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
@@ -340,9 +371,9 @@ bool Datagrama::MergePartialFromCodedStream(
         break;
       }
 
-      // required bytes Data = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+      // required bytes Data = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
                 input, this->mutable_data()));
         } else {
@@ -380,20 +411,25 @@ void Datagrama::SerializeWithCachedSizes(
 
   cached_has_bits = _has_bits_[0];
   // required .rathed.DatagramaType Type = 1;
-  if (cached_has_bits & 0x00000004u) {
+  if (cached_has_bits & 0x00000008u) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
-            1, this->type(0), output);
+      1, this->type(), output);
   }
 
-  // required int32 PackNumber = 2;
+  // optional int32 SeqNumber = 2;
   if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->packnumber(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->seqnumber(), output);
   }
 
-  // required bytes Data = 3;
+  // required int32 PackNumber = 3;
+  if (cached_has_bits & 0x00000004u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->packnumber(), output);
+  }
+
+  // required bytes Data = 4;
   if (cached_has_bits & 0x00000001u) {
     ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
-      3, this->data(), output);
+      4, this->data(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -411,21 +447,26 @@ void Datagrama::SerializeWithCachedSizes(
 
   cached_has_bits = _has_bits_[0];
   // required .rathed.DatagramaType Type = 1;
-  if (cached_has_bits & 0x00000004u) {
+  if (cached_has_bits & 0x00000008u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-            1, this->type(0), target);
+      1, this->type(), target);
   }
 
-  // required int32 PackNumber = 2;
+  // optional int32 SeqNumber = 2;
   if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->packnumber(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->seqnumber(), target);
   }
 
-  // required bytes Data = 3;
+  // required int32 PackNumber = 3;
+  if (cached_has_bits & 0x00000004u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->packnumber(), target);
+  }
+
+  // required bytes Data = 4;
   if (cached_has_bits & 0x00000001u) {
     target =
       ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
-        3, this->data(), target);
+        4, this->data(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -441,14 +482,14 @@ size_t Datagrama::RequiredFieldsByteSizeFallback() const {
   size_t total_size = 0;
 
   if (has_data()) {
-    // required bytes Data = 3;
+    // required bytes Data = 4;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::BytesSize(
         this->data());
   }
 
   if (has_packnumber()) {
-    // required int32 PackNumber = 2;
+    // required int32 PackNumber = 3;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
         this->packnumber());
@@ -457,7 +498,7 @@ size_t Datagrama::RequiredFieldsByteSizeFallback() const {
   if (has_type()) {
     // required .rathed.DatagramaType Type = 1;
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type(0));
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
   }
 
   return total_size;
@@ -471,20 +512,20 @@ size_t Datagrama::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  if (((_has_bits_[0] & 0x00000007) ^ 0x00000007) == 0) {  // All required fields are present.
-    // required bytes Data = 3;
+  if (((_has_bits_[0] & 0x0000000d) ^ 0x0000000d) == 0) {  // All required fields are present.
+    // required bytes Data = 4;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::BytesSize(
         this->data());
 
-    // required int32 PackNumber = 2;
+    // required int32 PackNumber = 3;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
         this->packnumber());
 
     // required .rathed.DatagramaType Type = 1;
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type(0));
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
 
   } else {
     total_size += RequiredFieldsByteSizeFallback();
@@ -492,6 +533,14 @@ size_t Datagrama::ByteSizeLong() const {
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // optional int32 SeqNumber = 2;
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000002u) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->seqnumber());
+  }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -521,15 +570,18 @@ void Datagrama::MergeFrom(const Datagrama& from) {
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
+  if (cached_has_bits & 0x0000000fu) {
     if (cached_has_bits & 0x00000001u) {
       _has_bits_[0] |= 0x00000001u;
       data_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.data_);
     }
     if (cached_has_bits & 0x00000002u) {
-      packnumber_ = from.packnumber_;
+      seqnumber_ = from.seqnumber_;
     }
     if (cached_has_bits & 0x00000004u) {
+      packnumber_ = from.packnumber_;
+    }
+    if (cached_has_bits & 0x00000008u) {
       type_ = from.type_;
     }
     _has_bits_[0] |= cached_has_bits;
@@ -551,7 +603,7 @@ void Datagrama::CopyFrom(const Datagrama& from) {
 }
 
 bool Datagrama::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
+  if ((_has_bits_[0] & 0x0000000d) != 0x0000000d) return false;
   return true;
 }
 
@@ -565,6 +617,7 @@ void Datagrama::InternalSwap(Datagrama* other) {
   swap(_has_bits_[0], other->_has_bits_[0]);
   data_.Swap(&other->data_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(seqnumber_, other->seqnumber_);
   swap(packnumber_, other->packnumber_);
   swap(type_, other->type_);
 }
@@ -647,13 +700,13 @@ const char* VectorString::_InternalParse(const char* begin, const char* end, voi
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // repeated string peer = 1;
+      // repeated string peers = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          ctx->extra_parse_data().SetFieldName("rathed.VectorString.peer");
+          ctx->extra_parse_data().SetFieldName("rathed.VectorString.peers");
           object = msg->add_peers();
           if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
             parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8Verify;
@@ -700,7 +753,7 @@ bool VectorString::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated string peer = 1;
+      // repeated string peers = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
@@ -709,7 +762,7 @@ bool VectorString::MergePartialFromCodedStream(
             this->peers(this->peers_size() - 1).data(),
             static_cast<int>(this->peers(this->peers_size() - 1).length()),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "rathed.VectorString.peer");
+            "rathed.VectorString.peers");
         } else {
           goto handle_unusual;
         }
@@ -743,12 +796,12 @@ void VectorString::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated string peer = 1;
+  // repeated string peers = 1;
   for (int i = 0, n = this->peers_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->peers(i).data(), static_cast<int>(this->peers(i).length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "rathed.VectorString.peer");
+      "rathed.VectorString.peers");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       1, this->peers(i), output);
   }
@@ -766,12 +819,12 @@ void VectorString::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated string peer = 1;
+  // repeated string peers = 1;
   for (int i = 0, n = this->peers_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->peers(i).data(), static_cast<int>(this->peers(i).length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "rathed.VectorString.peer");
+      "rathed.VectorString.peers");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(1, this->peers(i), target);
   }
@@ -797,7 +850,7 @@ size_t VectorString::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated string peer = 1;
+  // repeated string peers = 1;
   total_size += 1 *
       ::google::protobuf::internal::FromIntSize(this->peers_size());
   for (int i = 0, n = this->peers_size(); i < n; i++) {

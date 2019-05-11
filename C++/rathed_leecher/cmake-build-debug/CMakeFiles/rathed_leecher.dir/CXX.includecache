@@ -205,6 +205,8 @@ QtCore/QString
 -
 set
 -
+stack
+-
 
 /usr/include/qt/QtCore/QSharedDataPointer
 qshareddata.h

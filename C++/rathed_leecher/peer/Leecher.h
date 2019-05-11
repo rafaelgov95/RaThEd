@@ -35,11 +35,13 @@
 #include <future>
 #include <QtCore/QString>
 #include <set>
+
 #define MAX_LENGTH 320
+#define MAX_LENGTH_FILE 320-15
+
+#include <stack>
 
 namespace io = google::protobuf::io;
-
-
 
 
 class Leecher {
@@ -48,32 +50,38 @@ private:
     int socket_fd, total_bytes_file[4], rastreadorPorta = 8080, numthreads = 4;
     std::thread threads[4];
     PrioritDataGramaFIFO filaBuffer;
-    std::set<ComparableBuffer>setBuffer;
+    std::queue<rathed::Datagrama> filaConfirma;
+    std::set<ComparableBuffer> setBuffer;
     struct sockaddr_in rastreador_address;
+    struct sockaddr_in *seed_address;
     CamadaDeRede *camadaDeRede;
     int total_de_pacotes;
 
     rathed::Datagrama
-    EnviarDataGramaParaRede(long tempInicial,short type, const char* hash, long bytes, struct sockaddr_in *pointer_address);
+    EnviarDataGramaParaRede(int type_down, const rathed::Datagrama &data_, struct sockaddr_in &memory_seed_address);
 
-    std::vector<std::string> ConsultarRastreador(const char* hash);
+    std::vector<std::string> ConsultarRastreador(const char *hash);
 
-    long ConsultarFileSize(const char* hash,struct sockaddr_in* pointer_address);
+    long ConsultarFileSize(const char *hash, struct sockaddr_in &pointer_address);
 
-    void IniciarDownloadP2PSequencial(const char *hash, const char *path, struct sockaddr_in seed_address[]);
+    void IniciarDownloadP2PSequencial(const char *hash, const char *path, struct sockaddr_in *pointers_address);
 
-    void IniciarDownloadP2PAleatorio(const char* hash, const char* path, struct sockaddr_in seed_address[]);
+    void IniciarDownloadP2PAleatorio(const char *hash, const char *path, struct sockaddr_in *pointer_address);
 
-    void DownloandP2P(const char* hash, long num_pacote, struct sockaddr_in* pointer_addresss);
+    void DownloandP2P(int type_down, const char *hash, long num_pacote, struct sockaddr_in memory_seed_address);
+
+    void DownloandP2PConfirmar(int type_down, const rathed::Datagrama& data_, struct sockaddr_in memory_seed_address);
+
+    void ConfirmarPacotes(const char *hash, int num_pack);
 
 public:
     Leecher();
 
     ~Leecher();
-    long total_bytes_baixados=0,velocidade = 100;
-    void Run(std::string hash, std::string path, int type_download);
 
+    double total_bytes_baixados = 0, velocidade = 100;
 
+    void Run(const char *hash, const char *path, int type_download);
 
 
 };

@@ -18,9 +18,9 @@ CamadaDeRede::CamadaDeRede(unsigned int socket, struct sockaddr_in &rastreador) 
 
 
 void CamadaDeRede::StartTemporizacao(const rathed::Datagrama &data) {
-
     int x = rand() % 100 + 1; //distribuicao não sei fazer
     if (F > x) {
+//        std::cout<<"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"<<std::endl;
     } else {
         int wx = 0;
         int timeEnvio = rtt + wx;// tempodoTime
@@ -29,11 +29,10 @@ void CamadaDeRede::StartTemporizacao(const rathed::Datagrama &data) {
 }
 
 
-void CamadaDeRede::InterfaceRede(short type, const char *hash, long bytes, struct sockaddr_in *seed_address) {
+void CamadaDeRede::InterfaceRede(rathed::Datagrama data,struct sockaddr_in seed_address) {
     std::lock_guard<std::mutex> lock(m);
-    rathed::Datagrama data = DataGrama(type, bytes, hash);
     if (sendto(socket_fd, DataGramaSerial(data), data.ByteSizeLong(), 0,
-               (struct sockaddr *) seed_address, sizeof(struct sockaddr)) <= 0)
+               (struct sockaddr *) &seed_address, sizeof(struct sockaddr)) <= 0)
         error("Erro ao enviar");
     bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH, 0, (struct sockaddr *) &seed_address,
                           &address_length);

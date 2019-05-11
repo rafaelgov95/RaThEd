@@ -4,11 +4,10 @@
 
 #include "Temporizador.h"
 
-//Temporizador::Temporizador(std::shared_future<void>f,std::chrono::milliseconds interval, CamadaDeRede *camada,short type, const char *hash, long bytes, struct sockaddr_in *pointer_address): interval{interval}, done{f},camada{camada},type{type},hash{hash},pointer_address{pointer_address}
-//{ }
-
-Temporizador::Temporizador(std::shared_future<void> &f,std::chrono::milliseconds interval,PrioritDataGramaFIFO &fila, rathed::Datagrama &data):interval{interval}, done{f}, fila(fila), data(data)
+Temporizador::Temporizador(std::shared_future<void>f,std::chrono::milliseconds interval, CamadaDeRede *camada,short type, const char *hash, long bytes, struct sockaddr_in *pointer_address): interval{interval}, done{f},camada{camada},type{type},hash{hash},pointer_address{pointer_address}
 { }
+
+
 
 std::future<void> Temporizador::run() {
     return std::async(std::launch::async, &Temporizador::tickWrapper, this);
@@ -22,14 +21,17 @@ void Temporizador::tickWrapper() {
     do {
         status = done.wait_for(interval);
         if (status == std::future_status::timeout) {
-            tickfunction();
+//            tickfunction();
         }
     } while (status != std::future_status::ready);
 }
-void Temporizador::tickfunction() {
-    std::lock_guard<std::mutex> lock(cout_mutex);
+//void Temporizador::tickfunction() {
+//    std::lock_guard<std::mutex> lock(cout_mutex);
+//    std::cout << "Executar Temporizador"  << std::endl;
+//
 //    camada->InterfaceRede(type, hash, bytes, pointer_address);
-    fila.push(data);
-    std::cout << "tick (" << std::this_thread::get_id() << ")" << "TEMP: "<<MyTempMS()<<std::endl;
-}
+//
+//    std::cout << "tick (" << std::this_thread::get_id() << ")" << "TEMP: "<<MyTempMS()<<std::endl;
+//    return ;
+//}
 
