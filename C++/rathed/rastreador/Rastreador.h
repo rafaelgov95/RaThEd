@@ -26,7 +26,6 @@
 #include "model.pb.h"
 
 #define MAX_LENGTH 320
-//char *END_FLAG = "================END";
 
 class Rastreador {
 
@@ -35,23 +34,23 @@ private:
     int numfd=0;
     int socket_fd, bytes_read;
     unsigned int address_length;
-    char recieve_data[MAX_LENGTH ];
+    char recieve_data[MAX_LENGTH];
     struct sockaddr_in server_address, client_address;
     std::vector<std::pair<std::string,std::vector<std::string>>> filesPeers;
 
 
-    void run();
-    void selectOpcao(rathed::Datagrama);
-    void enviarPeers(std::string hash);
+    void Run();
+    void SelectOpcao(rathed::Datagrama);
+    void EnviarPeers(std::string hash);
 
 public:
     Rastreador(unsigned int porta);
     ~Rastreador();
 
-    void consultaFiles(rathed::Datagrama &data);
-    void atualizarPeer(rathed::Datagrama data);
+    void ConsultaFiles(rathed::Datagrama &data);
+    void AtualizarPeer(rathed::Datagrama data);
 
-    void listarFiles(rathed::Datagrama data);
+    void ListarFiles(rathed::Datagrama data);
 
 };
 

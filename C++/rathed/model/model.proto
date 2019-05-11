@@ -11,9 +11,11 @@ enum DatagramaType {
 }
 
 message Datagrama {
+
   required DatagramaType Type=1;
-  required int32 PackNumber=2;                       /* unique client identifier */
-  required bytes Data=3;
+  optional int32 SeqNumber=2;
+  required int32 PackNumber=3;                       /* unique client identifier */
+  required bytes Data=4;
 }
 
 message VectorString {

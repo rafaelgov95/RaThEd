@@ -1,3 +1,5 @@
+#include <utility>
+
 //
 // Created by rafael on 10/04/19.
 //
@@ -27,6 +29,18 @@ static void mySleep(int sleepMs)
     Sleep(sleepMs);
 #endif
 }
+struct CompareBuffer {
+    CompareBuffer(rathed::Datagrama &val) : val_(val) {}
+    bool operator()(const rathed::Datagrama &element) const {
+        return val_.seqnumber() == element.seqnumber();
+    }
+    bool operator==(const rathed::Datagrama &element) {
+        return val_.seqnumber() == element.seqnumber();
+    }
+
+private:
+    rathed::Datagrama val_;
+};
 
 struct CompareHash {
     CompareHash(const std::string val) : val_(val) {}

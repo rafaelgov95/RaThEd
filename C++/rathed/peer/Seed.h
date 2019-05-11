@@ -24,45 +24,37 @@
 #include "util.h"
 #include <unistd.h>
 #include <queue>
-
 #define MAX_LENGTH 320
-
+#define MAX_LENGTH_FILE 305
 
 class Seed {
 
 private:
-    int R=4,rastreadorPorta = 8080;
-    fd_set readfds;
-    int numfd = 0;
-    int socket_fd, bytes_read, bytes_total;
+    int opcao=2, R=2 ,rastreadorPorta = 8080;
+    int my_port, numfd = 0, socket_fd, bytes_read, bytes_total;
     unsigned int address_length;
-    char recieve_data[MAX_LENGTH-10];
+    long total_de_pacotes=0;
+    char recieve_data[MAX_LENGTH_FILE];
     struct sockaddr_in server_address, client_address, rastreador_address;
+    fd_set readfds;
     std::vector<std::pair<std::string, std::string>> file;
     std::vector<rathed::Datagrama>buffer;
-    long total_de_pacotes=0;
+
 
     void Run();
     rathed::Datagrama check_list_enviados(int x );
-
     void AtualizarRastreador(const std::string& hash,const std::string& path);
 
     void TratarMensagem(rathed::Datagrama& data);
-
     void EnviarAleatorio(rathed::Datagrama& data);
     void EnviarSequencial(rathed::Datagrama& data);
-
     void AtualizacaoRealizada(rathed::Datagrama& data);
-
     void ConsultaFileSize(rathed::Datagrama& data);
-
-    void Desconectar();
-
-    void IsTypeEnviar(rathed::Datagrama& data, int opcao);
+    void ConfirmarPacote(rathed::Datagrama& data);
+    void IsTypeEnviar(rathed::Datagrama& data);
 
 public:
     Seed(int porta);
-
     ~Seed();
 
 

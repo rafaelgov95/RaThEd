@@ -65,13 +65,13 @@ void Rastreador::selectOpcao(rathed::Datagrama data) {
     if (data.type() == 1) {
         //ACK
     } else if (data.type() == 2) {
-        consultaFiles(data);// funcao de buscar Hash do file
+        ConsultaFiles(data);// funcao de buscar Hash do file
     } else if (data.type() == 3) {
         //SYN
     } else if (data.type() == 4) {
-        atualizarPeer(data);
+        AtualizarPeer(data);
     } else if (data.type() == 5) {
-        listarFiles(data);// funcao de buscar Hash do file
+        ListarFiles(data);// funcao de buscar Hash do file
 
     } else {
         if (sendto(socket_fd, std::string("Not Option").c_str(), strlen(std::string("Not Option").c_str()), 0,
@@ -82,7 +82,7 @@ void Rastreador::selectOpcao(rathed::Datagrama data) {
 
 }
 
-void Rastreador::enviarPeers(std::string peers) {
+void Rastreador::EnviarPeers(std::string peers) {
     std::cout << "EnviarPeers: " << peers << std::endl;
     rathed::Datagrama _data = DataGrama(1, 0, peers.c_str());
     if (sendto(socket_fd, DataGramaSerial(_data), _data.ByteSizeLong(), 0,
@@ -91,20 +91,20 @@ void Rastreador::enviarPeers(std::string peers) {
 
 }
 
-void Rastreador::consultaFiles(rathed::Datagrama &data) {
+void Rastreador::ConsultaFiles(rathed::Datagrama &data) {
     std::cout << "Teste DATA "<<data.data() << std::endl;
     auto it = std::find_if(filesPeers.begin(), filesPeers.end(), CompareHashPeer(data.data()));
     if (it.base() != nullptr) {
         std::string tmp;
         for (auto const &s : it.base()->second) { tmp +=s.c_str(); tmp +=";";}
         std::cout << "Arquivo Encontrado consultaFiles:" << std::endl;
-        enviarPeers(tmp);
+        EnviarPeers(tmp);
     } else {
         std::cout << "Arquivo Não Encontrado consultaFiles:" << std::endl;
     }
 }
 
-void Rastreador::atualizarPeer(rathed::Datagrama data) {
+void Rastreador::AtualizarPeer(rathed::Datagrama data) {
 
     char ip[INET_ADDRSTRLEN];
     char result[50];
@@ -131,7 +131,7 @@ void Rastreador::atualizarPeer(rathed::Datagrama data) {
 }
 
 
-void Rastreador::listarFiles(rathed::Datagrama data) {
+void Rastreador::ListarFiles(rathed::Datagrama data) {
 
 
 }
