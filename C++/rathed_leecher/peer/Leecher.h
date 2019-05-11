@@ -68,9 +68,9 @@ private:
 
     void IniciarDownloadP2PAleatorio(const char *hash, const char *path, struct sockaddr_in *pointer_address);
 
-    void DownloandP2P(int type_down, const char *hash, long num_pacote, struct sockaddr_in memory_seed_address);
+    void DownloandP2P(int type_down, const char *hash, long num_pacote, struct sockaddr_in seed_address);
 
-    void DownloandP2PConfirmar(int type_down, const rathed::Datagrama& data_, struct sockaddr_in memory_seed_address);
+    void DownloandP2PConfirmar(int type_down, const rathed::Datagrama& data_, struct sockaddr_in seed_address);
 
     void ConfirmarPacotes(const char *hash, int num_pack);
 

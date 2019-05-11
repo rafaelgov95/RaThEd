@@ -78,7 +78,7 @@ void Leecher::IniciarDownloadP2PSequencial(const char *hash, const char *path, s
         tempInicio = MyTempMS();
         while (threads_round < numthreads && flag_2) {
             if (total_de_pacotes + 1 > num_pacote) {
-                threads[threads_round] = std::thread(&Leecher::DownloandP2P, this, 1, hash, num_pacote, pointer_address[threads_round]);
+                threads[threads_round] = std::thread(&Leecher::DownloandP2P, this, 1, hash, num_pacote,pointer_address[threads_round]);
                 num_pacote += 1;
                 threads_round++;
             } else {
@@ -127,7 +127,7 @@ void Leecher::IniciarDownloadP2PSequencial(const char *hash, const char *path, s
 }
 
 
-void Leecher::IniciarDownloadP2PAleatorio(const char *hash, const char *path, sockaddr_in *pointer_address) {
+void Leecher::IniciarDownloadP2PAleatorio(const char *hash, const char *path, struct sockaddr_in *pointer_address) {
     long tempInicio = 0, tempFim = 0, tempResult = 0, tempResulTotal = 0;
     int fd_arq = open(path, O_CREAT | O_WRONLY,
                       0666), num_pacote = 1, round = 0, jitter = 0, jitterImp = 0, jitterPar = 0;
@@ -136,9 +136,7 @@ void Leecher::IniciarDownloadP2PAleatorio(const char *hash, const char *path, so
     bool flag = true;
 
     round = 1;
-
     while (flag) {
-
         int threads_round = 0;
         camadaDeRede->InterfaceGetFilaBuffer().clear();
         tempInicio = MyTempMS();
@@ -299,11 +297,11 @@ void Leecher::DownloandP2P(int type_down, const char *hash, long num_pacote, str
     data.set_type(static_cast<rathed::DatagramaType>(2));
     data.set_packnumber(num_pacote);
     data.set_data(hash);
-    filaBuffer.push(EnviarDataGramaParaRede(type_down, data, seed));
+    filaBuffer.push(EnviarDataGramaParaRede(type_down, data,seed));
 }
 
 void Leecher::DownloandP2PConfirmar(int type_down, const rathed::Datagrama& data, struct sockaddr_in seed) {
-    filaBuffer.push(EnviarDataGramaParaRede(type_down, data, seed));
+    filaBuffer.push(EnviarDataGramaParaRede(type_down, data,seed));
 }
 
 long Leecher::ConsultarFileSize(const char *hash, sockaddr_in &seed) {
