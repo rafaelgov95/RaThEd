@@ -79,7 +79,7 @@ void Widget::on_btn_add_clicked() {
 //                "/home/rafael/Documentos/musicas_testes/vai_teia.txt",2);
 
     leecher.Run("cc72fc24056ced9ce13a287ca1243d48",
-                "/home/rafael/Documentos/musicas_testes/vai_teia.mp3",2);
+                "/home/rafael/Documentos/musicas_testes/vai_teia.mp3",1);
 
 
 //    QString filePath = "/home/rafael/Documentos/musicas_testes/stream_voice.mp3";

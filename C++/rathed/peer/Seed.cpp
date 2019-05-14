@@ -177,8 +177,10 @@ void Seed::EnviarAleatorio(rathed::Datagrama &data) {
         if (sendto(socket_fd, DataGramaSerial(datagrama), datagrama.ByteSizeLong(), 0,
                    (struct sockaddr *) &client_address, sizeof(struct sockaddr)) <= 0)
             error("Erro ao enviar 1");
+
         std::cout << "Bytes data: " << datagrama.data().size() << std::endl;
         std::cout << "Bytes Datagrama: " << datagrama.ByteSizeLong() << std::endl;
+
         std::cout << "Packnumber: " << datagrama.packnumber() << std::endl;
 
 

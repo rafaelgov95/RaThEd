@@ -29,13 +29,13 @@
 #include <google/protobuf/io/zero_copy_stream_impl.h>
 
 #define MAX_LENGTH (320*8)
-#define MAX_LENGTH_FILE ((320*8)-48)
+#define MAX_LENGTH_FILE ((320*8)-15)
 
 namespace io = google::protobuf::io;
 class Seed {
 
 private:
-    int fd_arq, opcao=2, R=5 ,rastreadorPorta = 8080;
+    int fd_arq, opcao=1, R=5 ,rastreadorPorta = 8080;
     io::ZeroCopyInputStream *raw_input ;
     io::CodedInputStream *coded_input ;
     int my_port, numfd = 0, socket_fd, bytes_read, bytes_total;

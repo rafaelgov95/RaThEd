@@ -37,7 +37,7 @@
 #include <set>
 
 #define MAX_LENGTH (320*8)
-#define MAX_LENGTH_FILE ((320*8)-48)
+#define MAX_LENGTH_FILE ((320*8)-15)
 
 #include <stack>
 
