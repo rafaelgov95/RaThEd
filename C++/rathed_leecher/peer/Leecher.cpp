@@ -45,13 +45,16 @@ void Leecher::Run(const char *hash, const char *path, int type_download) {
         std::cout << "Teste total_bytes_file : " << total_bytes_file[i] << std::endl;
 
     }
-    if ((total_bytes_file[0] % 310 == 0)) {
-        total_de_pacotes = (total_bytes_file[0] / 310);
+    long fileSize_total = total_bytes_file[0];
+
+    if ( fileSize_total %  (MAX_LENGTH_FILE) == 0) {
+        total_de_pacotes = (fileSize_total /  (MAX_LENGTH_FILE));
 
     } else {
-        total_de_pacotes = (total_bytes_file[0] / 310) + 1;
+        total_de_pacotes = (fileSize_total /   (MAX_LENGTH_FILE)) + 1;
     }
 
+    std::cout << "Total de pacotes : " << total_de_pacotes << std::endl;
 
     if (type_download == 1) {
         IniciarDownloadP2PSequencial(hash, path, seed_address);
@@ -78,7 +81,7 @@ void Leecher::IniciarDownloadP2PSequencial(const char *hash, const char *path, s
         tempInicio = MyTempMS();
         while (threads_round < numthreads && flag_2) {
             if (total_de_pacotes + 1 > num_pacote) {
-                threads[threads_round] = std::thread(&Leecher::DownloandP2P, this, 1, hash, num_pacote,pointer_address[threads_round]);
+                threads[threads_round] = std::thread(&Leecher::RequisicaoP2P, this, 1, hash, num_pacote,pointer_address[threads_round]);
                 num_pacote += 1;
                 threads_round++;
             } else {
@@ -93,6 +96,11 @@ void Leecher::IniciarDownloadP2PSequencial(const char *hash, const char *path, s
         while (!filaBuffer.empty()) {
             rathed::Datagrama data;
             filaBuffer.next(data);
+//            std::cout << "BYTES PACK: " << data.ByteSize() <<std::endl;
+//            std::cout << "BYTES data() PACK: " << data.data().size() <<std::endl;
+//            std::cout << "BYTES data() APACKNUMBER: " << sizeof(data.packnumber()) <<std::endl;
+//            std::cout << "GRAVANDO BYTES: " << data.data().size() <<std::endl;
+
             coded_output->WriteRaw(data.data().c_str(), data.data().size());
         }
         if (flag_2) {
@@ -100,17 +108,17 @@ void Leecher::IniciarDownloadP2PSequencial(const char *hash, const char *path, s
             tempResult = tempFim - tempInicio;
             tempResulTotal += tempResult;
             total_bytes_baixados = coded_output->ByteCount();
-            velocidade = ((((numthreads * 310) / 8) / (tempResult * pow(10, -3))) * pow(10, -2));
+            velocidade += ((((numthreads * 320)) / (tempResult * pow(10, -3))) * pow(10, -2));
             if ((round % 2) == 1) {
                 jitterPar = tempResult;
                 jitter += jitterPar - jitterImp;
-                std::cout << "VELOCIDADE: " << velocidade << " KBps  "
+                std::cout << "VELOCIDADE: " << velocidade/round << " KBps  "
                           << "- PING: " << tempResult << " ms - JITTER: " << jitterPar - jitterImp <<
                           " ms - PING [M]: " << (tempResulTotal / round) << " ms - JITTER [M]: " << jitter << std::endl;
             } else {
                 jitterImp = tempResult;
                 jitter += jitterImp - jitterPar;
-                std::cout << "VELOCIDADE: " << velocidade << " KBps  "
+                std::cout << "VELOCIDADE: " << velocidade/round << " KBps  "
                           << "- PING: " << tempResult << " ms - JITTER: " << jitterImp - jitterPar <<
                           " ms - PING [M]: " << (tempResulTotal / round) << " ms - JITTER [M]: " << jitter << " ms"
                           << std::endl;
@@ -142,7 +150,7 @@ void Leecher::IniciarDownloadP2PAleatorio(const char *hash, const char *path, st
         tempInicio = MyTempMS();
         while (threads_round < numthreads && flag) {
             if (total_de_pacotes + 1 > num_pacote) {
-                threads[threads_round] = std::thread(&Leecher::DownloandP2P, this, 2, hash, num_pacote, pointer_address[threads_round]);
+                threads[threads_round] = std::thread(&Leecher::RequisicaoP2P, this, 2, hash, num_pacote, pointer_address[threads_round]);
                 threads_round++;
             } else {
                 flag = false;
@@ -159,6 +167,7 @@ void Leecher::IniciarDownloadP2PAleatorio(const char *hash, const char *path, st
             filaConfirma.push(data);
             if (data.packnumber() >= num_pacote) {
                 setBuffer.emplace(data);
+
             }
 
         }
@@ -171,7 +180,7 @@ void Leecher::IniciarDownloadP2PAleatorio(const char *hash, const char *path, st
         } else {
 
             bool flag_entrou_gravacao = false;
-            while (num_pacote == (*setBuffer.begin()).data.packnumber() && !setBuffer.empty()) {
+            while (num_pacote == (*setBuffer.begin()).data.packnumber() && !setBuffer.empty() && flag ) {
                 if (flag_entrou_gravacao) {
                     tempInicio = MyTempMS();
 //                    std::cout << "T2 Inicio " << tempInicio << std::endl;
@@ -194,9 +203,10 @@ void Leecher::IniciarDownloadP2PAleatorio(const char *hash, const char *path, st
 //                std::cout << "T1 FIM " << tempFim << std::endl;
 //                std::cout << "T1 RESULT " << tempResult << std::endl;
 
+//                std::cout <<"PACKNUMER: "<<data.packnumber() <<"Tamanho: "<<data.data().size() << "total_bytes_baixados: " << total_bytes_baixados <<std::endl;
 
                 total_bytes_baixados = coded_output->ByteCount();
-                velocidade = ((((double) (numthreads * 310) / 8) / (tempResult * pow(10, -3))) * pow(10, -2));
+                velocidade = ((((double) (numthreads * 310) ) / (tempResult * pow(10, -3))) * pow(10, -2));
                 if ((round % 2) == 1) {
                     jitterPar = tempResult;
                     jitter += jitterPar - jitterImp;
@@ -234,7 +244,7 @@ void Leecher::ConfirmarPacotes(const char *hash, int num_send) {
                 porta = j;
             }
         }
-        threads[threads_round] = std::thread(&Leecher::DownloandP2PConfirmar, this, 2, data, seed_address[porta]);
+        threads[threads_round] = std::thread(&Leecher::ConfirmaRequisicaoP2P, this, 2, data, seed_address[porta]);
         filaConfirma.pop();
         threads_round++;
     }
@@ -292,16 +302,16 @@ std::vector<std::string> Leecher::ConsultarRastreador(const char *hash) {
 
 }
 
-void Leecher::DownloandP2P(int type_down, const char *hash, long num_pacote, struct sockaddr_in seed) {
+void Leecher::RequisicaoP2P(int type_down, const char *hash, long num_pacote, struct sockaddr_in seed) {
     rathed::Datagrama data;
     data.set_type(static_cast<rathed::DatagramaType>(2));
     data.set_packnumber(num_pacote);
     data.set_data(hash);
-    filaBuffer.push(EnviarDataGramaParaRede(type_down, data,seed));
+    filaBuffer.push(EnviarDataGramaParaRede(type_down,data,seed));
 }
 
-void Leecher::DownloandP2PConfirmar(int type_down, const rathed::Datagrama& data, struct sockaddr_in seed) {
-    filaBuffer.push(EnviarDataGramaParaRede(type_down, data,seed));
+void Leecher::ConfirmaRequisicaoP2P(int type_down, const rathed::Datagrama& data, struct sockaddr_in seed) {
+    filaBuffer.push(EnviarDataGramaParaRede(type_down,data,seed));
 }
 
 long Leecher::ConsultarFileSize(const char *hash, sockaddr_in &seed) {

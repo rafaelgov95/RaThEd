@@ -31,6 +31,9 @@ void CamadaDeRede::StartTemporizacao(const rathed::Datagrama &data) {
 
 void CamadaDeRede::InterfaceRede(rathed::Datagrama data,struct sockaddr_in seed_address) {
     std::lock_guard<std::mutex> lock(m);
+
+//    std::cout << "Solcutacai Bytes Datagrama: " << data.data().size() << std::endl;
+
     if (sendto(socket_fd, DataGramaSerial(data), data.ByteSizeLong(), 0,
                (struct sockaddr *) &seed_address, sizeof(struct sockaddr)) <= 0)
         error("Erro ao enviar");
@@ -38,6 +41,7 @@ void CamadaDeRede::InterfaceRede(rathed::Datagrama data,struct sockaddr_in seed_
                           &address_length);
     data.clear_data();
     data.ParseFromArray(recieve_data, bytes_read);
+//    std::cout << "Bytes lido: " <<bytes_read<<" Bytes Datagrama: " << data.data().size() << std::endl;
     StartTemporizacao(data);
 }
 

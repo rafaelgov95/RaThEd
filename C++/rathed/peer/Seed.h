@@ -2,6 +2,7 @@
 // Created by rafael on 08/04/19.
 //
 
+
 #ifndef UNTITLED_SEEDS_H
 #define UNTITLED_SEEDS_H
 
@@ -24,26 +25,34 @@
 #include "util.h"
 #include <unistd.h>
 #include <queue>
-#define MAX_LENGTH 320
-#define MAX_LENGTH_FILE 305
+#include <google/protobuf/io/zero_copy_stream.h>
+#include <google/protobuf/io/zero_copy_stream_impl.h>
 
+#define MAX_LENGTH (320*8)
+#define MAX_LENGTH_FILE ((320*8)-10)
+
+namespace io = google::protobuf::io;
 class Seed {
 
 private:
-    int opcao=2, R=2 ,rastreadorPorta = 8080;
+    int fd_arq, opcao=2, R=5 ,rastreadorPorta = 8080;
+    io::ZeroCopyInputStream *raw_input ;
+    io::CodedInputStream *coded_input ;
     int my_port, numfd = 0, socket_fd, bytes_read, bytes_total;
     unsigned int address_length;
-    long total_de_pacotes=0;
-    char recieve_data[MAX_LENGTH_FILE];
+    char recieve_data[MAX_LENGTH];
     struct sockaddr_in server_address, client_address, rastreador_address;
     fd_set readfds;
     std::vector<std::pair<std::string, std::string>> file;
     std::vector<rathed::Datagrama>buffer;
+    long total_de_pacotes=0;
+
 
 
     void Run();
     rathed::Datagrama check_list_enviados(int x );
     void AtualizarRastreador(const std::string& hash,const std::string& path);
+
 
     void TratarMensagem(rathed::Datagrama& data);
     void EnviarAleatorio(rathed::Datagrama& data);
@@ -55,6 +64,7 @@ private:
 
 public:
     Seed(int porta);
+
     ~Seed();
 
 

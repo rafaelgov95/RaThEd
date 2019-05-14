@@ -11,13 +11,11 @@
 #include "util.h"
 #include <ostream>
 #include "random"
-#include <google/protobuf/io/zero_copy_stream.h>
-#include <google/protobuf/io/zero_copy_stream_impl.h>
-
-
-namespace io = google::protobuf::io;
-
 Seed::~Seed() {
+
+    delete (raw_input);
+    delete (coded_input);
+    close(fd_arq);
     close(socket_fd);
 }
 
@@ -64,7 +62,7 @@ void Seed::Run() {
 
         if (FD_ISSET(socket_fd, &readfds)) {
             FD_CLR(socket_fd, &readfds);
-            bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH, 0, (struct sockaddr *) &client_address,
+            bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH_FILE, 0, (struct sockaddr *) &client_address,
                                   &address_length); //block call, will wait till client enters something, before proceeding
             rathed::Datagrama buf;
             buf.ParseFromArray(recieve_data, bytes_read);
@@ -92,7 +90,6 @@ void Seed::IsTypeEnviar(rathed::Datagrama &data) {
 }
 
 void Seed::TratarMensagem(rathed::Datagrama &data) {
-
 
     switch (data.type()) {
         case 1:
@@ -135,14 +132,34 @@ rathed::Datagrama Seed::check_list_enviados(int x) {
     datagrama.set_type(static_cast<rathed::DatagramaType>(1));
     datagrama.set_seqnumber(my_port);
     int valor = 0;
-    if (total_de_pacotes > 0) {
-        valor = rand() % total_de_pacotes;
-        auto it = buffer.begin() + valor;
-        datagrama.set_seqnumber(my_port);
-        datagrama.set_packnumber(it.base()->packnumber());
-        datagrama.set_data(it.base()->data().c_str(), it.base()->data().size());
-        return datagrama;
+    if (x > 0) {
+        auto i = buffer.begin();
+        while (i != buffer.end()) {
+            int range =(int)(total_de_pacotes*0.1);
+            if(range <=0){
+                valor = 0;
+
+            }else{
+                valor = rand() % range;
+            }
+
+            i = buffer.begin() + valor;
+//            std::cout <<" buffer Tamanho PACK: "<< buffer.begin().base()->data().size()<<std::endl;
+            if (i.base()->packnumber() >= x) {
+                datagrama.set_seqnumber(my_port);
+                datagrama.set_packnumber(i.base()->packnumber());
+                datagrama.set_data(i.base()->data().c_str(), i.base()->data().size());
+//                std::cout <<"Tamanho PACK: "<< datagrama.data().size()<<  "VALOR SORTEADO: " << valor << " TOTAL PACKs: " << total_de_pacotes << " SEED: " << my_port
+//                          << std::endl;
+                return datagrama;
+            } else {
+                i = buffer.erase(i);
+                total_de_pacotes = buffer.size();
+
+            }
+        }
     }
+
     datagrama.set_packnumber(0);
     datagrama.set_data("");
     return datagrama;
@@ -160,7 +177,7 @@ void Seed::EnviarAleatorio(rathed::Datagrama &data) {
         if (sendto(socket_fd, DataGramaSerial(datagrama), datagrama.ByteSizeLong(), 0,
                    (struct sockaddr *) &client_address, sizeof(struct sockaddr)) <= 0)
             error("Erro ao enviar 1");
-
+        std::cout << "Bytes data: " << datagrama.data().size() << std::endl;
         std::cout << "Bytes Datagrama: " << datagrama.ByteSizeLong() << std::endl;
         std::cout << "Packnumber: " << datagrama.packnumber() << std::endl;
 
@@ -192,7 +209,7 @@ void Seed::EnviarSequencial(rathed::Datagrama &data) {
 
         std::cout << "Total de Bytes File Enviados: " << data.packnumber() << " DE " << total_de_pacotes
                   << std::endl;
-        std::cout << "Bytes File: " << it.base()->data().size() << std::endl;
+        std::cout << "Bytes File: " << datagrama.data().size() << std::endl;
         std::cout << "Bytes Datagrama: " << datagrama.ByteSizeLong() << std::endl;
         std::cout << "Packnumber: " << datagrama.packnumber() << std::endl;
 
@@ -214,20 +231,21 @@ void Seed::AtualizarRastreador(const std::string &hash, const std::string &path)
                                                                  path);
     file.push_back(arquivo);
 
-    long fileSize_total = fileSize(path.c_str());
 
-    if ((fileSize_total % 310 == 0)) {
-        total_de_pacotes = (fileSize_total / MAX_LENGTH_FILE);
+    long fileSize_total = fileSize(path.c_str());
+    std::cout << "fileSize_total: " <<fileSize_total<< std::endl;
+
+    if ( fileSize_total % (MAX_LENGTH_FILE) == 0) {
+        total_de_pacotes = (fileSize_total / MAX_LENGTH_FILE );
 
     } else {
         total_de_pacotes = (fileSize_total / MAX_LENGTH_FILE) + 1;
     }
+    std::cout << "total_de_pacotes: " <<total_de_pacotes<< std::endl;
 
-
-    int fd_arq = open(path.c_str(), O_RDONLY, 0666);
-    io::ZeroCopyInputStream *raw_input = new io::FileInputStream(fd_arq);
-    auto *coded_input = new io::CodedInputStream(raw_input);
-
+    fd_arq = open(path.c_str(), O_RDONLY, 0666);
+    raw_input = new io::FileInputStream(fd_arq);
+    coded_input = new io::CodedInputStream(raw_input);
     for (long j = 1; j <= total_de_pacotes; ++j) {
         int inicial = coded_input->CurrentPosition();
         coded_input->ReadRaw(recieve_data, MAX_LENGTH_FILE);
@@ -236,18 +254,12 @@ void Seed::AtualizarRastreador(const std::string &hash, const std::string &path)
         data.set_packnumber(j);
         data.set_data(recieve_data, (fim - inicial));
         buffer.push_back(data);
-
     }
-
-    delete (raw_input);
-    delete (coded_input);
-    close(fd_arq);
 
     rathed::Datagrama _data = DataGrama(4, arquivo.second.size(), arquivo.first);
     if (sendto(socket_fd, DataGramaSerial(_data), _data.ByteSizeLong(), 0,
                (struct sockaddr *) &rastreador_address, sizeof(struct sockaddr)) <= 0)
         error("Erro ao enviar");
-
 
 }
 
@@ -263,7 +275,7 @@ void Seed::ConfirmarPacote(rathed::Datagrama &data) {
         auto i = buffer.begin();
         while (i != buffer.end() && flag) {
             if (i.base()->packnumber() == data.packnumber()) {
-                pack =i.base()->packnumber();
+                pack = i.base()->packnumber();
                 buffer.erase(i);
                 total_de_pacotes = buffer.size();
                 flag = false;

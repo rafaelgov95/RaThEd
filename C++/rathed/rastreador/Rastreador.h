@@ -25,8 +25,8 @@
 #include "util.h"
 #include "model.pb.h"
 
-#define MAX_LENGTH 320
-
+#define MAX_LENGTH (320*8)
+#define MAX_LENGTH_FILE ((320*8)-10)
 class Rastreador {
 
 private:

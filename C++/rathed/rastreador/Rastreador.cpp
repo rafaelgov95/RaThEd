@@ -28,10 +28,10 @@ Rastreador::Rastreador(unsigned int porta) {
     {
         error("bind()"); // erro se der merd@
     }
-    run();
+    Run();
 }
 
-void Rastreador::run() {
+void Rastreador::Run() {
 
     printf("\nRastreador Iniciado\n");
     for (;;) {
@@ -51,7 +51,7 @@ void Rastreador::run() {
                                   &address_length); //block call, will wait till client enters something, before proceeding
             rathed::Datagrama buf;
             buf.ParseFromArray(recieve_data, bytes_read);
-            selectOpcao(buf);
+            SelectOpcao(buf);
         }
         perror("Fecho Solicitação"); // erro no select()
 
@@ -59,7 +59,7 @@ void Rastreador::run() {
 
 }
 
-void Rastreador::selectOpcao(rathed::Datagrama data) {
+void Rastreador::SelectOpcao(rathed::Datagrama data) {
     std::cout << "selectOpcao Rastreador: " << data.type() << std::endl;
 
     if (data.type() == 1) {

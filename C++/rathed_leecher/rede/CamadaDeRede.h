@@ -16,8 +16,9 @@
 #include <condition_variable>
 #include <util/PrioritFIFO.h>
 
-#define MAX_LENGTH 320
-#define MAX_LENGTH_FILE MAX_LENGTH-15
+#define MAX_LENGTH (320*8)
+#define MAX_LENGTH_FILE ((320*8)-10)
+
 class CamadaDeRede {
 
 private:
@@ -25,7 +26,7 @@ private:
     char recieve_data[MAX_LENGTH];
     struct sockaddr_in rastreador_address;
     PrioritFIFO filaDataGramas;
-    long rtt=20,F=3;
+    long rtt=20,F=50;
     std::mutex m;
     void StartTemporizacao(const rathed::Datagrama& data);
 

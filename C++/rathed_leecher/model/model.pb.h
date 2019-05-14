@@ -206,19 +206,19 @@ class Datagrama final :
   ::std::string* release_data();
   void set_allocated_data(::std::string* data);
 
-  // optional int32 SeqNumber = 2;
+  // optional fixed32 SeqNumber = 2;
   bool has_seqnumber() const;
   void clear_seqnumber();
   static const int kSeqNumberFieldNumber = 2;
-  ::google::protobuf::int32 seqnumber() const;
-  void set_seqnumber(::google::protobuf::int32 value);
+  ::google::protobuf::uint32 seqnumber() const;
+  void set_seqnumber(::google::protobuf::uint32 value);
 
-  // required int32 PackNumber = 3;
+  // required fixed32 PackNumber = 3;
   bool has_packnumber() const;
   void clear_packnumber();
   static const int kPackNumberFieldNumber = 3;
-  ::google::protobuf::int32 packnumber() const;
-  void set_packnumber(::google::protobuf::int32 value);
+  ::google::protobuf::uint32 packnumber() const;
+  void set_packnumber(::google::protobuf::uint32 value);
 
   // required .rathed.DatagramaType Type = 1;
   bool has_type() const;
@@ -238,8 +238,8 @@ class Datagrama final :
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::internal::ArenaStringPtr data_;
-  ::google::protobuf::int32 seqnumber_;
-  ::google::protobuf::int32 packnumber_;
+  ::google::protobuf::uint32 seqnumber_;
+  ::google::protobuf::uint32 packnumber_;
   int type_;
   friend struct ::TableStruct_model_2eproto;
 };
@@ -409,37 +409,37 @@ inline void Datagrama::set_type(::rathed::DatagramaType value) {
   // @@protoc_insertion_point(field_set:rathed.Datagrama.Type)
 }
 
-// optional int32 SeqNumber = 2;
+// optional fixed32 SeqNumber = 2;
 inline bool Datagrama::has_seqnumber() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
 inline void Datagrama::clear_seqnumber() {
-  seqnumber_ = 0;
+  seqnumber_ = 0u;
   _has_bits_[0] &= ~0x00000002u;
 }
-inline ::google::protobuf::int32 Datagrama::seqnumber() const {
+inline ::google::protobuf::uint32 Datagrama::seqnumber() const {
   // @@protoc_insertion_point(field_get:rathed.Datagrama.SeqNumber)
   return seqnumber_;
 }
-inline void Datagrama::set_seqnumber(::google::protobuf::int32 value) {
+inline void Datagrama::set_seqnumber(::google::protobuf::uint32 value) {
   _has_bits_[0] |= 0x00000002u;
   seqnumber_ = value;
   // @@protoc_insertion_point(field_set:rathed.Datagrama.SeqNumber)
 }
 
-// required int32 PackNumber = 3;
+// required fixed32 PackNumber = 3;
 inline bool Datagrama::has_packnumber() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
 inline void Datagrama::clear_packnumber() {
-  packnumber_ = 0;
+  packnumber_ = 0u;
   _has_bits_[0] &= ~0x00000004u;
 }
-inline ::google::protobuf::int32 Datagrama::packnumber() const {
+inline ::google::protobuf::uint32 Datagrama::packnumber() const {
   // @@protoc_insertion_point(field_get:rathed.Datagrama.PackNumber)
   return packnumber_;
 }
-inline void Datagrama::set_packnumber(::google::protobuf::int32 value) {
+inline void Datagrama::set_packnumber(::google::protobuf::uint32 value) {
   _has_bits_[0] |= 0x00000004u;
   packnumber_ = value;
   // @@protoc_insertion_point(field_set:rathed.Datagrama.PackNumber)

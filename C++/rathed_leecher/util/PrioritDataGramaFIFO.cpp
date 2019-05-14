@@ -15,6 +15,7 @@ bool PrioritDataGramaFIFO::next(rathed::Datagrama& elem) {
         return false;
     }
     elem = fila.top();
+
     fila.pop();
     return true;
 }
