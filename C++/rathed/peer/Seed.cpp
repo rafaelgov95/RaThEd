@@ -144,13 +144,13 @@ rathed::Datagrama Seed::check_list_enviados(int x) {
             }
 
             i = buffer.begin() + valor;
-//            std::cout <<" buffer Tamanho PACK: "<< buffer.begin().base()->data().size()<<std::endl;
+
             if (i.base()->packnumber() >= x) {
                 datagrama.set_seqnumber(my_port);
                 datagrama.set_packnumber(i.base()->packnumber());
                 datagrama.set_data(i.base()->data().c_str(), i.base()->data().size());
-//                std::cout <<"Tamanho PACK: "<< datagrama.data().size()<<  "VALOR SORTEADO: " << valor << " TOTAL PACKs: " << total_de_pacotes << " SEED: " << my_port
-//                          << std::endl;
+                std::cout <<"Tamanho PACK: "<< datagrama.data().size() <<  " VALOR SORTEADO: " << valor << " TOTAL PACKs: " << total_de_pacotes << " SEED: " << my_port
+                          << std::endl;
                 return datagrama;
             } else {
                 i = buffer.erase(i);

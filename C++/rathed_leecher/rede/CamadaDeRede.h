@@ -17,7 +17,7 @@
 #include <util/PrioritFIFO.h>
 
 #define MAX_LENGTH (320*8)
-#define MAX_LENGTH_FILE ((320*8)-10)
+#define MAX_LENGTH_FILE ((320*8)-48)
 
 class CamadaDeRede {
 

@@ -29,7 +29,7 @@
 #include <google/protobuf/io/zero_copy_stream_impl.h>
 
 #define MAX_LENGTH (320*8)
-#define MAX_LENGTH_FILE ((320*8)-10)
+#define MAX_LENGTH_FILE ((320*8)-48)
 
 namespace io = google::protobuf::io;
 class Seed {
@@ -47,8 +47,6 @@ private:
     std::vector<rathed::Datagrama>buffer;
     long total_de_pacotes=0;
 
-
-
     void Run();
     rathed::Datagrama check_list_enviados(int x );
     void AtualizarRastreador(const std::string& hash,const std::string& path);
@@ -64,7 +62,6 @@ private:
 
 public:
     Seed(int porta);
-
     ~Seed();
 
 

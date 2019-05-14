@@ -54,7 +54,7 @@ void Leecher::Run(const char *hash, const char *path, int type_download) {
         total_de_pacotes = (fileSize_total /   (MAX_LENGTH_FILE)) + 1;
     }
 
-    std::cout << "Total de pacotes : " << total_de_pacotes << std::endl;
+//    std::cout << "Total de pacotes : " << total_de_pacotes << std::endl;
 
     if (type_download == 1) {
         IniciarDownloadP2PSequencial(hash, path, seed_address);
@@ -203,7 +203,7 @@ void Leecher::IniciarDownloadP2PAleatorio(const char *hash, const char *path, st
 //                std::cout << "T1 FIM " << tempFim << std::endl;
 //                std::cout << "T1 RESULT " << tempResult << std::endl;
 
-//                std::cout <<"PACKNUMER: "<<data.packnumber() <<"Tamanho: "<<data.data().size() << "total_bytes_baixados: " << total_bytes_baixados <<std::endl;
+//                std::cout <<"PACKNUMER: "<<data.packnumber() <<"Tamanho Data Size: "<<data.data().size() << "total_bytes_baixados: " << total_bytes_baixados <<std::endl;
 
                 total_bytes_baixados = coded_output->ByteCount();
                 velocidade = ((((double) (numthreads * 310) ) / (tempResult * pow(10, -3))) * pow(10, -2));
