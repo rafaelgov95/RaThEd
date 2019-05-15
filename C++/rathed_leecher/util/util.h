@@ -59,11 +59,12 @@ struct ComparableBuffer{
     bool operator <(ComparableBuffer const& other)const{return data.packnumber()<other.data.packnumber();}
 };
 
-static rathed::Datagrama DataGrama(int type, int32_t packNumber,std::string bytes) {
+static rathed::Datagrama DataGrama(int type,int32_t seqNumber, int32_t packNumber,const char* bytes) {
     rathed::Datagrama new_data;
     new_data.set_type(static_cast<rathed::DatagramaType>(type));
+    new_data.set_seqnumber(seqNumber);
     new_data.set_packnumber(packNumber);
-    new_data.set_data(bytes);
+    new_data.set_data(bytes,strlen(bytes));
     return new_data;
 
 };

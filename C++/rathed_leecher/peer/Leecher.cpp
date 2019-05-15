@@ -54,8 +54,6 @@ void Leecher::Run(const char *hash, const char *path, int type_download) {
         total_de_pacotes = (fileSize_total /   (MAX_LENGTH_FILE)) + 1;
     }
 
-//    std::cout << "Total de pacotes : " << total_de_pacotes << std::endl;
-
     if (type_download == 1) {
         IniciarDownloadP2PSequencial(hash, path, seed_address);
     } else if (type_download == 2) {
@@ -167,13 +165,11 @@ void Leecher::IniciarDownloadP2PAleatorio(const char *hash, const char *path, st
             filaConfirma.push(data);
             if (data.packnumber() >= num_pacote) {
                 setBuffer.emplace(data);
-
             }
 
         }
         camadaDeRede->InterfaceGetFilaBuffer().clear();
         ConfirmarPacotes(hash, num_pacote);
-        camadaDeRede->InterfaceGetFilaBuffer().clear();
 
         if ((*setBuffer.begin()).data.packnumber() == -1) {
             flag = false;
@@ -297,11 +293,7 @@ std::vector<std::string> Leecher::ConsultarRastreador(const char *hash) {
 }
 
 void Leecher::RequisicaoP2P(int type_down, const char *hash, int num_pacote, struct sockaddr_in seed) {
-    rathed::Datagrama data;
-    data.set_type(static_cast<rathed::DatagramaType>(2));
-    data.set_seqnumber(0);
-    data.set_packnumber(num_pacote);
-    data.set_data(hash,strlen(hash));
+    rathed::Datagrama data = DataGrama(2,0,num_pacote,hash);
     filaBuffer.push(EnviarDataGramaParaRede(type_down,data,seed));
 }
 
