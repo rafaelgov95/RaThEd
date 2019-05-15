@@ -302,11 +302,7 @@ void Leecher::ConfirmaRequisicaoP2P(int type_down, const rathed::Datagrama& data
 }
 
 long Leecher::ConsultarFileSize(const char *hash, sockaddr_in &seed) {
-    rathed::Datagrama data;
-    data.set_type(static_cast<rathed::DatagramaType>(3));
-    data.set_seqnumber(0);
-    data.set_packnumber(0);
-    data.set_data(hash,strlen(hash));
+    rathed::Datagrama data = DataGrama(3,0,0,hash);
     return EnviarDataGramaParaRede(1, data, seed).packnumber();
 }
 
