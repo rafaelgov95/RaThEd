@@ -35,10 +35,9 @@ namespace io = google::protobuf::io;
 class Seed {
 
 private:
-    int fd_arq, opcao=1, R=5 ,rastreadorPorta = 8080;
+    int fd_arq, opcao=2, R=5 ,rastreadorPorta = 8080, my_port, numfd = 0, socket_fd, bytes_read, bytes_total;
     io::ZeroCopyInputStream *raw_input ;
     io::CodedInputStream *coded_input ;
-    int my_port, numfd = 0, socket_fd, bytes_read, bytes_total;
     unsigned int address_length;
     char recieve_data[MAX_LENGTH];
     struct sockaddr_in server_address, client_address, rastreador_address;

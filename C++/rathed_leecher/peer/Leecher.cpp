@@ -263,13 +263,6 @@ Leecher::EnviarDataGramaParaRede(int type_dow, const rathed::Datagrama& data_, s
     while (true) {
         if (round == 4) {
             camadaDeRede->InterfaceRede(data_, pointer_address);
-//           if(type==1){
-//               std::cout<<"Enviando Confirmacao PACKS: "<<numpacote<<std::endl;
-//           }else if(type==2){
-//               std::cout<<"Enviando PACKS: "<<numpacote<<std::endl;
-//           }
-
-
         }
         if (camadaDeRede->InterfaceGetFilaBuffer().myPack(data_.type(), data_.packnumber(), data, type_dow, round)) {
             long t1 = MyTempMS();
@@ -293,7 +286,7 @@ std::vector<std::string> Leecher::ConsultarRastreador(const char *hash) {
     data.set_type(static_cast<rathed::DatagramaType>(2));
     data.set_seqnumber(0);
     data.set_packnumber(0);
-    data.set_data(hash);
+    data.set_data(hash,strlen(hash));
     data = EnviarDataGramaParaRede(1, data, rastreador_address);
     std::vector<std::string> Peers_Com_File{my_split(data.data(), ';')};
     for (int i = 0; i < Peers_Com_File.size(); ++i) {
@@ -303,12 +296,12 @@ std::vector<std::string> Leecher::ConsultarRastreador(const char *hash) {
 
 }
 
-void Leecher::RequisicaoP2P(int type_down, const char *hash, long num_pacote, struct sockaddr_in seed) {
+void Leecher::RequisicaoP2P(int type_down, const char *hash, int num_pacote, struct sockaddr_in seed) {
     rathed::Datagrama data;
     data.set_type(static_cast<rathed::DatagramaType>(2));
     data.set_seqnumber(0);
     data.set_packnumber(num_pacote);
-    data.set_data(hash);
+    data.set_data(hash,strlen(hash));
     filaBuffer.push(EnviarDataGramaParaRede(type_down,data,seed));
 }
 
@@ -321,7 +314,7 @@ long Leecher::ConsultarFileSize(const char *hash, sockaddr_in &seed) {
     data.set_type(static_cast<rathed::DatagramaType>(3));
     data.set_seqnumber(0);
     data.set_packnumber(0);
-    data.set_data(hash);
+    data.set_data(hash,strlen(hash));
     return EnviarDataGramaParaRede(1, data, seed).packnumber();
 }
 

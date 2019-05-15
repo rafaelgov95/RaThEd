@@ -67,13 +67,11 @@ private:
 
     void IniciarDownloadP2PAleatorio(const char *hash, const char *path, struct sockaddr_in *pointer_address);
 
-    void RequisicaoP2P(int type_down, const char *hash, long num_pacote, struct sockaddr_in seed_address);
-
-//    overload RequisicaoP2P; // This is optional
+    void RequisicaoP2P(int type_down, const char *hash, int num_pacote, struct sockaddr_in seed_address);
 
     void ConfirmaRequisicaoP2P(int type_down, const rathed::Datagrama& data_, struct sockaddr_in seed_address);
 
-    void ConfirmarPacotes(const char *hash, int num_pack);
+    void ConfirmarPacotes(const char *hash, int num_pacote);
 
 public:
     Leecher();

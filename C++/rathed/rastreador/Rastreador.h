@@ -40,17 +40,16 @@ private:
 
 
     void Run();
-    void SelectOpcao(rathed::Datagrama);
-    void EnviarPeers(std::string hash);
+    void SelectOpcao(rathed::Datagrama &data);
+    void EnviarPeers(const char* peers);
 
 public:
     Rastreador(unsigned int porta);
     ~Rastreador();
 
     void ConsultaFiles(rathed::Datagrama &data);
-    void AtualizarPeer(rathed::Datagrama data);
-
-    void ListarFiles(rathed::Datagrama data);
+    void AtualizarPeer(rathed::Datagrama &data);
+    void ListarFiles(rathed::Datagrama &data);
 
 };
 

@@ -49,6 +49,8 @@ void Rastreador::Run() {
 
             bytes_read = recvfrom(socket_fd, recieve_data, MAX_LENGTH, 0, (struct sockaddr *) &client_address,
                                   &address_length); //block call, will wait till client enters something, before proceeding
+            std::cout << " bytes_read: " << bytes_read << std::endl;
+
             rathed::Datagrama buf;
             buf.ParseFromArray(recieve_data, bytes_read);
             SelectOpcao(buf);
@@ -59,7 +61,8 @@ void Rastreador::Run() {
 
 }
 
-void Rastreador::SelectOpcao(rathed::Datagrama data) {
+
+void Rastreador::SelectOpcao(rathed::Datagrama &data) {
     std::cout << "selectOpcao Rastreador: " << data.type() << std::endl;
 
     if (data.type() == 1) {
@@ -82,32 +85,28 @@ void Rastreador::SelectOpcao(rathed::Datagrama data) {
 
 }
 
-void Rastreador::EnviarPeers(std::string peers) {
-    std::cout << "EnviarPeers: " << peers << std::endl;
-
-    rathed::Datagrama _data = DataGrama(1, 0, peers.c_str());
-    _data.set_seqnumber(0);
-
-    if (sendto(socket_fd, DataGramaSerial(_data), _data.ByteSizeLong(), 0,
+void Rastreador::EnviarPeers(const char* peers) {
+    rathed::Datagrama _data = DataGrama(1,0,0,peers);
+    std::cout << "EnviarPeers: " << _data.data() << std::endl;
+    if (sendto(socket_fd, DataGramaSerial(_data), _data.ByteSize(), 0,
                (struct sockaddr *) &client_address, sizeof(struct sockaddr)) <= 0)
         error("Erro ao enviar");
 
 }
 
 void Rastreador::ConsultaFiles(rathed::Datagrama &data) {
-    std::cout << "Teste DATA "<<data.data() << std::endl;
     auto it = std::find_if(filesPeers.begin(), filesPeers.end(), CompareHashPeer(data.data()));
     if (it.base() != nullptr) {
         std::string tmp;
-        for (auto const &s : it.base()->second) { tmp +=s.c_str(); tmp +=";";}
+        for (auto const &s : it.base()->second) { tmp +=s; tmp +=";";}
         std::cout << "Arquivo Encontrado consultaFiles:" << std::endl;
-        EnviarPeers(tmp);
+        EnviarPeers(tmp.c_str());
     } else {
         std::cout << "Arquivo Não Encontrado consultaFiles:" << std::endl;
     }
 }
 
-void Rastreador::AtualizarPeer(rathed::Datagrama data) {
+void Rastreador::AtualizarPeer(rathed::Datagrama &data) {
 
     char ip[INET_ADDRSTRLEN];
     char result[50];
@@ -134,7 +133,7 @@ void Rastreador::AtualizarPeer(rathed::Datagrama data) {
 }
 
 
-void Rastreador::ListarFiles(rathed::Datagrama data) {
+void Rastreador::ListarFiles(rathed::Datagrama &data) {
 
 
 }

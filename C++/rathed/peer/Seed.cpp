@@ -117,8 +117,8 @@ void Seed::ConsultaFileSize(rathed::Datagrama &data) {
         bytes_total = fileSize(it.base()->second.c_str());
         std::cout << "ConsultaFile Enviado Tamanho File: " << bytes_total
                   << std::endl;
-        rathed::Datagrama _data = DataGrama(3, bytes_total, data.data());
-        _data.set_seqnumber(0);
+        rathed::Datagrama _data = DataGrama(3, 0,bytes_total, data.data().c_str());
+
         if (sendto(socket_fd, DataGramaSerial(_data), _data.ByteSizeLong(), 0,
                    (struct sockaddr *) &client_address, sizeof(struct sockaddr)) <= 0)
             error("Erro ao enviar");
@@ -161,7 +161,7 @@ rathed::Datagrama Seed::check_list_enviados(int x) {
     }
 
 
-    datagrama.set_data("");
+    datagrama.set_data("ERRO", sizeof("ERRO"));
     return datagrama;
 }
 
@@ -260,8 +260,7 @@ void Seed::AtualizarRastreador(const std::string &hash, const std::string &path)
         buffer.push_back(data);
     }
 
-    rathed::Datagrama _data = DataGrama(4, arquivo.second.size(), arquivo.first);
-    _data.set_seqnumber(0);
+    rathed::Datagrama _data = DataGrama(4,0,arquivo.second.size(), arquivo.first.c_str());
     if (sendto(socket_fd, DataGramaSerial(_data), _data.ByteSizeLong(), 0,
                (struct sockaddr *) &rastreador_address, sizeof(struct sockaddr)) <= 0)
         error("Erro ao enviar");
@@ -295,7 +294,7 @@ void Seed::ConfirmarPacote(rathed::Datagrama &data) {
     }
     data.set_seqnumber(0);
     data.set_packnumber(pack);
-    data.set_data("OK");
+    data.set_data("OK",sizeof("OK"));
     if (sendto(socket_fd, DataGramaSerial(data), data.ByteSizeLong(), 0,
                (struct sockaddr *) &client_address, sizeof(struct sockaddr)) <= 0)
         error("Erro ao enviar 1");

@@ -22,17 +22,18 @@
 class CamadaDeRede {
 
 private:
-    unsigned int socket_fd,bytes_read,address_length;
+    int rtt=20,F=50,socket_fd, bytes_read;
+    unsigned int address_length;
     char recieve_data[MAX_LENGTH];
     struct sockaddr_in rastreador_address;
     PrioritFIFO filaDataGramas;
-    long rtt=20,F=50;
     std::mutex m;
+
     void StartTemporizacao(const rathed::Datagrama& data);
 
 public:
     CamadaDeRede(unsigned int socket, struct sockaddr_in &rastreador);
-    void InterfaceRede(rathed::Datagrama data, struct sockaddr_in seed_address) ;
+    void InterfaceRede(const rathed::Datagrama &data, struct sockaddr_in seed_address) ;
     PrioritFIFO& InterfaceGetFilaBuffer();
 };
 

@@ -80,16 +80,17 @@ static void error(char *message) {
 }
 
 
-static rathed::Datagrama DataGrama(int type, int32_t packNumber,std::string bytes) {
+static rathed::Datagrama DataGrama(int type, int32_t seqNumber,int32_t packNumber, const char *bytes) {
     rathed::Datagrama new_data;
     new_data.set_type(static_cast<rathed::DatagramaType>(type));
+    new_data.set_seqnumber(seqNumber);
     new_data.set_packnumber(packNumber);
-    new_data.set_data(bytes);
+    new_data.set_data(bytes,strlen(bytes));
     return new_data;
 
 };
 
-static void *DataGramaSerial (rathed::Datagrama datagrama) {
+static void *DataGramaSerial (rathed::Datagrama &datagrama) {
 size_t size = datagrama.ByteSizeLong();
 void *buffer = malloc(size);
 datagrama.SerializeToArray(buffer, size);
