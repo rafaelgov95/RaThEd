@@ -15,17 +15,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2287bb4b-7650-4081-b910-3dae6e5019b5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/main.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/peer/Seed.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/model.pb.cc" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.pb.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/model.pb.h" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.pb.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/model.proto" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/peer/Seed.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/peer/Seed.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/peer/Seed.h" beforeDir="false" afterPath="$PROJECT_DIR$/peer/Seed.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rastreador/Rastreador.h" beforeDir="false" afterPath="$PROJECT_DIR$/rastreador/Rastreador.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rastreador/Rastreador.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/rastreador/Rastreador.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed_leecher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed_leecher/peer/Leecher.h" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/peer/Leecher.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/model/model.pb.cc" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/model/model.pb.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/model/model.pb.h" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/model/model.pb.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/model/model.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/model/model.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rathed_leecher/peer/Leecher.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/peer/Leecher.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed_leecher/rede/CamadaDeRede.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/rede/CamadaDeRede.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed_leecher/rede/CamadaDeRede.h" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/rede/CamadaDeRede.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed_leecher/template/widget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/template/widget.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/peer/Seed.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="182" lean-forward="true" selection-start-line="182" selection-end-line="182" />
+            <state relative-caret-position="181">
+              <caret line="202" column="17" selection-start-line="202" selection-start-column="17" selection-end-line="202" selection-end-column="17" />
               <folding>
                 <element signature="e#78#99#0" expanded="true" />
               </folding>
@@ -55,7 +56,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rastreador/Rastreador.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
+            <state relative-caret-position="-140">
               <caret line="29" column="18" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
               <folding>
                 <element signature="e#102#124#0" expanded="true" />
@@ -67,7 +68,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/peer/Seed.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
+            <state relative-caret-position="4">
               <caret line="32" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="e#94#116#0" expanded="true" />
@@ -93,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/model.proto">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+            <state relative-caret-position="250">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -123,7 +124,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/util.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1820">
+            <state relative-caret-position="271">
               <caret line="91" column="13" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
             </state>
           </provider>
@@ -132,8 +133,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rastreador/Rastreador.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1080">
-              <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+            <state relative-caret-position="157">
+              <caret line="67" column="18" lean-forward="true" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -194,10 +195,10 @@
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/util/util.h" />
-        <option value="$PROJECT_DIR$/model/model.proto" />
-        <option value="$PROJECT_DIR$/rastreador/Rastreador.cpp" />
         <option value="$PROJECT_DIR$/rastreador/Rastreador.h" />
         <option value="$PROJECT_DIR$/peer/Seed.h" />
+        <option value="$PROJECT_DIR$/model/model.proto" />
+        <option value="$PROJECT_DIR$/rastreador/Rastreador.cpp" />
         <option value="$PROJECT_DIR$/peer/Seed.cpp" />
       </list>
     </option>
@@ -378,12 +379,12 @@
       <workItem from="1557844089704" duration="2749000" />
       <workItem from="1557858311191" duration="3032000" />
       <workItem from="1557861362526" duration="11060000" />
-      <workItem from="1557875819495" duration="2403000" />
+      <workItem from="1557875819495" duration="3539000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="478433000" />
+    <option name="totallyTimeSpent" value="479569000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -403,7 +404,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969433" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.84311634" visible="true" weight="0.36925516" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.84311634" visible="true" weight="0.33597463" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.766809" weight="0.33755943" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -455,22 +456,22 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/peer/Seed.cpp</url>
-          <line>288</line>
+          <line>291</line>
           <option name="timeStamp" value="124" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/peer/Seed.cpp</url>
-          <line>278</line>
+          <line>281</line>
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/peer/Seed.cpp</url>
-          <line>282</line>
+          <line>285</line>
           <option name="timeStamp" value="128" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/peer/Seed.cpp</url>
-          <line>281</line>
+          <line>284</line>
           <option name="timeStamp" value="129" />
         </line-breakpoint>
       </breakpoints>
@@ -710,13 +711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/model.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="620">
@@ -734,23 +728,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/util.h">
+    <entry file="file://$PROJECT_DIR$/model/model.proto">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1820">
-          <caret line="91" column="13" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rastreador/Rastreador.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+        <state relative-caret-position="250">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rastreador/Rastreador.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
+        <state relative-caret-position="-140">
           <caret line="29" column="18" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
           <folding>
             <element signature="e#102#124#0" expanded="true" />
@@ -758,9 +745,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/rastreador/Rastreador.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="67" column="18" lean-forward="true" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/peer/Seed.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
+        <state relative-caret-position="4">
           <caret line="32" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="e#94#116#0" expanded="true" />
@@ -768,10 +762,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/util/util.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="91" column="13" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/peer/Seed.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="182" lean-forward="true" selection-start-line="182" selection-end-line="182" />
+        <state relative-caret-position="181">
+          <caret line="202" column="17" selection-start-line="202" selection-start-column="17" selection-end-line="202" selection-end-column="17" />
           <folding>
             <element signature="e#78#99#0" expanded="true" />
           </folding>

@@ -12,7 +12,7 @@ enum DatagramaType {
 
 message Datagrama {
   required DatagramaType Type=1;
-  optional fixed32 SeqNumber=2;
+  required fixed32 SeqNumber=2;
   required fixed32 PackNumber=3;
   required bytes Data=4;
 }

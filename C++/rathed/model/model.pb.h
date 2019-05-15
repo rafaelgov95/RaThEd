@@ -206,7 +206,7 @@ class Datagrama final :
   ::std::string* release_data();
   void set_allocated_data(::std::string* data);
 
-  // optional fixed32 SeqNumber = 2;
+  // required fixed32 SeqNumber = 2;
   bool has_seqnumber() const;
   void clear_seqnumber();
   static const int kSeqNumberFieldNumber = 2;
@@ -409,7 +409,7 @@ inline void Datagrama::set_type(::rathed::DatagramaType value) {
   // @@protoc_insertion_point(field_set:rathed.Datagrama.Type)
 }
 
-// optional fixed32 SeqNumber = 2;
+// required fixed32 SeqNumber = 2;
 inline bool Datagrama::has_seqnumber() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }

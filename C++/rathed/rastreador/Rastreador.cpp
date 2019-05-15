@@ -84,7 +84,10 @@ void Rastreador::SelectOpcao(rathed::Datagrama data) {
 
 void Rastreador::EnviarPeers(std::string peers) {
     std::cout << "EnviarPeers: " << peers << std::endl;
+
     rathed::Datagrama _data = DataGrama(1, 0, peers.c_str());
+    _data.set_seqnumber(0);
+
     if (sendto(socket_fd, DataGramaSerial(_data), _data.ByteSizeLong(), 0,
                (struct sockaddr *) &client_address, sizeof(struct sockaddr)) <= 0)
         error("Erro ao enviar");

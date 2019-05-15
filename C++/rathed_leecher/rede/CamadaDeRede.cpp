@@ -42,7 +42,7 @@ void CamadaDeRede::InterfaceRede(rathed::Datagrama data,struct sockaddr_in seed_
     data.clear_data();
 //    std::cout << "Bytes Datagrama Antes: " << data__.ByteSize() << std::endl;
     data.ParseFromArray(recieve_data, bytes_read);
-    data.set_seqnumber(11111111111111111111);
+//    data.set_seqnumber(11111111111111111111);
     std::cout << " Bytes Datagrama: " << data.data().size() << std::endl;
     std::cout << " Bytes Datagrama ByteSize: " << data.ByteSize()<< std::endl;
 

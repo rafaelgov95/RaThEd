@@ -291,6 +291,7 @@ Leecher::EnviarDataGramaParaRede(int type_dow, const rathed::Datagrama& data_, s
 std::vector<std::string> Leecher::ConsultarRastreador(const char *hash) {
     rathed::Datagrama data;
     data.set_type(static_cast<rathed::DatagramaType>(2));
+    data.set_seqnumber(0);
     data.set_packnumber(0);
     data.set_data(hash);
     data = EnviarDataGramaParaRede(1, data, rastreador_address);
@@ -305,6 +306,7 @@ std::vector<std::string> Leecher::ConsultarRastreador(const char *hash) {
 void Leecher::RequisicaoP2P(int type_down, const char *hash, long num_pacote, struct sockaddr_in seed) {
     rathed::Datagrama data;
     data.set_type(static_cast<rathed::DatagramaType>(2));
+    data.set_seqnumber(0);
     data.set_packnumber(num_pacote);
     data.set_data(hash);
     filaBuffer.push(EnviarDataGramaParaRede(type_down,data,seed));
@@ -317,6 +319,7 @@ void Leecher::ConfirmaRequisicaoP2P(int type_down, const rathed::Datagrama& data
 long Leecher::ConsultarFileSize(const char *hash, sockaddr_in &seed) {
     rathed::Datagrama data;
     data.set_type(static_cast<rathed::DatagramaType>(3));
+    data.set_seqnumber(0);
     data.set_packnumber(0);
     data.set_data(hash);
     return EnviarDataGramaParaRede(1, data, seed).packnumber();
