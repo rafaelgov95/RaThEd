@@ -30,11 +30,12 @@ private slots:
     void on_btn_add_clicked();              // Slot para processar adicionando faixas através da caixa de diálogo
 
 private:
+
     Ui::Widget *ui;
     QStandardItemModel  *m_playListModel;   // Modelo de dados da lista de reprodução para exibição
     QMediaPlayer        *m_player;          // Jogador pista
     QMediaPlaylist      *m_playlist;        // Lista de reprodução do player
-    Leecher leecher;
+    Leecher leecher ;
 };
 
 #endif //RATHED_LEECHER_WIDGET_H

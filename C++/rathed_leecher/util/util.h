@@ -83,18 +83,6 @@ static long MyTempMS() {
     return ms.count();
 }
 
-//std::streampos fileSize( const char* filePath ){
-//
-//    std::streampos fsize = 0;
-//    std::ifstream file( filePath, std::ios::binary );
-//
-//    fsize = file.tellg();
-//    file.seekg( 0, std::ios::end );
-//    fsize = file.tellg() - fsize;
-//    file.close();
-//
-//    return fsize;
-//}
 static const std::vector<std::string> my_split(const std::string& s, const char& c)
 {
     std::string buff{""};

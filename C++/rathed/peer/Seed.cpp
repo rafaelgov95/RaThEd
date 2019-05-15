@@ -272,7 +272,6 @@ void Seed::AtualizacaoRealizada(rathed::Datagrama &data) {
 }
 
 void Seed::ConfirmarPacote(rathed::Datagrama &data) {
-    std::cout << "DATANUMBER: " << data.packnumber() << std::endl;
     bool flag = true;
     int pack = -1;
     if (data.packnumber() > 0) {

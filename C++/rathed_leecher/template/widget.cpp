@@ -16,7 +16,7 @@ Widget::Widget(QWidget *parent) :
 
     m_playListModel = new QStandardItemModel(this);
     ui->playlistView->setModel(m_playListModel);    // defini modelo de dados
-    ui->lcdNumber->display(QString::number(leecher.velocidade,'f',4));
+    ui->lcdNumber->display(QString::number(leecher.velocidade, 'f', 0));
     // Definir cabecalhos da tabela
     m_playListModel->setHorizontalHeaderLabels(QStringList() << tr("Audio Stream")
                                                              << tr("Audio Path"));
@@ -55,6 +55,11 @@ Widget::Widget(QWidget *parent) :
     connect(m_playlist, &QMediaPlaylist::currentIndexChanged, [this](int index) {
         ui->currentTrack->setText(m_playListModel->data(m_playListModel->index(index, 0)).toString());
     });
+//
+//    connect( ui->lcdNumber,SIGNAL(), [this](int index) {
+//        ui->lcdNumber->display(QString::number(leecher.velocidade,'f',0));
+//    });
+
 }
 
 Widget::~Widget() {
@@ -65,39 +70,14 @@ Widget::~Widget() {
 }
 
 void Widget::on_btn_add_clicked() {
-
-    // Com a ajuda do diálogo de seleção de arquivos, fazemos uma seleção múltipla de arquivos mp3
-//    QStringList files = QFileDialog::getOpenFileNames(this,
-//                                                      tr("Abrir Arquivos"),
-//                                                      QString(),
-//                                                      tr("Arquivo de Audio (*.mp3)"));
+    leecher.start();
 
 
-    // Em seguida, defina os dados por nomes e caminhos de arquivo
-    // na lista de reprodução e na tabela que exibe a lista de reprodução
-//    leecher.Run("cc72fc24056ced9ce13a287ca1243d48",
-//                "/home/rafael/Documentos/musicas_testes/vai_teia.txt",2);
+    QString filePath = "/home/rafael/Documentos/musicas_testes/vai_teia.mp3";
+    QList<QStandardItem *> items;
+    items.append(new QStandardItem(filePath));
+    m_playListModel->appendRow(items);
+    m_player->setMedia(QMediaContent(QUrl::fromLocalFile(filePath)));
+    m_player->setPlaylist(m_playlist);
 
-    leecher.Run("cc72fc24056ced9ce13a287ca1243d48",
-                "/home/rafael/Documentos/musicas_testes/vai_teia.mp3",2);
-
-
-//    QString filePath = "/home/rafael/Documentos/musicas_testes/stream_voice.mp3";
-//            foreach (QString filePath, files) {
-//            QMediaContent *mc=new QMediaContent(QUrl("http://192.168.42.129:8080/video"));
-//            player->setMedia(*mc);
-//            QList<QStandardItem *> items;
-//            items.append(new QStandardItem(QDir(filePath).dirName()));
-//            items.append(new QStandardItem(filePath));
-//            m_playListModel->appendRow(items);
-//              m_player->setMedia(QMediaContent(QUrl::fromLocalFile(filePath)));
-//            m_player->setMedia(QMediaContent(QDataStream::readBytes(&QUrl::fromLocalFile(filePath),6144000));
-//            m_player->setPlaylist(m_playlist);
-//            m_player->mediaStatusChanged();
-//              std::cout << "chego aqui" << std::endl;
-
-//              m_player->setMedia(QUrl("qrc:/home/rafael/Documentos/musicas_testes/stream_voice.mp3"));
-//              thread_rastreador.join();
-
-//        }
 }
