@@ -35,9 +35,8 @@
 #include <future>
 #include <QtCore/QString>
 #include <set>
-
-#define MAX_LENGTH (320*8)
-#define MAX_LENGTH_FILE ((320*8)-15)
+#define MAX_LENGTH (320)
+#define MAX_LENGTH_FILE (320-15)
 
 
 #include <stack>
@@ -51,8 +50,8 @@ namespace io = google::protobuf::io;
 class Leecher :public QThread{
 
 private:
-    char *hash, *path;
-    int type_download=2,socket_fd, total_bytes_file[4], total_de_pacotes, rastreadorPorta = 8080, numthreads = 4;
+   const  char *hash, *path;
+    int tipo_download,socket_fd, total_bytes_file[4], total_de_pacotes, rastreador_porta, numthreads = 4,total_bytes_baixados;
     std::thread threads[4];
     PrioritDataGramaFIFO filaBuffer;
     PrioritDataGramaFIFO filaConfirma;
@@ -68,9 +67,9 @@ private:
 
     long ConsultarFileSize(const char *hash, struct sockaddr_in &pointer_address);
 
-    void IniciarDownloadP2PSequencial( char *hash, char *path, struct sockaddr_in *pointers_address);
+    void IniciarDownloadP2PSequencial( const char *hash, const char *path, struct sockaddr_in *pointers_address);
 
-    void IniciarDownloadP2PAleatorio( char *hash,  char *path, struct sockaddr_in *pointer_address);
+    void IniciarDownloadP2PAleatorio( const char *hash, const  char *path, struct sockaddr_in *pointer_address);
 
     void RequisicaoP2P(int type_down, const char *hash, int num_pacote, struct sockaddr_in seed_address);
 
@@ -79,13 +78,10 @@ private:
     void ConfirmarPacotes(const char *hash, int num_pacote);
 
 public:
-    Leecher( );
-
-//    Leecher( char *hash,  char *path);
-
+    Leecher(int tipo_download, int rastreador_porta, int rtt, int falha );
+    void configFileDownload(std::string path, std::string hash);
     ~Leecher();
-
-    double total_bytes_baixados = 0, velocidade = 100,velocidade_media;
+    double velocidade = 100,velocidade_media;
     void run();
 
 

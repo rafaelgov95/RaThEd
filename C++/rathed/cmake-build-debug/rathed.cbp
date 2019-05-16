@@ -117,6 +117,9 @@
 		<Unit filename="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed/rastreador/Rastreador.h">
 			<Option target="rathed"/>
 		</Unit>
+		<Unit filename="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed/util/json.hpp">
+			<Option target="rathed"/>
+		</Unit>
 		<Unit filename="/home/rafael/Documentos/Projetos/RaThEd/C++/rathed/util/util.h">
 			<Option target="rathed"/>
 		</Unit>

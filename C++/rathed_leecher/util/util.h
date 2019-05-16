@@ -83,6 +83,12 @@ static long MyTempMS() {
     return ms.count();
 }
 
+static long MyTempMiS_() {
+    std::chrono::microseconds ms = std::chrono::duration_cast<std::chrono::microseconds>(
+            std::chrono::system_clock::now().time_since_epoch()
+    );
+    return ms.count();
+}
 static const std::vector<std::string> my_split(const std::string& s, const char& c)
 {
     std::string buff{""};

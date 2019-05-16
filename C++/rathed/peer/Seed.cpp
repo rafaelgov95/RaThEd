@@ -19,7 +19,11 @@ Seed::~Seed() {
     close(socket_fd);
 }
 
-Seed::Seed(int porta) {
+Seed::Seed(int tipo_download, int porta,int rastreadorPorta,int atraso){
+
+    opcao=tipo_download;
+    R=atraso;
+
     srand((unsigned int) time(NULL));
     if ((socket_fd = socket(AF_INET, SOCK_DGRAM, 0)) == -1) {
         error("socket()");
@@ -40,15 +44,14 @@ Seed::Seed(int porta) {
         error("bind()");
     }
     my_port = ntohs(server_address.sin_port);
-    Run();
+
 
 }
 
 
 void Seed::Run() {
 
-    AtualizarRastreador("cc72fc24056ced9ce13a287ca1243d48", "/home/rafael/Downloads/t.mp3");
-//    AtualizarRastreador("cc72fc24056ced9ce13a287ca1243d48", "/home/rafael/Downloads/rafael.txt");
+
 
     for (;;) {
         FD_SET(socket_fd, &readfds);
@@ -73,7 +76,7 @@ void Seed::Run() {
 
 void Seed::IsTypeEnviar(rathed::Datagrama &data) {
     if (opcao == 1) {
-        int valor = rand() % (10 + 1);
+        int valor = rand() % (100 + 1);
         if (valor > R) {
             std::cout << "Bloco Dispinivel: " << std::endl;
             std::cout << "Enviar Bloco Dispinivel!" << std::endl;
@@ -136,7 +139,7 @@ rathed::Datagrama Seed::check_list_enviados(int x) {
     if (x > 0) {
         auto i = buffer.begin();
         while (i != buffer.end()) {
-            int range =(int)(total_de_pacotes*0.1);
+            int range =(int)(total_de_pacotes*0.01);
             if(range <=0){
                 valor = 0;
 

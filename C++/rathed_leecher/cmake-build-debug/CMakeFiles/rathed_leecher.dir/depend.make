@@ -4,6 +4,7 @@
 CMakeFiles/rathed_leecher.dir/main.cpp.o: ../peer/Leecher.h
 CMakeFiles/rathed_leecher.dir/main.cpp.o: ../util/PrioritFIFO.h
 CMakeFiles/rathed_leecher.dir/main.cpp.o: ../util/Temporizador.h
+CMakeFiles/rathed_leecher.dir/main.cpp.o: ../util/json.hpp
 CMakeFiles/rathed_leecher.dir/main.cpp.o: ../util/util.h
 CMakeFiles/rathed_leecher.dir/main.cpp.o: ../model/model.pb.h
 CMakeFiles/rathed_leecher.dir/main.cpp.o: ../rede/CamadaDeRede.h
@@ -538,6 +539,7 @@ CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/3YJK5W5UP7/qrc_buttons.cpp.
 
 CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.o: ../peer/Leecher.h
 CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.o: ../util/PrioritFIFO.h
+CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.o: ../util/json.hpp
 CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.o: ../model/model.pb.h
 CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.o: ../rede/CamadaDeRede.h
 CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.o: ../util/PrioritDataGramaFIFO.h
@@ -802,6 +804,7 @@ CMakeFiles/rathed_leecher.dir/rede/CamadaDeRede.cpp.o: ../rede/CamadaDeRede.h
 
 CMakeFiles/rathed_leecher.dir/template/widget.cpp.o: ../peer/Leecher.h
 CMakeFiles/rathed_leecher.dir/template/widget.cpp.o: ../util/PrioritFIFO.h
+CMakeFiles/rathed_leecher.dir/template/widget.cpp.o: ../util/json.hpp
 CMakeFiles/rathed_leecher.dir/template/widget.cpp.o: ../model/model.pb.h
 CMakeFiles/rathed_leecher.dir/template/widget.cpp.o: ../peer/Leecher.h
 CMakeFiles/rathed_leecher.dir/template/widget.cpp.o: ../rede/CamadaDeRede.h

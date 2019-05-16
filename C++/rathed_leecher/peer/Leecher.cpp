@@ -18,35 +18,33 @@
 Leecher::~Leecher() {
     close(socket_fd);
     free(camadaDeRede);
-    free(hash);
-    free(path);
 }
-//Leecher::Leecher(char *hash, char *path) {
+
+void Leecher::configFileDownload(std::string hash_,std::string path_){
+    path=new char(path_.size());
+    hash=new char(hash_.size());
+
+    strcpy((char*)path,path_.c_str());
+    strcpy((char*)hash,hash_.c_str());
+}
 
 
-Leecher::Leecher() {
-    this->path = (char *) malloc(strlen("/home/rafael/Documentos/musicas_testes/vai_teia.mp3") * (sizeof(char)));
-    this->hash = (char *) malloc(strlen("cc72fc24056ced9ce13a287ca1243d48") * (sizeof(char)));
-//    tleecher = std::thread(&Leecher::Run,this,"cc72fc24056ced9ce13a287ca1243d48", "/home/rafael/Documentos/musicas_testes/vai_teia.mp3");
-
-     path="/home/rafael/Documentos/musicas_testes/vai_teia.mp3";
-     hash="cc72fc24056ced9ce13a287ca1243d48";
-
-//    this->path=path;
-//    hash=hash;
+Leecher::Leecher(int tipo_download, int rastreador_porta,int rtt, int falha):tipo_download(tipo_download),rastreador_porta(rastreador_porta) {
+    std::cout<<"Tipo_download: "<<tipo_download <<" RatreadorPorta: "<< rastreador_porta <<std::endl;
 
     if ((socket_fd = socket(AF_INET, SOCK_DGRAM, 0)) == -1) {
         error("socket()");
     }
     bzero(&(rastreador_address.sin_zero), 8);
     rastreador_address.sin_family = AF_INET;
-    rastreador_address.sin_port = htons(rastreadorPorta);
+    rastreador_address.sin_port = htons(rastreador_porta);
     rastreador_address.sin_addr.s_addr = INADDR_ANY;
-    camadaDeRede = new CamadaDeRede(socket_fd, rastreador_address);
+    camadaDeRede = new CamadaDeRede(socket_fd, rastreador_address, rtt,falha);
 }
 
 
 void Leecher::run() {
+
     std::vector<std::string> total_peers = ConsultarRastreador(hash);
     seed_address = (struct sockaddr_in *) malloc(total_peers.size() * sizeof(struct sockaddr_in));
     for (int i = 0; i < total_peers.size(); ++i) {
@@ -68,30 +66,30 @@ void Leecher::run() {
         total_de_pacotes = (fileSize_total / (MAX_LENGTH_FILE)) + 1;
     }
 
-    if (type_download == 1) {
+    if (tipo_download == 1) {
         IniciarDownloadP2PSequencial(hash, path, seed_address);
-    } else if (type_download == 2) {
+    } else if (tipo_download == 2) {
         IniciarDownloadP2PAleatorio(hash, path, seed_address);
     }
 
 
 }
 
-void Leecher::IniciarDownloadP2PSequencial(char *hash, char *path, struct sockaddr_in *pointer_address) {
-    int ultimos_bytes=0, tempInicioFile,tempFimFile, tempInicio = 0, tempFim = 0, tempResult = 0, tempResulTotal = 0;
+void Leecher::IniciarDownloadP2PSequencial(const char *hash, const char *path, struct sockaddr_in *pointer_address) {
+    double tempInicioFile=0,tempFimFile, tempInicio = 0, tempFim = 0, tempResult = 0, tempResulTotal = 0,jitter = 0, jitterImp = 0, jitterPar = 0;
     int fd_arq = open(path, O_CREAT | O_WRONLY,
-                      0666), num_pacote = 1, round = 0, jitter = 0, jitterImp = 0, jitterPar = 0;
+                      0666), num_pacote = 1, round = 0;
     io::ZeroCopyOutputStream *raw_output = new io::FileOutputStream(fd_arq);
     auto *coded_output = new io::CodedOutputStream(raw_output);
     bool flag, flag_2;
     flag = flag_2 = true;
-    tempInicioFile=MyTempMS();
-
+    tempInicioFile=MyTempMiS_();
+    long byts_anterior=0;
     while (flag) {
         round += 1;
         int threads_round = 0;
         camadaDeRede->InterfaceGetFilaBuffer().clear();
-        tempInicio = MyTempMS();
+        tempInicio = MyTempMiS_();
         while (threads_round < numthreads && flag_2) {
             if (total_de_pacotes + 1 > num_pacote) {
                 threads[threads_round] = std::thread(&Leecher::RequisicaoP2P, this, 1, hash, num_pacote,
@@ -106,42 +104,45 @@ void Leecher::IniciarDownloadP2PSequencial(char *hash, char *path, struct sockad
         for (int i = 0; i < threads_round; ++i) {
             threads[i].join();
         }
+        byts_anterior=coded_output->ByteCount();
         while (!filaBuffer.empty()) {
             rathed::Datagrama data;
             filaBuffer.next(data);
             coded_output->WriteRaw(data.data().c_str(), data.data().size());
         }
         if (flag_2) {
-            tempFim = MyTempMS();
+            tempFim = MyTempMiS_();
             tempResult = tempFim - tempInicio;
             tempResulTotal += tempResult;
+
             total_bytes_baixados = coded_output->ByteCount();
-            velocidade = (((numthreads*320) / (tempResult * pow(10, -3)))/100);
-            velocidade_media +=velocidade;
+
+            velocidade_media = ((total_bytes_baixados/ ((double)((tempFim-tempInicioFile ) /1000000))) * pow(10, -3));
+            int bytes_resut=(total_bytes_baixados-byts_anterior);
+            velocidade = (((bytes_resut)/ ((double)(tempResult /1000000))) * pow(10, -3));
 
             if ((round % 2) == 1) {
                 jitterPar = tempResult;
                 jitter += jitterPar - jitterImp;
-                std::cout << "VELOCIDADE: " << velocidade << " VELOCIDADE [M]: " << velocidade_media/round  << " KBps  "
-                          << "- PING: " << tempResult << " ms - JITTER: " << jitterPar - jitterImp <<
-                          " ms - PING [M]: " << (tempResulTotal / round) << " ms - JITTER [M]: " << jitter << std::endl;
+                std::cout << "VELOCIDADE: " << velocidade << " KBps VELOCIDADE [M]: " << velocidade_media  << " KBps  "
+                          << "- PING: " << (tempResult/1000)  << " ms - JITTER: " << (jitterPar - jitterImp)/1000 <<
+                          " ms - PING [M]: " << ((tempResulTotal/1000)/round) << " ms - JITTER [M]: " << jitter/1000 << std::endl;
             } else {
                 jitterImp = tempResult;
                 jitter += jitterImp - jitterPar;
-                std::cout << "VELOCIDADE: " << velocidade << " VELOCIDADE [M]: " << velocidade_media/round   << " KBps  "
-                          << "- PING: " << tempResult << " ms - JITTER: " << jitterImp - jitterPar <<
-                          " ms - PING [M]: " << (tempResulTotal / round) << " ms - JITTER [M]: " << jitter << " ms"
+                std::cout << "VELOCIDADE: " << velocidade << " KBps VELOCIDADE [M]: " << velocidade_media   << " KBps  "
+                          << "- PING: " << (tempResult/1000)  << " ms - JITTER: " << (jitterImp - jitterPar)/1000 <<
+                          " ms - PING [M]: " << ((tempResulTotal/1000)/round) << " ms - JITTER [M]: " << jitter/1000 << " ms"
                           << std::endl;
             }
+
 
         }
     }
 
-
-
-    tempFimFile=MyTempMS();
-    std::cout << "TAMANHO FINAL DO AUDIO: " << coded_output->ByteCount() << " Bytes Gravados" <<" em: "<<((tempFimFile-tempInicioFile)/1000) <<" segundos" << std::endl;
-    std::cout << "TAXA DE GRAVACAO: " << ((coded_output->ByteCount())/((tempFimFile-tempInicioFile)/1000))/1000  << " KBytes/s" << std::endl;
+    tempFimFile=MyTempMiS_();
+    std::cout << "TAMANHO FINAL DO AUDIO: " << coded_output->ByteCount() << " Bytes Gravados" <<" em: "<<((tempFimFile-tempInicioFile)/1000000) <<" segundos" << std::endl;
+    std::cout << "TAXA DE GRAVACAO: " << ((coded_output->ByteCount())/((tempFimFile-tempInicioFile)/1000000))/1000  << " KBytes/s" << std::endl;
 
 
     delete coded_output;
@@ -150,23 +151,23 @@ void Leecher::IniciarDownloadP2PSequencial(char *hash, char *path, struct sockad
 }
 
 
-void Leecher::IniciarDownloadP2PAleatorio( char *hash,  char *path, struct sockaddr_in *pointer_address) {
-    int tempInicioFile,tempFimFile,tempInicio = 0, tempFim = 0, tempResult = 0, tempResulTotal = 0;
+void Leecher::IniciarDownloadP2PAleatorio(const char *hash, const char *path, struct sockaddr_in *pointer_address) {
+    double tempInicioFile,tempFimFile,tempInicio = 0, tempFim = 0, tempResult = 0, tempResulTotal = 0;
     int fd_arq = open(path, O_CREAT | O_WRONLY,
                       0666), num_pacote = 1, round = 0, jitter = 0, jitterImp = 0, jitterPar = 0;
     io::ZeroCopyOutputStream *raw_output = new io::FileOutputStream(fd_arq);
     auto *coded_output = new io::CodedOutputStream(raw_output);
     bool flag = true;
-    int num_pacote_ultimo=0;
+    int byts_anterior=0,num_pacote_ultimo=0;
     round = 1;
 
-    tempInicioFile=MyTempMS();
+    tempInicioFile=MyTempMiS_();
 
     while (flag) {
         int threads_round = 0;
         camadaDeRede->InterfaceGetFilaBuffer().clear();
         if(num_pacote>num_pacote_ultimo){
-            tempInicio = MyTempMS();
+            tempInicio = MyTempMiS_();
             num_pacote_ultimo=num_pacote;
         }
         while (threads_round < numthreads && flag) {
@@ -194,8 +195,6 @@ void Leecher::IniciarDownloadP2PAleatorio( char *hash,  char *path, struct socka
         }
         camadaDeRede->InterfaceGetFilaBuffer().clear();
         ConfirmarPacotes(hash, num_pacote);
-//        camadaDeRede->InterfaceGetFilaBuffer().clear();
-
         if ((*setBuffer.begin()).data.packnumber() == -1) {
             flag = false;
         } else {
@@ -203,49 +202,41 @@ void Leecher::IniciarDownloadP2PAleatorio( char *hash,  char *path, struct socka
             bool flag_entrou_gravacao = false;
             while (num_pacote == (*setBuffer.begin()).data.packnumber() && !setBuffer.empty() && flag) {
                 if (flag_entrou_gravacao) {
-                    tempInicio = MyTempMS();
+                    tempInicio = MyTempMiS_();
                 }
                 flag_entrou_gravacao = true;
                 rathed::Datagrama data = (*setBuffer.begin()).data;
+                std::cout<<" DATAFILE: "<< data.ByteSize()<<std::endl;
+                byts_anterior =coded_output->ByteCount();
                 coded_output->WriteRaw(data.data().c_str(), data.data().size());
                 num_pacote += 1;
-//                std::cout << "2 Numer Pack: " << " Gravados ate Agora no Buffer: " << coded_output->ByteCount()
-//                          << " Gravando Bytes: " << data.data().size() << " Packnumber: "
-//                          << data.packnumber() << " inicioDownload: " << num_pacote << std::endl;
                 setBuffer.erase(setBuffer.begin());
-                tempFim = MyTempMS();
+                tempFim = MyTempMiS_();
 
 
                 tempResult = (tempFim - tempInicio);
-                if(tempResult<=0){
-                    tempResult=1;
-                }
-
-//                std::cout << "T1 " << tempResult << std::endl;
 
                 tempResulTotal += tempResult;
 
-//                std::cout << "T1 FIM " << tempFim << std::endl;
-//                std::cout << "T1 RESULT " << tempResult << std::endl;
-
-//                std::cout <<"PACKNUMER: "<<data.packnumber() <<"Tamanho Data Size: "<<data.data().size() << "total_bytes_baixados: " << total_bytes_baixados <<std::endl;
-//                bits_anterior =coded_output->ByteCount();
                 total_bytes_baixados = coded_output->ByteCount();
-                velocidade = (((320) / (tempResult * pow(10, -3))) * pow(10, -3));
-                velocidade_media +=velocidade;
+
+                velocidade_media = ((total_bytes_baixados/ ((double)((tempFim-tempInicioFile ) /1000000))) * pow(10, -3));
+                int bytes_resut=(total_bytes_baixados-byts_anterior);
+                velocidade = (((bytes_resut)/ ((double)(tempResult /1000000))) * pow(10, -3));
+
 
                 if ((round % 2) == 1) {
                     jitterPar = tempResult;
                     jitter += jitterPar - jitterImp;
-                    std::cout << "VELOCIDADE: " << velocidade << " VELOCIDADE [M]: " << velocidade_media/round  << " KBps  "
-                              << "- PING: " << tempResult << " ms - JITTER: " << jitterPar - jitterImp <<
-                              " ms - PING [M]: " << (tempResulTotal / round) << " ms - JITTER [M]: " << jitter << std::endl;
+                    std::cout << "VELOCIDADE: " << velocidade << " KBps VELOCIDADE [M]: " << velocidade_media  << " KBps  "
+                              << "- PING: " << (tempResult/1000)  << " ms - JITTER: " << (jitterPar - jitterImp)/1000 <<
+                              " ms - PING [M]: " << ((tempResulTotal/1000)/round) << " ms - JITTER [M]: " << jitter/1000 << std::endl;
                 } else {
                     jitterImp = tempResult;
                     jitter += jitterImp - jitterPar;
-                    std::cout << "VELOCIDADE: " << velocidade << " VELOCIDADE [M]: " << velocidade_media/round   << " KBps  "
-                              << "- PING: " << tempResult << " ms - JITTER: " << jitterImp - jitterPar <<
-                              " ms - PING [M]: " << (tempResulTotal / round) << " ms - JITTER [M]: " << jitter << " ms"
+                    std::cout << "VELOCIDADE: " << velocidade << " KBps VELOCIDADE [M]: " << velocidade_media   << " KBps  "
+                              << "- PING: " << (tempResult/1000) << " ms - JITTER: " << (jitterImp - jitterPar)/1000 <<
+                              " ms - PING [M]: " << ((tempResulTotal/1000)/round) << " ms - JITTER [M]: " << jitter/1000 << " ms"
                               << std::endl;
                 }
 
@@ -254,9 +245,9 @@ void Leecher::IniciarDownloadP2PAleatorio( char *hash,  char *path, struct socka
         }
     }
 
-    tempFimFile=MyTempMS();
-    std::cout << "TAMANHO FINAL DO AUDIO: " << coded_output->ByteCount() << " Bytes Gravados" <<" em: "<<((tempFimFile-tempInicioFile)/1000) <<" segundos" << std::endl;
-    std::cout << "TAXA DE GRAVACAO: " << ((coded_output->ByteCount())/((tempFimFile-tempInicioFile)/1000))/1000  << " KBytes/s" << std::endl;
+    tempFimFile=MyTempMiS_();
+    std::cout << "TAMANHO FINAL DO AUDIO: " << coded_output->ByteCount() << " Bytes Gravados" <<" em: "<<((tempFimFile-tempInicioFile)/1000000) <<" segundos" << std::endl;
+    std::cout << "TAXA DE GRAVACAO: " << ((coded_output->ByteCount())/((tempFimFile-tempInicioFile)/1000000))/1000  << " KBytes/s" << std::endl;
 
     delete coded_output;
     delete raw_output;
@@ -335,6 +326,7 @@ void Leecher::ConfirmaRequisicaoP2P(int type_down, const rathed::Datagrama &data
 }
 
 long Leecher::ConsultarFileSize(const char *hash, sockaddr_in &seed) {
+
     rathed::Datagrama data = DataGrama(3, 0, 0, hash);
     return EnviarDataGramaParaRede(1, data, seed).packnumber();
 }

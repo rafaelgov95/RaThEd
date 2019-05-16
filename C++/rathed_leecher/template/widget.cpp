@@ -16,7 +16,7 @@ Widget::Widget(QWidget *parent) :
 
     m_playListModel = new QStandardItemModel(this);
     ui->playlistView->setModel(m_playListModel);    // defini modelo de dados
-    ui->lcdNumber->display(QString::number(leecher.velocidade, 'f', 0));
+    ui->lcdNumber->display(QString::number(leecher->velocidade, 'f', 0));
     // Definir cabecalhos da tabela
     m_playListModel->setHorizontalHeaderLabels(QStringList() << tr("Audio Stream")
                                                              << tr("Audio Path"));
@@ -70,10 +70,20 @@ Widget::~Widget() {
 }
 
 void Widget::on_btn_add_clicked() {
-    leecher.start();
+    std::ifstream i("/home/rafael/Documentos/Projetos/RaThEd/C++/config/config.json");
+    json j;
+    i >> j;
+    std::string hash = j["leecher"]["hash_file"];
+    std::string path = j["leecher"]["local_download"];
+    int rtt=j["camada_de_rede"]["rtt"];
+    int falha=j["camada_de_rede"]["falha"];
+
+    leecher = new Leecher(j["tipo_download"],j["rastreador"]["porta"],rtt,falha);
+    leecher->configFileDownload(hash,path);
+    leecher->start();
 
 
-    QString filePath = "/home/rafael/Documentos/musicas_testes/vai_teia.mp3";
+    QString filePath = path.c_str();
     QList<QStandardItem *> items;
     items.append(new QStandardItem(filePath));
     m_playListModel->appendRow(items);

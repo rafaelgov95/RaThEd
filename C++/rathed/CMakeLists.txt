@@ -12,7 +12,7 @@ find_package (Threads REQUIRED)
 set(CMAKE_CXX_STANDARD 14)
 include_directories(peer/ rastreador/ util/ model/ template/)
 add_executable(rathed main.cpp peer/Seed.cpp peer/Seed.h model/model.pb.h model/model.pb.cc
-        rastreador/Rastreador.cpp rastreador/Rastreador.h util/util.h
+        rastreador/Rastreador.cpp rastreador/Rastreador.h util/util.h util/json.hpp
         )
 
 target_link_libraries(rathed Threads::Threads ${PROTOBUF_LIBRARIES})

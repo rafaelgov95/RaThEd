@@ -95,6 +95,8 @@ void Rastreador::EnviarPeers(const char* peers) {
 }
 
 void Rastreador::ConsultaFiles(rathed::Datagrama &data) {
+    std::cout << "DATA: " <<data.data().c_str() <<std::endl;
+
     auto it = std::find_if(filesPeers.begin(), filesPeers.end(), CompareHashPeer(data.data()));
     if (it.base() != nullptr) {
         std::string tmp;

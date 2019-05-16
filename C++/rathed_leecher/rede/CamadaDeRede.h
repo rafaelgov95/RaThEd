@@ -15,14 +15,13 @@
 #include <mutex>
 #include <condition_variable>
 #include <util/PrioritFIFO.h>
-
-#define MAX_LENGTH (320*8)
-#define MAX_LENGTH_FILE ((320*8)-15)
+#define MAX_LENGTH (320)
+#define MAX_LENGTH_FILE (320-15)
 
 class CamadaDeRede {
 
 private:
-    int rtt=20,F=50,socket_fd, bytes_read;
+    int rtt,F,socket_fd, bytes_read;
     unsigned int address_length;
     char recieve_data[MAX_LENGTH];
     struct sockaddr_in rastreador_address;
@@ -32,7 +31,9 @@ private:
     void StartTemporizacao(const rathed::Datagrama& data);
 
 public:
-    CamadaDeRede(unsigned int socket, struct sockaddr_in &rastreador);
+
+    CamadaDeRede(unsigned int socket, struct sockaddr_in &rastreador, int rtt, int falha);
+
     void InterfaceRede(const rathed::Datagrama &data, struct sockaddr_in seed_address) ;
     PrioritFIFO& InterfaceGetFilaBuffer();
 };

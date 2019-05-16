@@ -27,30 +27,30 @@
 #include <queue>
 #include <google/protobuf/io/zero_copy_stream.h>
 #include <google/protobuf/io/zero_copy_stream_impl.h>
-
-#define MAX_LENGTH (320*8)
-#define MAX_LENGTH_FILE ((320*8)-15)
-
+#include <util/json.hpp>
+#define MAX_LENGTH (320)
+#define MAX_LENGTH_FILE (320-15)
+using json = nlohmann::json;
 namespace io = google::protobuf::io;
 class Seed {
 
+
 private:
-    int fd_arq, opcao=2, R=5 ,rastreadorPorta = 8080, my_port, numfd = 0, socket_fd, bytes_read, bytes_total;
+    fd_set readfds;
+    char *hash,*path;
+    int fd_arq, opcao, R, my_port, numfd = 0, socket_fd, bytes_read, bytes_total;
     io::ZeroCopyInputStream *raw_input ;
     io::CodedInputStream *coded_input ;
     unsigned int address_length;
     char recieve_data[MAX_LENGTH];
     struct sockaddr_in server_address, client_address, rastreador_address;
-    fd_set readfds;
     std::vector<std::pair<std::string, std::string>> file;
     std::vector<rathed::Datagrama>buffer;
     long total_de_pacotes=0;
 
-    void Run();
+
+
     rathed::Datagrama check_list_enviados(int x );
-    void AtualizarRastreador(const std::string& hash,const std::string& path);
-
-
     void TratarMensagem(rathed::Datagrama& data);
     void EnviarAleatorio(rathed::Datagrama& data);
     void EnviarSequencial(rathed::Datagrama& data);
@@ -60,7 +60,10 @@ private:
     void IsTypeEnviar(rathed::Datagrama& data);
 
 public:
-    Seed(int porta);
+    void Run();
+    Seed(int tipo_download, int porta,int rastreadorPorta,int atraso);
+    void AtualizarRastreador(const std::string& hash,const std::string& path);
+
     ~Seed();
 
 

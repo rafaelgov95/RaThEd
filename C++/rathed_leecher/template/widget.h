@@ -4,6 +4,7 @@
 
 #ifndef RATHED_LEECHER_WIDGET_H
 #define RATHED_LEECHER_WIDGET_H
+#include <util/json.hpp>
 
 
 #include <QWidget>
@@ -11,6 +12,7 @@
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
 #include <peer/Leecher.h>
+using json = nlohmann::json;
 
 namespace Ui {
     class Widget;
@@ -35,7 +37,7 @@ private:
     QStandardItemModel  *m_playListModel;   // Modelo de dados da lista de reprodução para exibição
     QMediaPlayer        *m_player;          // Jogador pista
     QMediaPlaylist      *m_playlist;        // Lista de reprodução do player
-    Leecher leecher ;
+    Leecher *leecher ;
 };
 
 #endif //RATHED_LEECHER_WIDGET_H

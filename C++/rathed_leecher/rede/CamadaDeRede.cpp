@@ -11,8 +11,8 @@
 #include <libnet.h>
 #include <chrono>
 
-CamadaDeRede::CamadaDeRede(unsigned int socket, struct sockaddr_in &rastreador) : socket_fd(socket),
-                                                                                  rastreador_address(rastreador) {
+CamadaDeRede::CamadaDeRede(unsigned int socket, struct sockaddr_in &rastreador, int rtt, int falha) : socket_fd(socket),
+                                                                                  rastreador_address(rastreador),rtt(rtt),F(falha) {
     srand((unsigned int) time(NULL));
     address_length = sizeof(struct sockaddr);
 }
