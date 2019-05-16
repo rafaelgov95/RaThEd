@@ -15,42 +15,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2287bb4b-7650-4081-b910-3dae6e5019b5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/util/json.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../rathed_leecher/util/json.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/main.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/peer/Seed.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rathed.dir/rastreador/Rastreador.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/rathed" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/rathed" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/rathed.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/rathed.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/peer/Seed.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/peer/Seed.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/peer/Seed.h" beforeDir="false" afterPath="$PROJECT_DIR$/peer/Seed.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rastreador/Rastreador.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/rastreador/Rastreador.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rastreador/Rastreador.h" beforeDir="false" afterPath="$PROJECT_DIR$/rastreador/Rastreador.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed_leecher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed_leecher/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/peer/Leecher.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/peer/Leecher.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/rathed_leecher_autogen/mocs_compilation.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/template/widget.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher.dir/template/widget.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher_autogen.dir/AutogenInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/CMakeFiles/rathed_leecher_autogen.dir/AutogenInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/cmake-build-debug/rathed_leecher.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed_leecher/peer/Leecher.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/peer/Leecher.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed_leecher/peer/Leecher.h" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/peer/Leecher.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed_leecher/rede/CamadaDeRede.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/rede/CamadaDeRede.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed_leecher/rede/CamadaDeRede.h" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/rede/CamadaDeRede.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rathed_leecher/template/widget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/template/widget.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed_leecher/template/widget.h" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/template/widget.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rathed_leecher/util/util.h" beforeDir="false" afterPath="$PROJECT_DIR$/../rathed_leecher/util/util.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -400,12 +372,12 @@
       <workItem from="1557932387919" duration="775000" />
       <workItem from="1557941701317" duration="10064000" />
       <workItem from="1558007075416" duration="12396000" />
-      <workItem from="1558029641235" duration="8731000" />
+      <workItem from="1558029641235" duration="9385000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="521695000" />
+    <option name="totallyTimeSpent" value="522349000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

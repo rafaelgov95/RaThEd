@@ -58,7 +58,7 @@ private:
     std::set<ComparableBuffer> setBuffer;
     struct sockaddr_in rastreador_address, *seed_address;
     CamadaDeRede *camadaDeRede;
-
+    std::ofstream *ofs;
 
     rathed::Datagrama
     EnviarDataGramaParaRede(int type_down, const rathed::Datagrama &data_, struct sockaddr_in &memory_seed_address);
@@ -79,7 +79,7 @@ private:
 
 public:
     Leecher(int tipo_download, int rastreador_porta, int rtt, int falha );
-    void configFileDownload(std::string path, std::string hash);
+    void configFileDownload(std::string path, std::string hash,const char *log);
     ~Leecher();
     double velocidade = 100,velocidade_media;
     void run();

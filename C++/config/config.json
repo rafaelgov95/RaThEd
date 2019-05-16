@@ -15,6 +15,7 @@
         "inicio_porta":8080   
     },
     "leecher":{
+        "log":"/home/rafael/Documentos/musicas_testes/vai_teia.txt",
         "local_download":"/home/rafael/Documentos/musicas_testes/vai_teia.mp3",
         "hash_file":"cc72fc24056ced9ce13a287ca1243d48",
         "porta":8080   

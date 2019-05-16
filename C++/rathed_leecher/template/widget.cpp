@@ -75,11 +75,12 @@ void Widget::on_btn_add_clicked() {
     i >> j;
     std::string hash = j["leecher"]["hash_file"];
     std::string path = j["leecher"]["local_download"];
+    std::string log = j["leecher"]["log"];
     int rtt=j["camada_de_rede"]["rtt"];
     int falha=j["camada_de_rede"]["falha"];
 
     leecher = new Leecher(j["tipo_download"],j["rastreador"]["porta"],rtt,falha);
-    leecher->configFileDownload(hash,path);
+    leecher->configFileDownload(hash,path,log.c_str());
     leecher->start();
 
 

@@ -17,12 +17,14 @@
 
 Leecher::~Leecher() {
     close(socket_fd);
-    free(camadaDeRede);
+    ofs->close();
+    delete  camadaDeRede;
 }
 
-void Leecher::configFileDownload(std::string hash_,std::string path_){
+void Leecher::configFileDownload(std::string hash_,std::string path_,const char *log){
     path=new char(path_.size());
     hash=new char(hash_.size());
+    ofs =  new  std::ofstream(log, std::ofstream::out);
 
     strcpy((char*)path,path_.c_str());
     strcpy((char*)hash,hash_.c_str());
@@ -121,19 +123,28 @@ void Leecher::IniciarDownloadP2PSequencial(const char *hash, const char *path, s
             int bytes_resut=(total_bytes_baixados-byts_anterior);
             velocidade = (((bytes_resut)/ ((double)(tempResult /1000000))) * pow(10, -3));
 
+
             if ((round % 2) == 1) {
                 jitterPar = tempResult;
                 jitter += jitterPar - jitterImp;
                 std::cout << "VELOCIDADE: " << velocidade << " KBps VELOCIDADE [M]: " << velocidade_media  << " KBps  "
                           << "- PING: " << (tempResult/1000)  << " ms - JITTER: " << (jitterPar - jitterImp)/1000 <<
                           " ms - PING [M]: " << ((tempResulTotal/1000)/round) << " ms - JITTER [M]: " << jitter/1000 << std::endl;
+
+                *ofs << "VELOCIDADE: " << velocidade << " KBps VELOCIDADE [M]: " << velocidade_media  << " KBps  "
+                     << "- PING: " << (tempResult/1000)  << " ms - JITTER: " << (jitterPar - jitterImp)/1000 <<
+                     " ms - PING [M]: " << ((tempResulTotal/1000)/round) << " ms - JITTER [M]: " << jitter/1000 << std::endl;
             } else {
                 jitterImp = tempResult;
                 jitter += jitterImp - jitterPar;
                 std::cout << "VELOCIDADE: " << velocidade << " KBps VELOCIDADE [M]: " << velocidade_media   << " KBps  "
-                          << "- PING: " << (tempResult/1000)  << " ms - JITTER: " << (jitterImp - jitterPar)/1000 <<
+                          << "- PING: " << (tempResult/1000) << " ms - JITTER: " << (jitterImp - jitterPar)/1000 <<
                           " ms - PING [M]: " << ((tempResulTotal/1000)/round) << " ms - JITTER [M]: " << jitter/1000 << " ms"
                           << std::endl;
+                *ofs << "VELOCIDADE: " << velocidade << " KBps VELOCIDADE [M]: " << velocidade_media   << " KBps  "
+                     << "- PING: " << (tempResult/1000) << " ms - JITTER: " << (jitterImp - jitterPar)/1000 <<
+                     " ms - PING [M]: " << ((tempResulTotal/1000)/round) << " ms - JITTER [M]: " << jitter/1000 << " ms"
+                     << std::endl;
             }
 
 
@@ -223,7 +234,7 @@ void Leecher::IniciarDownloadP2PAleatorio(const char *hash, const char *path, st
                 velocidade_media = ((total_bytes_baixados/ ((double)((tempFim-tempInicioFile ) /1000000))) * pow(10, -3));
                 int bytes_resut=(total_bytes_baixados-byts_anterior);
                 velocidade = (((bytes_resut)/ ((double)(tempResult /1000000))) * pow(10, -3));
-
+//                std::ofstream ofs ("test.txt", std::ofstream::out);
 
                 if ((round % 2) == 1) {
                     jitterPar = tempResult;
@@ -231,10 +242,18 @@ void Leecher::IniciarDownloadP2PAleatorio(const char *hash, const char *path, st
                     std::cout << "VELOCIDADE: " << velocidade << " KBps VELOCIDADE [M]: " << velocidade_media  << " KBps  "
                               << "- PING: " << (tempResult/1000)  << " ms - JITTER: " << (jitterPar - jitterImp)/1000 <<
                               " ms - PING [M]: " << ((tempResulTotal/1000)/round) << " ms - JITTER [M]: " << jitter/1000 << std::endl;
+
+                    *ofs << "VELOCIDADE: " << velocidade << " KBps VELOCIDADE [M]: " << velocidade_media  << " KBps  "
+                              << "- PING: " << (tempResult/1000)  << " ms - JITTER: " << (jitterPar - jitterImp)/1000 <<
+                              " ms - PING [M]: " << ((tempResulTotal/1000)/round) << " ms - JITTER [M]: " << jitter/1000 << std::endl;
                 } else {
                     jitterImp = tempResult;
                     jitter += jitterImp - jitterPar;
                     std::cout << "VELOCIDADE: " << velocidade << " KBps VELOCIDADE [M]: " << velocidade_media   << " KBps  "
+                              << "- PING: " << (tempResult/1000) << " ms - JITTER: " << (jitterImp - jitterPar)/1000 <<
+                              " ms - PING [M]: " << ((tempResulTotal/1000)/round) << " ms - JITTER [M]: " << jitter/1000 << " ms"
+                              << std::endl;
+                    *ofs << "VELOCIDADE: " << velocidade << " KBps VELOCIDADE [M]: " << velocidade_media   << " KBps  "
                               << "- PING: " << (tempResult/1000) << " ms - JITTER: " << (jitterImp - jitterPar)/1000 <<
                               " ms - PING [M]: " << ((tempResulTotal/1000)/round) << " ms - JITTER [M]: " << jitter/1000 << " ms"
                               << std::endl;
