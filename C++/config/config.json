@@ -2,7 +2,7 @@
     "tipo_download":1, 
     "camada_de_rede":{
         "rtt":20,
-        "falha":25
+        "falha":1
     },
     "rastreador":{
       "porta":8080      
@@ -11,11 +11,11 @@
         "peers":"4",
         "local_file":"/home/rafael/Downloads/t.mp3",
         "hash_file":"cc72fc24056ced9ce13a287ca1243d48",
-        "atraso":25,
+        "atraso":1,
         "inicio_porta":8080   
     },
     "leecher":{
-        "log":"/home/rafael/Documentos/musicas_testes/vai_teia.txt",
+        "log":"/home/rafael/Documentos/musicas_testes/",
         "local_download":"/home/rafael/Documentos/musicas_testes/vai_teia.mp3",
         "hash_file":"cc72fc24056ced9ce13a287ca1243d48",
         "porta":8080   

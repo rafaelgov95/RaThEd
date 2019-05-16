@@ -25,7 +25,6 @@ void Leecher::configFileDownload(std::string hash_,std::string path_,const char 
     path=new char(path_.size());
     hash=new char(hash_.size());
     ofs =  new  std::ofstream(log, std::ofstream::out);
-
     strcpy((char*)path,path_.c_str());
     strcpy((char*)hash,hash_.c_str());
 }
