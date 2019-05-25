@@ -37,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rastreador/Rastreador.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
+            <state relative-caret-position="258">
+              <caret line="82" column="36" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -153,7 +153,7 @@
     <auto-save>true</auto-save>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="27" />
     <option name="width" value="1920" />
     <option name="height" value="1053" />
@@ -343,12 +343,12 @@
       <workItem from="1558670394671" duration="2122000" />
       <workItem from="1558697208167" duration="832000" />
       <workItem from="1558745785233" duration="735000" />
-      <workItem from="1558792664640" duration="2421000" />
+      <workItem from="1558792664640" duration="2735000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="671471000" />
+    <option name="totallyTimeSpent" value="671785000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -360,20 +360,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.36666667" visible="true" weight="0.18569905" />
       <window_info id="Structure" order="1" sideWeight="0.6333333" side_tool="true" weight="0.1369863" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969433" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.84311634" weight="0.22028527" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.84311634" visible="true" weight="0.21943231" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.766809" weight="0.474443" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.3264192" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3264192" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.87299895" weight="0.4183835" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.87299895" weight="0.6189956" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4954955" weight="0.30269414" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.23319103" side_tool="true" weight="0.41266376" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32896462" />
@@ -711,8 +711,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rastreador/Rastreador.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
+        <state relative-caret-position="258">
+          <caret line="82" column="36" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
         </state>
       </provider>
     </entry>
