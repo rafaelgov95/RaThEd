@@ -31,7 +31,8 @@
 *.out
 *.app
 
-cmake-build-debug/
+C++/rathed_leecher/cmake-build-debug/
+C++/rathed/cmake-build-debug/
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
