@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="rathed_leecher" targetName="rathed_leecher" />
+      <config projectName="rathed_leecher" targetName="rathed_leecher_autogen" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c4a3b644-ab9a-4fb2-89e0-190f47fdc983" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+    <option name="clangWarnings" value="-Wno-unused-variable,-Werror=implicit-function-declaration,-Wshadow,-Wno-shadow-field-in-constructor-modified,-Wno-shadow-ivar,-Wno-writable-strings" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/include/c++/8.3.0/ext/new_allocator.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="539">
+              <caret line="149" column="6" selection-start-line="149" selection-start-column="6" selection-end-line="149" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rede/CamadaDeRede.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="445">
+              <caret line="34" column="113" selection-start-line="34" selection-start-column="113" selection-end-line="34" selection-end-column="113" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/include/google/protobuf/io/zero_copy_stream_impl.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2940">
+              <caret line="147" column="11" selection-start-line="147" selection-start-column="11" selection-end-line="147" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/include/c++/8.3.0/bits/stl_set.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1860">
+              <caret line="93" column="10" selection-start-line="93" selection-start-column="10" selection-end-line="93" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>chegou</find>
+      <find>chegou aqui</find>
+      <find>chego</find>
+      <find>consultarRastreador</find>
+      <find>aqui</find>
+      <find>coded_output</find>
+      <find>Consultar</find>
+      <find>tempInicio</find>
+      <find>&quot;&quot;</find>
+      <find>set_data</find>
+      <find>std::set&lt;ComparableBuffer&gt;</find>
+      <find>double</find>
+      <find>data</find>
+      <find>8</find>
+      <find>buffer_size_</find>
+      <find>aliasing_enabled_</find>
+      <find>total_bytes</find>
+      <find>kDefaultTotalBytesLimit</find>
+      <find>BUFFER</find>
+      <find>total_bytes_</find>
+      <find>malloc</find>
+      <find>filaConfirma</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>data</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/template/TemplateRathed.cpp" />
+        <option value="$PROJECT_DIR$/template/TemplateRathed.h" />
+        <option value="$PROJECT_DIR$/template/main.cpp" />
+        <option value="$PROJECT_DIR$/cmake-build-debug/rathed_leecher_autogen/include/ui_widget.h" />
+        <option value="$PROJECT_DIR$/peers/Leecher.h" />
+        <option value="$PROJECT_DIR$/template/Widget.cpp" />
+        <option value="$PROJECT_DIR$/template/widget.ui" />
+        <option value="$PROJECT_DIR$/buttons.qrc" />
+        <option value="$PROJECT_DIR$/cmake-build-debug/rathed_leecher_autogen/buttons.qrc" />
+        <option value="$PROJECT_DIR$/template/buttons.qrc" />
+        <option value="$PROJECT_DIR$/template/ui_widget.h" />
+        <option value="$PROJECT_DIR$/peers/Leecher.cpp" />
+        <option value="$PROJECT_DIR$/util/teste1.cpp" />
+        <option value="$PROJECT_DIR$/util/Temporizador.h" />
+        <option value="$PROJECT_DIR$/util/PrioritFIFO.h" />
+        <option value="$PROJECT_DIR$/util/PrioritFIFO.cpp" />
+        <option value="$PROJECT_DIR$/util/Temporizador.cpp" />
+        <option value="$PROJECT_DIR$/model/model.pb.h" />
+        <option value="$PROJECT_DIR$/model/model.pb.cc" />
+        <option value="$PROJECT_DIR$/template/widget.h" />
+        <option value="$PROJECT_DIR$/player/player.h" />
+        <option value="$PROJECT_DIR$/player/Player.h" />
+        <option value="$PROJECT_DIR$/template/widget.cpp" />
+        <option value="$PROJECT_DIR$/util/PrioritDataGramaFIFO.h" />
+        <option value="$PROJECT_DIR$/util/PrioritDataGramaFIFO.cpp" />
+        <option value="$PROJECT_DIR$/util/DataGramaFIFO.h" />
+        <option value="$PROJECT_DIR$/util/DataGramaFIFO.cpp" />
+        <option value="/usr/include/google/protobuf/io/coded_stream.h" />
+        <option value="$PROJECT_DIR$/util/coded_stream.cpp" />
+        <option value="$PROJECT_DIR$/util/zero_copy_stream_impl_lite.cpp" />
+        <option value="$PROJECT_DIR$/util/zero_copy_stream_impl_lite.h" />
+        <option value="$PROJECT_DIR$/util/coded_stream.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/player/Player.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/rede/CamadaDeRede.cpp" />
+        <option value="$PROJECT_DIR$/rede/CamadaDeRede.h" />
+        <option value="$PROJECT_DIR$/util/util.h" />
+        <option value="$PROJECT_DIR$/peer/Leecher.h" />
+        <option value="$PROJECT_DIR$/peer/Leecher.cpp" />
+        <option value="$PROJECT_DIR$/model/model.proto" />
+      </list>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1920" />
+    <option name="width" value="1360" />
+    <option name="height" value="768" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="rathed_leecher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rathed_leecher" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rathed_leecher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rathed_leecher" type="462c0819:PsiDirectoryNode" />
+              <item name="peer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rathed_leecher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rathed_leecher" type="462c0819:PsiDirectoryNode" />
+              <item name="player" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rathed_leecher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rathed_leecher" type="462c0819:PsiDirectoryNode" />
+              <item name="rede" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/util" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resource" />
+      <recent name="$PROJECT_DIR$/template" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/util" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/template" />
+      <recent name="$PROJECT_DIR$/cmake-build-debug/rathed_leecher_autogen" />
+      <recent name="$PROJECT_DIR$/cmake-build-debug" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="CMake Application.rathed_leecher">
+    <configuration name="rathed_leecher" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="rathed_leecher" TARGET_NAME="rathed_leecher" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="rathed_leecher" RUN_TARGET_NAME="rathed_leecher">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="rathed_leecher_autogen" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="rathed_leecher" TARGET_NAME="rathed_leecher_autogen" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.rathed_leecher" />
+      <item itemvalue="CMake Application.rathed_leecher_autogen" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c4a3b644-ab9a-4fb2-89e0-190f47fdc983" name="Default Changelist" comment="" />
+      <created>1555309299635</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555309299635</updated>
+      <workItem from="1555309301199" duration="3097000" />
+      <workItem from="1555337917366" duration="871000" />
+      <workItem from="1555341152333" duration="16405000" />
+      <workItem from="1555381976400" duration="1813000" />
+      <workItem from="1555385958690" duration="8840000" />
+      <workItem from="1555414188189" duration="19967000" />
+      <workItem from="1555453260542" duration="736000" />
+      <workItem from="1555611003758" duration="2054000" />
+      <workItem from="1555613971831" duration="284000" />
+      <workItem from="1555617480980" duration="9000" />
+      <workItem from="1555617514028" duration="856000" />
+      <workItem from="1556111992547" duration="111000" />
+      <workItem from="1556148645568" duration="987000" />
+      <workItem from="1556560500927" duration="712000" />
+      <workItem from="1556584289511" duration="3565000" />
+      <workItem from="1556624301760" duration="37055000" />
+      <workItem from="1556675232766" duration="5467000" />
+      <workItem from="1556711977798" duration="29259000" />
+      <workItem from="1556799602069" duration="10906000" />
+      <workItem from="1556819775527" duration="8320000" />
+      <workItem from="1556843339064" duration="6087000" />
+      <workItem from="1556849906125" duration="3527000" />
+      <workItem from="1556883357562" duration="29806000" />
+      <workItem from="1556932698909" duration="2956000" />
+      <workItem from="1556936622268" duration="4324000" />
+      <workItem from="1556974678919" duration="20659000" />
+      <workItem from="1557020066102" duration="2732000" />
+      <workItem from="1557031706094" duration="879000" />
+      <workItem from="1557058100543" duration="8946000" />
+      <workItem from="1557104766592" duration="576000" />
+      <workItem from="1557142399078" duration="13619000" />
+      <workItem from="1557165983668" duration="6055000" />
+      <workItem from="1557190847060" duration="6936000" />
+      <workItem from="1557204487920" duration="870000" />
+      <workItem from="1557233498732" duration="7965000" />
+      <workItem from="1557252980143" duration="5238000" />
+      <workItem from="1557261022338" duration="4360000" />
+      <workItem from="1557275110115" duration="18012000" />
+      <workItem from="1557314189432" duration="13633000" />
+      <workItem from="1557339073105" duration="8951000" />
+      <workItem from="1557362415238" duration="14226000" />
+      <workItem from="1557437596900" duration="327000" />
+      <workItem from="1557448627023" duration="11310000" />
+      <workItem from="1557510062509" duration="259000" />
+      <workItem from="1557510818688" duration="13361000" />
+      <workItem from="1557532523167" duration="5475000" />
+      <workItem from="1557581610925" duration="2009000" />
+      <workItem from="1557584157035" duration="6303000" />
+      <workItem from="1557590542890" duration="8734000" />
+      <workItem from="1557798927270" duration="1238000" />
+      <workItem from="1557844066115" duration="3025000" />
+      <workItem from="1557858313519" duration="13943000" />
+      <workItem from="1557875818870" duration="13583000" />
+      <workItem from="1557931228190" duration="797000" />
+      <workItem from="1557932388959" duration="1802000" />
+      <workItem from="1557941702671" duration="13394000" />
+      <workItem from="1558007076618" duration="8283000" />
+      <workItem from="1558029614415" duration="13510000" />
+      <workItem from="1558053420362" duration="4314000" />
+      <workItem from="1558095902084" duration="12210000" />
+      <workItem from="1558117258750" duration="202000" />
+      <workItem from="1558118488629" duration="5924000" />
+      <workItem from="1558136297119" duration="1322000" />
+      <workItem from="1558299102092" duration="599000" />
+      <workItem from="1558352840507" duration="10212000" />
+      <workItem from="1558375004488" duration="15906000" />
+      <workItem from="1558403306654" duration="10171000" />
+      <workItem from="1558436783357" duration="7325000" />
+      <workItem from="1558461071880" duration="13521000" />
+      <workItem from="1558476018747" duration="26406000" />
+      <workItem from="1558525534660" duration="13460000" />
+      <workItem from="1558552443040" duration="9548000" />
+      <workItem from="1558567237116" duration="14411000" />
+      <workItem from="1558611576627" duration="9617000" />
+      <workItem from="1558636097295" duration="6418000" />
+      <workItem from="1558670393811" duration="2325000" />
+      <workItem from="1558697207674" duration="848000" />
+      <workItem from="1558745784589" duration="599000" />
+      <workItem from="1558792664302" duration="1606000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="624662000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1920" y="0" width="1360" height="768" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info id="Structure" order="1" sideWeight="0.50363636" weight="0.25453576" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49636364" visible="true" weight="0.17199391" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32969433" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7203842" weight="0.22598253" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8740662" weight="0.42248908" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49893278" weight="0.3286026" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.8041622" weight="0.47707424" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49733192" weight="0.43581617" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010672" side_tool="true" weight="0.37772927" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4994664" weight="0.32969433" />
+      <window_info anchor="bottom" id="CMake" order="12" sideWeight="0.49893278" visible="true" weight="0.3771791" />
+      <window_info anchor="bottom" id="GenProtobuf-Output" order="13" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.016008537" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info id="Structure" order="1" sideWeight="0.50363636" weight="0.25453576" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49636364" visible="true" weight="0.11526147" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32969433" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7203842" visible="true" weight="0.2849345" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8740662" weight="0.42248908" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49893278" weight="0.3286026" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.8041622" weight="0.47707424" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49733192" weight="0.30021834" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010672" side_tool="true" weight="0.37772927" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4994664" weight="0.32969433" />
+      <window_info anchor="bottom" id="CMake" order="12" sideWeight="0.49893278" weight="0.37772927" />
+      <window_info anchor="bottom" id="GenProtobuf-Output" order="13" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.016008537" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../../.." />
+    </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="NONE" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/peer/Leecher.h</url>
+          <line>39</line>
+          <log-expression expression="define MAX_LENGTH 320&#10;#define MAX_LENGTH_FILE 320-48" language="ObjectiveC" />
+          <option name="timeStamp" value="598" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/peer/Leecher.h</url>
+          <line>9</line>
+          <option name="timeStamp" value="607" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
+          <line>279</line>
+          <option name="timeStamp" value="633" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
+          <line>276</line>
+          <option name="timeStamp" value="634" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
+          <line>266</line>
+          <option name="timeStamp" value="635" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
+          <line>268</line>
+          <option name="timeStamp" value="636" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
+          <line>267</line>
+          <option name="timeStamp" value="637" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
+          <line>320</line>
+          <option name="timeStamp" value="638" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
+          <line>317</line>
+          <option name="timeStamp" value="639" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
+          <line>315</line>
+          <option name="timeStamp" value="640" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
+          <line>313</line>
+          <option name="timeStamp" value="641" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
+          <line>265</line>
+          <option name="timeStamp" value="644" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
+          <line>259</line>
+          <option name="timeStamp" value="649" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
+          <line>260</line>
+          <option name="timeStamp" value="650" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
+          <line>261</line>
+          <option name="timeStamp" value="651" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
+          <line>252</line>
+          <option name="timeStamp" value="659" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
+          <line>253</line>
+          <option name="timeStamp" value="660" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
+          <line>251</line>
+          <option name="timeStamp" value="661" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
+          <line>258</line>
+          <option name="timeStamp" value="662" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/peer/Leecher.cpp</url>
+          <line>255</line>
+          <option name="timeStamp" value="663" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="breakpointLogExpression">
+      <expression>
+        <expression-string>define MAX_LENGTH 320
+#define MAX_LENGTH_FILE 320-48</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="setValue">
+      <expression>
+        <expression-string>305</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>true</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/util/Temporizador.h" />
+    <entry file="file:///usr/include/string.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="120" column="13" selection-start-line="120" selection-start-column="13" selection-end-line="120" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/qt/QtCore/qobject.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2940">
+          <caret line="147" column="13" selection-start-line="147" selection-start-column="13" selection-end-line="147" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/widget.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="39" column="18" selection-start-line="39" selection-end-line="40" />
+          <folding>
+            <element signature="e#105#129#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/widget.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1580">
+          <caret line="79" column="34" selection-start-line="79" selection-start-column="34" selection-end-line="79" selection-end-column="34" />
+          <folding>
+            <element signature="e#41#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/time.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3360">
+          <caret line="168" column="64" selection-start-line="168" selection-start-column="64" selection-end-line="168" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/DataGramaFIFO.h" />
+    <entry file="file://$PROJECT_DIR$/util/DataGramaFIFO.cpp" />
+    <entry file="file:///usr/include/netinet/in.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="401" column="11" selection-start-line="401" selection-start-column="11" selection-end-line="401" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/google/protobuf/stubs/macros.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/google/protobuf/stubs/port.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="152" column="16" selection-start-line="152" selection-start-column="16" selection-end-line="152" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/google/protobuf/port_def.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="189" column="8" selection-start-line="189" selection-start-column="8" selection-end-line="189" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/google/protobuf/extension_set.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="73" column="6" selection-start-line="73" selection-start-column="6" selection-end-line="73" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/jemalloc/jemalloc.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="102" column="35" selection-start-line="102" selection-start-column="35" selection-end-line="102" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/postgresql/server/snowball/libstemmer/header.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed/limits.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="119" column="12" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/8.3.0/bits/stl_pair.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="523" column="4" selection-start-line="523" selection-start-column="4" selection-end-line="523" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/coded_stream.cpp" />
+    <entry file="file://$PROJECT_DIR$/util/zero_copy_stream_impl_lite.cpp" />
+    <entry file="file://$PROJECT_DIR$/util/zero_copy_stream_impl_lite.h" />
+    <entry file="file://$PROJECT_DIR$/util/coded_stream.h" />
+    <entry file="file:///usr/include/google/protobuf/stubs/common.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file:///usr/include/google/protobuf/io/coded_stream.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15160">
+          <caret line="758" column="14" selection-start-line="758" selection-start-column="14" selection-end-line="758" selection-end-column="14" />
+          <folding>
+            <element signature="e#4880#4899#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/8.3.0/bits/basic_string.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45780">
+          <caret line="2289" selection-start-line="2289" selection-end-line="2289" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/google/protobuf/io/zero_copy_stream_impl_lite.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2480">
+          <caret line="124" column="40" selection-start-line="124" selection-start-column="40" selection-end-line="124" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/google/protobuf/io/zero_copy_stream.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="182" column="22" selection-start-line="182" selection-start-column="22" selection-end-line="182" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/8.3.0/thread">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="117" column="6" selection-start-line="117" selection-start-column="6" selection-end-line="117" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/8.3.0/iosfwd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="164" column="36" selection-start-line="164" selection-start-column="36" selection-end-line="164" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/PrioritDataGramaFIFO.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/PrioritDataGramaFIFO.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/unistd.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7040">
+          <caret line="352" column="11" selection-start-line="352" selection-start-column="11" selection-end-line="352" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/8.3.0/fstream">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18060">
+          <caret line="903" column="6" selection-start-line="903" selection-start-column="6" selection-end-line="903" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/Player.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/Player.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+          <folding>
+            <element signature="e#106#124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/PrioritCamadaDeRedeFIFO.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/PrioritCamadaDeRedeFIFO.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/model.pb.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8780">
+          <caret line="439" selection-start-line="439" selection-end-line="439" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/8.3.0/bits/stl_tree.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49700">
+          <caret line="2485" selection-start-line="2485" selection-end-line="2485" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/8.3.0/bits/stl_queue.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5320">
+          <caret line="266" column="4" selection-start-line="266" selection-start-column="4" selection-end-line="266" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/peer/Leecher.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7700">
+          <caret line="385" column="62" selection-start-line="385" selection-start-column="62" selection-end-line="385" selection-end-column="62" />
+          <folding>
+            <element signature="e#42#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/model.pb.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="164" column="11" selection-start-line="164" selection-start-column="11" selection-end-line="164" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/google/protobuf/io/zero_copy_stream_impl.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2940">
+          <caret line="147" column="11" selection-start-line="147" selection-start-column="11" selection-end-line="147" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/util.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1280">
+          <caret line="64" column="25" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+          <folding>
+            <element signature="e#86#104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rede/CamadaDeRede.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/peer/Leecher.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1340">
+          <caret line="67" column="53" selection-start-line="67" selection-start-column="53" selection-end-line="67" selection-end-column="53" />
+          <folding>
+            <element signature="e#118#140#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/8.3.0/bits/stl_set.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1860">
+          <caret line="93" column="10" selection-start-line="93" selection-start-column="10" selection-end-line="93" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/model.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/8.3.0/ext/new_allocator.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="149" column="6" selection-start-line="149" selection-start-column="6" selection-end-line="149" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="34" column="113" selection-start-line="34" selection-start-column="113" selection-end-line="34" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rede/CamadaDeRede.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

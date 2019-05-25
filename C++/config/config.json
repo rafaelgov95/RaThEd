@@ -1,0 +1,32 @@
+{
+    "tipo_download":1, 
+    "camada_de_rede":{
+        "rtt":20,   
+        "falha":20,
+        "E[X]":20
+    },
+    "rastreador":{
+      "porta":8080      
+    },
+    "seeder":{
+        "musicas":"/home/rafael/Downloads/SnowFlake_-_Living_Nightmare_.mp3",
+        "peers":1,
+        "local_file":"/home/rafael/Downloads/SnowFlake_-_Living_Nightmare_.mp3",
+        "hash_file":"cc72fc24056ced9ce13a287ca1243d48",
+        "disponibilidade":40,
+        "inicio_porta":8080   
+    },
+    "leecher":{
+        "log":"/home/rafael/Documentos/musicas_testes/",
+        "local_download":"/home/rafael/Documentos/musicas_testes/SnowFlake_-_Living_Nightmare_.mp3",
+        "hash_file":"cc72fc24056ced9ce13a287ca1243d48",
+        "porta":8080   
+    },
+    "player":{
+        "log":"/home/rafael/Documentos/musicas_testes/",
+        "local_download":"/home/rafael/Documentos/musicas_testes/SnowFlake_-_Living_Nightmare_.mp3",
+        "hash_file":"cc72fc24056ced9ce13a287ca1243d48",
+        "porta":8080   
+    }
+    
+}

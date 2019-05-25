@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package rathed;
+
+enum DatagramaType {
+    ACK = 1;
+    SND=  2;
+    SYN = 3;
+    UPD = 4;
+}
+
+message Datagrama {
+  required DatagramaType Type=1;
+  required fixed32 PackNumber=2;
+  required bytes Data=3;
+}
+
+message VectorString {
+  repeated string peers=1;
+}
