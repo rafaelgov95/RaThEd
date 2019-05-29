@@ -81,6 +81,12 @@ static void error(char *message) {
 }
 
 
+static long MyTempMiS_() {
+    std::chrono::microseconds ms = std::chrono::duration_cast<std::chrono::microseconds>(
+            std::chrono::system_clock::now().time_since_epoch()
+    );
+    return ms.count();
+}
 static rathed::Datagrama DataGrama(int type,int32_t packNumber, const char *bytes) {
     rathed::Datagrama new_data;
     new_data.set_type(static_cast<rathed::DatagramaType>(type));

@@ -46,7 +46,7 @@ private:
     struct sockaddr_in server_address, client_address, rastreador_address;
     std::vector<std::pair<std::string, std::string>> file;
     std::vector<rathed::Datagrama>buffer;
-
+    long entrada=0;
     long total_de_pacotes=0;
 
     rathed::Datagrama SelecionarBloco(rathed::Datagrama &data);

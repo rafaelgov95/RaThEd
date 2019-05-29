@@ -26,8 +26,6 @@ bool PrioritCamadaDeRedeFIFO::myPack(short type, long packnumber, pack &data, sh
             data = fila.top();
             fila.pop();
             return true;
-        }else if (type == 2 && type_dow == 1 && round==1) {
-            fila.pop();
         } else if (type == 1 ) {
             data = fila.top();
             fila.pop();

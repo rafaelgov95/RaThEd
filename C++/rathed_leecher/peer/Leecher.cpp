@@ -96,7 +96,7 @@ void StarPlay(const char *path, const char *log, int total_bytes_file) {
 
 void Leecher::IniciarDownloadP2PSequencial() {
     double tempInicioFile = 0, tempFimFile, tempInicio = 0, tempFim = 0, tempResult = 0, tempResulTotal = 0, jitter = 0, jitterImp = 0, jitterPar = 0;
-    int fd_arq = open(path, O_CREAT | O_WRONLY,
+    int fd_arq = open(path,  O_CREAT | O_WRONLY | O_TRUNC,
                       0666), num_pacote = 1, round = 0;
     int cont_packs = 0;
     io::ZeroCopyOutputStream *raw_output = new io::FileOutputStream(fd_arq, 305);
@@ -111,10 +111,10 @@ void Leecher::IniciarDownloadP2PSequencial() {
         round += 1;
         int threads_round = 0;
         camadaDeRede->InterfaceGetFilaBuffer().clear();
-//        tempInicio = MyTempMiS_();
         while (threads_round < numthreads && flag_2) {
             if (total_de_pacotes + 1 > num_pacote) {
-                threads[threads_round] = std::thread(&Leecher::RequisicaoP2P, this, 1, hash, num_pacote, seed_address[threads_round]);
+                threads[threads_round] = std::thread(&Leecher::RequisicaoP2P, this, 1, hash, num_pacote,
+                                                     seed_address[threads_round]);
                 tempInicioPack[threads_round] = std::make_pair(MyTempMiS_(), num_pacote);
                 num_pacote += 1;
                 threads_round++;
@@ -152,8 +152,10 @@ void Leecher::IniciarDownloadP2PSequencial() {
                 int bytes_resut = (total_bytes_baixados - byts_anterior);
                 velocidade = (((bytes_resut) / ((double) (tempResult * pow(10, -6)))) * pow(10, -3));
 
-                *ofs << data.packnumber() << ";" << velocidade_media << ";" << (long) temp_print_log << ";"
-                     << (long) tempFim << ";" << std::endl;
+                *ofs << data.packnumber() << ";" << velocidade_media << ";"
+                     << ((tempFim - tempInicioFile) * pow(10, -3)) << ";" << (long) temp_print_log << ";"
+                     << (long) tempFim << std::endl;
+
                 if ((round % 2) == 1) {
                     jitterPar = tempResult;
                     jitter += jitterPar - jitterImp;
@@ -199,6 +201,8 @@ void Leecher::IniciarDownloadP2PSequencial() {
          << ((tempFimFile - tempInicioFile) / 1000000) << " segundos" << std::endl;
     *ofs << "TAXA DE GRAVACAO: " << ((coded_output->ByteCount()) / ((tempFimFile - tempInicioFile) / 1000000)) / 1000
          << " KBytes/s" << std::endl;
+    *ofs << "Inicio Gravacao em : " << (long)tempInicioFile<< " TimeStamp Milissegundos " << std::endl;
+    *ofs << "FIM Gravacao em : " << (long)tempFimFile<< " TimeStamp Milissegundos " << std::endl;
 
     delete coded_output;
     delete raw_output;
@@ -209,13 +213,15 @@ void Leecher::IniciarDownloadP2PSequencial() {
 
 void Leecher::IniciarDownloadP2PAleatorio() {
     double tempInicioFile, tempFimFile, tempInicio = 0, tempFim = 0, tempResult = 0, tempResulTotal = 0, jitter = 0, jitterImp = 0, jitterPar = 0;
-    int fd_arq = open(path, O_CREAT | O_WRONLY,
+    int fd_arq = open(path, O_CREAT | O_WRONLY | O_TRUNC,
                       0666), num_pacote = 1, round = 0;
     io::ZeroCopyOutputStream *raw_output = new io::FileOutputStream(fd_arq, 305);
     auto *coded_output = new io::CodedOutputStream(raw_output);
-    bool flag = true, flag_confirma;
+    bool flag = true;
     int byts_anterior = 0, num_pacote_ultimo = 0;
     round = 1;
+    long packs_recebidos = 0;
+    long tempInicioPack[numthreads];
 
     std::thread thread_player;
     tempInicioFile = MyTempMiS_();
@@ -228,20 +234,24 @@ void Leecher::IniciarDownloadP2PAleatorio() {
             tempInicio = MyTempMiS_();
             num_pacote_ultimo = num_pacote;
         }
-        std::string tmp="#";
+        std::string tmp = "#";
         while (!filaConfirma.empty()) {
+
             tmp += std::to_string((*filaConfirma.begin()));
             tmp += ";";
             filaConfirma.erase((*filaConfirma.begin()));
         }
-        std::string new_hash =hash;
-        new_hash+=tmp;
+        std::string new_hash = hash;
+        new_hash += tmp;
         while (threads_round < numthreads && flag) {
 
-            if (total_de_pacotes + 1 > num_pacote) {
+            if (total_de_pacotes + 1 > num_pacote ) {
 
-                threads[threads_round] = std::thread(&Leecher::RequisicaoP2P, this, 2, new_hash.c_str(), num_pacote,
+                threads[threads_round] = std::thread(&Leecher::RequisicaoP2P, this, 2, new_hash.c_str(),
+                                                     num_pacote,
                                                      seed_address[threads_round]);
+//                tempInicioPack[threads_round] = std::make_pair(, num_pacote);
+                tempInicioPack[threads_round] =   MyTempMiS_();
                 threads_round++;
             } else {
                 flag = false;
@@ -252,24 +262,33 @@ void Leecher::IniciarDownloadP2PAleatorio() {
             threads[i].join();
         }
 
+            int count_t = 0;
         while (!filaBuffer.empty()) {
             filaBuffer.next(data);
+//            packs_recebidos += (310);
+//            tempFim = MyTempMiS_();
+//            *ofs << data.packnumber() << ";"
+//                 << ((packs_recebidos / ((double) ((tempFim - tempInicioFile) * pow(10, -6)))) * pow(10, -3)) << ";"
+//                 << (long) ((tempFim - tempInicioFile) * pow(10, -3)) << ";"  <<(long)tempInicioPack[count_t]<< ";"  << (long) tempFim << std::endl;
+//            count_t++;
 
-//            filaConfirma.emplace(data);
+//            *ofs << ((packs_recebidos / ((double) ((tempFim - tempInicioFile) * pow(10, -6)))) *
+//                     pow(10, -3))<<std::endl;
+
             filaConfirma.emplace(data.packnumber());
             if (data.packnumber() >= num_pacote) {
+
                 setBuffer.emplace(data);
             }
         }
 
-        if ((*setBuffer.begin()).data.packnumber() == -1) {
+        if (packs_recebidos >= total_bytes_file[0]) {
             flag = false;
         } else {
-
             bool flag_entrou_gravacao = false;
+
             while (setBuffer.begin() != setBuffer.end() && num_pacote == (*setBuffer.begin()).data.packnumber() &&
                    flag) {
-
                 if (flag_entrou_gravacao) {
                     tempInicio = MyTempMiS_();
                 }
@@ -311,6 +330,11 @@ void Leecher::IniciarDownloadP2PAleatorio() {
 
 
                 }
+
+//                *ofs << velocidade_media << ";"
+//                     << ((tempFim - tempInicioFile) * pow(10, -3)) << ";" << (long) temp_print_log << ";"
+//                     << (long) tempFim << std::endl;
+
                 *ofs << velocidade_media << std::endl;
                 if (round == 1) {
                     thread_player = std::thread(StarPlay, path, log_player, total_bytes_file[0]);
@@ -326,11 +350,19 @@ void Leecher::IniciarDownloadP2PAleatorio() {
               << ((coded_output->ByteCount() / ((tempFim - tempInicioFile) * pow(10, -6))) * pow(10, -3)) << " KBytes/s"
               << std::endl;
 //
+
     *ofs << "TAMANHO FINAL DO AUDIO: " << coded_output->ByteCount() << " Bytes Gravados" << " em: "
          << ((tempFimFile - tempInicioFile) / 1000000) << " segundos" << std::endl;
     *ofs << "TAXA DE GRAVACAO: "
          << ((coded_output->ByteCount()) / ((tempFimFile - tempInicioFile) / 1000000)) / 1000
          << " KBytes/s" << std::endl;
+    *ofs << "Inicio Gravacao em : " <<(long) tempInicioFile<< " TimeStamp Milissegundos " << std::endl;
+    *ofs << "FIM Gravacao em : " <<(long) tempFimFile<< " TimeStamp Milissegundos " << std::endl;
+//    *ofs << "TAMANHO FINAL DO AUDIO: " << packs_recebidos << " Bytes Gravados" << " em: "
+//         << ((tempFimFile - tempInicioFile) / 1000000) << " segundos" << std::endl;
+//    *ofs << "TAXA DE GRAVACAO: "
+//         << ((packs_recebidos) / ((tempFimFile - tempInicioFile) / 1000000)) / 1000
+//         << " KBytes/s" << std::endl;
 
     delete coded_output;
     delete raw_output;

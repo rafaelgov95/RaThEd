@@ -93,10 +93,12 @@ void Seed::IsTypeEnviar(rathed::Datagrama &data) {
 }
 
 void Seed::TratarMensagem(rathed::Datagrama &data) {
+    entrada=MyTempMiS_();
+    std::cout << "ENTRO: "<< MyTempMiS_() << std::endl;
 
     switch (data.type()) {
         case 1:
-            ConfirmarPacote(data);
+            ConfirmarPacote(data    );
             break;
         case 2:
             IsTypeEnviar(data);
@@ -171,6 +173,8 @@ void Seed::EnviarAleatorio(rathed::Datagrama &data) {
         if (sendto(socket_fd, DataGramaSerial(datagrama), datagrama.ByteSizeLong(), 0,
                    (struct sockaddr *) &client_address, sizeof(struct sockaddr)) <= 0)
             error("Erro ao enviar 1");
+        long saida = (MyTempMiS_()-entrada);
+        std::cout << "DELAY AQUI: " << saida << std::endl;
 
         std::cout << "Bytes data: " << datagrama.data().size() << std::endl;
         std::cout << "Bytes Datagrama: " << datagrama.ByteSizeLong() << std::endl;
@@ -266,17 +270,19 @@ void Seed::ConfirmarPacote(rathed::Datagrama &data) {
         for (int j = 0; j < list_apagar.size(); ++j) {
             bool flag = true;
             auto i = buffer.begin();
-            while (i != buffer.end() && i.base()->packnumber() <= std::atoi(list_apagar[j].c_str()) && flag) {
+//            while (i != buffer.end() && i.base()->packnumber() <= std::atoi(list_apagar[j].c_str()) && flag) {
+            while (i != buffer.end()) {
                 if (i.base()->packnumber() == std::atoi(list_apagar[j].c_str()) ) {
                     buffer.erase(i);
+                    std::cout << "TOTAL PACKS: " << total_de_pacotes << " APAGANDO PACK: " << list_apagar[j].c_str() << " SEED: "
+                              << my_port << std::endl;
                     total_de_pacotes = buffer.size();
                     flag = false;
                 } else {
                     ++i;
                 }
             }
-        std::cout << "TOTAL PACKS: " << total_de_pacotes << " APAGANDO PACK: " << list_apagar[j].c_str() << " SEED: "
-                  << my_port << std::endl;
+
         }
     }
 }
