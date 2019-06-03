@@ -1,8 +1,8 @@
 {
-    "tipo_download":2, 
+    "tipo_download":3, 
     "camada_de_rede":{
         "rtt":20,   
-        "falha":15,
+        "falha":0,
         "E[X]":20
     },
     "rastreador":{
@@ -10,10 +10,10 @@
     },
     "seeder":{
         "musicas":"/home/rafael/Downloads/SnowFlake_-_Living_Nightmare_.mp3",
-        "peers":4,
+        "peers":1,
         "local_file":"/home/rafael/Downloads/SnowFlake_-_Living_Nightmare_.mp3",
         "hash_file":"cc72fc24056ced9ce13a287ca1243d48",
-        "disponibilidade":85,
+        "disponibilidade":100,
         "inicio_porta":8080   
     },
     "leecher":{

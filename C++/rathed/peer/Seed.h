@@ -50,6 +50,9 @@ private:
     long total_de_pacotes=0;
 
     rathed::Datagrama SelecionarBloco(rathed::Datagrama &data);
+    rathed::Datagrama SelecionarBlocoRange(rathed::Datagrama &data);
+
+
     void TratarMensagem(rathed::Datagrama& data);
     void EnviarAleatorio(rathed::Datagrama& data);
     void EnviarSequencial(rathed::Datagrama& data);

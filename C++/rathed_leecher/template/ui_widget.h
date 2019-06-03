@@ -134,7 +134,7 @@ public:
 
     void retranslateUi(QWidget *Widget)
     {
-        Widget->setWindowTitle(QApplication::translate("Widget", "Simple Audio Player", nullptr));
+        Widget->setWindowTitle(QApplication::translate("Widget", "Rathred - Player", nullptr));
         currentTrack->setText(QString());
         btn_play->setText(QApplication::translate("Widget", "...", nullptr));
         btn_pause->setText(QApplication::translate("Widget", "...", nullptr));

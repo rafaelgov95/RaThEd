@@ -24,7 +24,6 @@ CamadaDeRede::CamadaDeRede(unsigned int socket, struct sockaddr_in &rastreador, 
 
 void CamadaDeRede::StartTemporizacao(const rathed::Datagrama &data, double temp1)   {
     int x = rand() % 100 + 1;
-//    temp1=0;
     if((100-F) >= x) {
         double wx =  generadorDistribucionExponencial(e);
         int timeEnvio = ((rtt/2) + (int)wx)+temp1;
@@ -36,10 +35,9 @@ void CamadaDeRede::StartTemporizacao(const rathed::Datagrama &data, double temp1
 
 void CamadaDeRede::InterfaceRede( const rathed::Datagrama &data,struct sockaddr_in seed_address) {
     std::lock_guard<std::mutex> lock(m);
-//    e=0;
-    rathed::Datagrama data_; //X = 80
+    rathed::Datagrama data_;
     int x = rand() % 100 + 1;
-    if((100-F) >= x) { //Falha 20
+    if((100-F) >= x) {
         double wx = generadorDistribucionExponencial(e);
         int timeEnvio = ((rtt/2) + (int)wx);
         if (sendto(socket_fd, DataGramaSerial(data), data.ByteSize(), 0,

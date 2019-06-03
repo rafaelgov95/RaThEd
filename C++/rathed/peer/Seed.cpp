@@ -87,7 +87,7 @@ void Seed::IsTypeEnviar(rathed::Datagrama &data) {
             std::cout << "Consultar Bloco....." << std::endl;
             IsTypeEnviar(data);
         }
-    } else if (opcao == 2) {
+    } else if (opcao >= 2) {
         EnviarAleatorio(data);
     }
 }
@@ -162,14 +162,48 @@ rathed::Datagrama Seed::SelecionarBloco(rathed::Datagrama &data) {
     return datagrama;
 }
 
+rathed::Datagrama Seed::SelecionarBlocoRange(rathed::Datagrama &data) {
+    rathed::Datagrama datagrama;
+    datagrama.set_type(static_cast<rathed::DatagramaType>(1));
+
+    auto i = buffer.begin();
+    while (i != buffer.end()) {
+        int valor = 0;
+        int range = (total_de_pacotes*0.10);
+        if (range > 1) {
+            valor = rand() % range;
+        }
+        i = buffer.begin() + valor;
+        if (i.base()->packnumber() >= data.packnumber()) {
+            datagrama.set_packnumber(i.base()->packnumber());
+            datagrama.set_data(i.base()->data().c_str(), i.base()->data().size());
+            std::cout << " Range X: " << data.packnumber() << " Tamanho PACK: " << datagrama.data().size()
+                      << " VALOR SORTEADO: " << valor
+                      << " TOTAL PACKs: " << total_de_pacotes << " SEED: " << my_port
+                      << std::endl;
+            return datagrama;
+        } else {
+            i = buffer.erase(i);
+            total_de_pacotes = buffer.size();
+        }
+    }
+    datagrama.set_packnumber(0);
+    datagrama.set_data("", 1);
+    return datagrama;
+}
+
 void Seed::EnviarAleatorio(rathed::Datagrama &data) {
     auto it = std::find_if(file.begin(), file.end(), CompareHash(data.data()));
     if (it.base() != nullptr && data.packnumber() > 0) {
-
-
         ConfirmarPacote(data);
         rathed::Datagrama datagrama;
-        datagrama = SelecionarBloco(data);
+        if(opcao==3){
+            datagrama = SelecionarBlocoRange(data);
+
+        }else{
+            datagrama = SelecionarBloco(data);
+        }
+
         if (sendto(socket_fd, DataGramaSerial(datagrama), datagrama.ByteSizeLong(), 0,
                    (struct sockaddr *) &client_address, sizeof(struct sockaddr)) <= 0)
             error("Erro ao enviar 1");

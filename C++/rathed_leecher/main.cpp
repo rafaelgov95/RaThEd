@@ -13,12 +13,19 @@
 void StartLeecher(int peers,int tipo_download,int portaRastreador,int rtt, int e,int falha,const char *path, const char *hash, const char *log_leecher, const char *log_player){
     Leecher leecher( peers,tipo_download,portaRastreador,rtt,e,falha);
     leecher.ConfigFileDownload(hash,path,log_leecher,log_player);
-    leecher.run();
+    leecher.Run();
 }
 
 
 int main(int argc, char *argv[])
 {
+////
+//    QApplication a(argc, argv);
+//    Widget w;
+//    w.show();
+//
+//    return a.exec();
+
 
     std::ifstream i("/home/rafael/Documentos/Projetos/RaThEd/C++/config/config.json");
     json j;

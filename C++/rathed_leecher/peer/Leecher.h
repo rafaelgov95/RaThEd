@@ -74,6 +74,7 @@ private:
     void IniciarDownloadP2PSequencial();
 
     void IniciarDownloadP2PAleatorio();
+    void IniciarDownloadP2PAleatorioComRange();
 
     void RequisicaoP2P(int type_down, const char* hash, int pack_number, struct sockaddr_in seed_address);
 
@@ -84,7 +85,7 @@ public:
     ~Leecher();
     Leecher(int peers,int tipo_download, int rastreador_porta, int rtt, int e,int falha );
     void ConfigFileDownload(const char *path, const char *hash,const char *log,const char *log_player);
-    void run();
+    void Run();
 
 
 };
